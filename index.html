@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="nl" data-lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Vault – privékluis</title>
+<meta name="description" content="My Vault: een beveiligde privélocatie voor je documenten, foto's en video's. Makkelijk toevoegen en beheren, volledig versleuteld, offline.">
+<link rel="icon" href="icon-vault.svg" type="image/svg+xml">
+<style>
+:root{
+  --bg:#f5f7fa; --surface:#ffffff; --surface-2:#edf1f6; --text:#141c27; --muted:#526070; --line:#d9e0e9;
+  --brand:#243b55; --accent:#2f8f9d; --accent-2:#0e5a5a; --warn:#9a5b00; --warn-bg:#fff4e0;
+  --hero-from:#1b2d44; --hero-to:#0e4a52; --on-hero:#eaf2f7; --shadow:0 1px 2px rgba(0,0,0,.05),0 8px 24px rgba(36,59,85,.08);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d1218; --surface:#141b24; --surface-2:#18212c; --text:#e4eaf1; --muted:#9fb0c2; --line:#26364a;
+    --brand:#9dbbe0; --accent:#5cc0cb; --accent-2:#5cc8bf; --warn:#f2c06b; --warn-bg:#2a2112;
+    --hero-from:#111d2d; --hero-to:#08302f; --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+html[data-lang="nl"] body [lang="en"], html[data-lang="en"] body [lang="nl"]{display:none !important}
+a{color:var(--accent)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+h1,h2,h3,h4{line-height:1.2;margin:0 0 .5em}
+h2{font-size:clamp(1.5rem,3vw,2.05rem);letter-spacing:-.01em}
+h3{font-size:1.08rem}
+h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.07em;color:var(--accent);margin-top:4px}
+p{margin:0 0 1em}
+.muted{color:var(--muted)}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;gap:16px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;color:var(--text);white-space:nowrap;font-size:1.05rem}
+.brand img{width:30px;height:30px;border-radius:8px}
+nav.links{display:flex;gap:18px;margin-left:auto;font-size:.93rem}
+nav.links a{color:var(--muted);text-decoration:none}
+nav.links a:hover{color:var(--text)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;flex:none}
+.lang button{border:0;background:transparent;color:var(--muted);padding:4px 10px;font:inherit;font-size:.85rem;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--brand);color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lang button[aria-pressed="true"]{color:#0d1218}}
+@media (max-width:820px){nav.links{display:none}.lang{margin-left:auto}}
+
+/* hero */
+.hero{background:linear-gradient(135deg,var(--hero-from),var(--hero-to));color:var(--on-hero);padding:64px 0 76px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero .name{display:flex;align-items:center;gap:14px;margin-bottom:18px;font-weight:800;font-size:1.3rem}
+.hero .name img{width:52px;height:52px;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.hero h1{font-size:clamp(1.9rem,4.6vw,2.9rem);letter-spacing:-.02em}
+.hero .lead{font-size:1.13rem;opacity:.92;max-width:34em}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 28px;padding:0;list-style:none}
+.pills li{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:4px 12px;font-size:.85rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#1b2d44;font-weight:700;text-decoration:none;padding:12px 20px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.btn:hover{transform:translateY(-1px)}
+.btn svg{width:20px;height:20px}
+.btn-ghost{color:var(--on-hero);text-decoration:none;border:1px solid rgba(255,255,255,.35);padding:11px 18px;border-radius:12px}
+.small{font-size:.83rem;opacity:.8;margin-top:12px}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.phones{justify-self:center}}
+
+/* phone mockups */
+.phones{display:flex;gap:16px;justify-content:center}
+.phone{width:200px;border-radius:28px;background:#111827;border:6px solid #253244;box-shadow:0 20px 50px rgba(0,0,0,.45);padding:14px 12px 18px;color:#dfe7f0;font-size:.72rem}
+.phone .bar{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:.9rem;margin:6px 2px 10px}
+.phone .bar svg{width:16px;height:16px;opacity:.85}
+.chips{display:flex;gap:4px;margin-bottom:8px}
+.chips span{border:1px solid #33445a;border-radius:999px;padding:1px 7px;font-size:.62rem;opacity:.85}
+.folders{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:6px}
+.folders div{border-radius:6px;padding:16px 6px 4px;font-size:.6rem;font-weight:600;color:#fff;position:relative}
+.folders div small{display:block;font-weight:400;opacity:.8}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.grid div{aspect-ratio:1;border-radius:4px;position:relative}
+.grid .doc{background:#e9edf3;display:grid;place-items:center;color:#243b55;font-weight:800;font-size:.55rem}
+.grid .vid::after{content:"0:42";position:absolute;right:3px;bottom:2px;font-size:.5rem;color:#fff;background:rgba(0,0,0,.45);padding:0 3px;border-radius:3px}
+.phone.mixer{background:#0f1717;border-color:#1f2b2b;transform:translateY(26px);width:170px}
+.mixer .title{font-weight:700;font-size:.85rem;margin:6px 0 12px;position:relative}
+.mixer .title .glow{position:absolute;inset:-4px -6px;border-radius:8px;animation:glow 3.2s ease-in-out infinite}
+@keyframes glow{0%,30%{box-shadow:0 0 0 0 rgba(92,200,191,0)}50%,70%{box-shadow:0 0 14px 2px rgba(92,200,191,.55)}100%{box-shadow:0 0 0 0 rgba(92,200,191,0)}}
+@media (prefers-reduced-motion:reduce){.mixer .title .glow{animation:none}}
+.row{margin:9px 0}
+.row span{display:block;opacity:.75;margin-bottom:4px}
+.track{height:4px;border-radius:2px;background:#2c3b3b;position:relative}
+.track i{position:absolute;left:0;top:0;bottom:0;border-radius:2px;background:#5cc8bf}
+.track b{position:absolute;top:50%;width:11px;height:11px;margin:-5.5px 0 0 -5.5px;border-radius:50%;background:#e9f5f4}
+@media (max-width:440px){.phone{width:170px}.phone.mixer{display:none}}
+
+/* sections */
+section{padding:72px 0}
+section.alt{background:var(--surface-2)}
+.kicker{color:var(--accent);font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.intro{max-width:46em;margin-bottom:36px}
+.intro p{color:var(--muted);font-size:1.05rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+.card .ic{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 15%,transparent);color:var(--accent);margin-bottom:12px}
+.card .ic svg{width:22px;height:22px}
+.card p{color:var(--muted);margin:0;font-size:.95rem}
+
+/* ease section */
+.ease{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:760px){.ease{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
+.panel h3{display:flex;align-items:center;gap:10px;font-size:1.2rem}
+.panel h3 .ic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--accent);color:#fff;flex:none}
+.panel h3 .ic svg{width:20px;height:20px}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:4px 0 16px;font-size:.85rem}
+.flow span{background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:3px 9px}
+.flow i{color:var(--muted);font-style:normal}
+ul.check{list-style:none;margin:0;padding:0}
+ul.check li{position:relative;padding-left:26px;margin-bottom:8px;color:var(--muted)}
+ul.check li::before{content:"";position:absolute;left:2px;top:.45em;width:13px;height:7px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+ul.check li strong{color:var(--text);font-weight:600}
+
+/* special features */
+.special{display:grid;gap:20px}
+.sf{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow)}
+.sf-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:16px}
+.num{width:42px;height:42px;border-radius:12px;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:800;font-size:1.1rem;flex:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .num{color:#0d1218}}
+.sf-head h3{font-size:1.3rem;margin-bottom:4px}
+.sf-head p{color:var(--muted);margin:0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px 28px}
+.cols > div{min-width:0}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 4px;padding:0;list-style:none}
+.tags li{font-size:.8rem;border:1px solid var(--line);background:var(--surface-2);border-radius:999px;padding:2px 10px;color:var(--muted)}
+
+/* steps */
+.steps{counter-reset:s;display:grid;gap:14px;max-width:820px}
+.step{display:grid;grid-template-columns:44px 1fr;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.step::before{counter-increment:s;content:counter(s);width:36px;height:36px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:700}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .step::before{color:#0d1218}}
+.step p{margin:0;color:var(--muted)}
+.callout{margin-top:24px;max-width:820px;border-left:4px solid var(--warn);background:var(--warn-bg);border-radius:0 12px 12px 0;padding:16px 20px}
+.callout strong{color:var(--warn)}
+.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.85em;word-break:break-all}
+
+/* faq */
+.faq{max-width:820px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+summary{cursor:pointer;padding:14px 18px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--accent);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details .a{padding:0 18px 16px;color:var(--muted)}
+
+/* disclaimer */
+.disc{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.disc div{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--surface)}
+.disc h3{font-size:.98rem}
+.disc p{color:var(--muted);font-size:.92rem;margin:0}
+
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.88rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="icon-vault.svg" alt="">My Vault</a>
+    <nav class="links">
+      <a href="#gemak"><span lang="nl">Gemak</span><span lang="en">Ease of use</span></a>
+      <a href="#features"><span lang="nl">Speciale features</span><span lang="en">Special features</span></a>
+      <a href="#uitleg"><span lang="nl">Uitleg</span><span lang="en">How it works</span></a>
+      <a href="#faq">FAQ</a>
+      <a href="#disclaimer">Disclaimer</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set-lang="nl" aria-pressed="true">NL</button>
+      <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <div class="name"><img src="icon-vault.svg" alt="">My Vault</div>
+      <h1>
+        <span lang="nl">Een beveiligde privélocatie voor je documenten, foto's en video's.</span>
+        <span lang="en">A secure private place for your documents, photos and videos.</span>
+      </h1>
+      <p class="lead">
+        <span lang="nl">Zet je bestanden in een paar tikken in je eigen kluis en houd ze overzichtelijk bij elkaar in mappen. Alles blijft versleuteld op je telefoon: geen account, geen cloud, geen internet. Alleen jij komt erbij, met je PIN of vingerafdruk.</span>
+        <span lang="en">Put your files into your own vault in a few taps and keep them neatly together in folders. Everything stays encrypted on your phone: no account, no cloud, no internet. Only you can get in, with your PIN or fingerprint.</span>
+      </p>
+      <ul class="pills">
+        <li><span lang="nl">In een paar tikken toegevoegd</span><span lang="en">Added in a few taps</span></li>
+        <li><span lang="nl">Mappen &amp; favorieten</span><span lang="en">Folders &amp; favourites</span></li>
+        <li><span lang="nl">AES-256-versleuteld</span><span lang="en">AES-256 encrypted</span></li>
+        <li><span lang="nl">100% offline</span><span lang="en">100% offline</span></li>
+      </ul>
+      <div class="cta">
+        <a class="btn" href="VolumeManager-1.5.1-release.apk" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 11l6 6 6-6M5 21h14"/></svg>
+          <span lang="nl">Download APK 1.5.1</span><span lang="en">Download APK 1.5.1</span>
+        </a>
+        <a class="btn-ghost" href="#installeren"><span lang="nl">Hoe installeer ik het?</span><span lang="en">How do I install it?</span></a>
+      </div>
+      <p class="small">
+        <span lang="nl">Android 8.0 of nieuwer · 64-bit ARM · ca. 12 MB · Nederlands, Engels, Duits, Frans, Italiaans, Spaans</span>
+        <span lang="en">Android 8.0 or newer · 64-bit ARM · approx. 12 MB · Dutch, English, German, French, Italian, Spanish</span>
+      </p>
+    </div>
+
+    <div class="phones" aria-hidden="true">
+      <div class="phone">
+        <div class="bar">My Vault
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg>
+        </div>
+        <div class="chips"><span lang="nl">Alles</span><span lang="en">All</span><span lang="nl">Favorieten</span><span lang="en">Favourites</span><span lang="nl">Prullenbak</span><span lang="en">Bin</span></div>
+        <div class="folders">
+          <div style="background:linear-gradient(135deg,#3b6e8f,#7fb3c9)"><span lang="nl">Vakantie</span><span lang="en">Holiday</span><small lang="nl">24 foto's · 3 video's</small><small lang="en">24 photos · 3 videos</small></div>
+          <div style="background:linear-gradient(135deg,#46407a,#9d94d8)"><span lang="nl">Documenten</span><span lang="en">Documents</span><small>12 PDF · 4 DOCX</small></div>
+        </div>
+        <div class="grid">
+          <div style="background:linear-gradient(135deg,#7a4e7e,#c68bb0)"></div>
+          <div class="doc">PDF</div>
+          <div class="vid" style="background:linear-gradient(135deg,#406a3e,#9cc58a)"></div>
+          <div style="background:linear-gradient(135deg,#8a5a2b,#e0b070)"></div>
+          <div style="background:linear-gradient(135deg,#2e4a7a,#7090d0)"></div>
+          <div class="doc">DOCX</div>
+          <div class="vid" style="background:linear-gradient(135deg,#2f6f6a,#73c2b8)"></div>
+          <div style="background:linear-gradient(135deg,#7a3434,#d27a6c)"></div>
+          <div style="background:linear-gradient(135deg,#5b5b5b,#a9a9a9)"></div>
+        </div>
+      </div>
+      <div class="phone mixer">
+        <div class="title"><span class="glow"></span>Volume Manager</div>
+        <div class="row"><span>Media</span><div class="track"><i style="width:70%"></i><b style="left:70%"></b></div></div>
+        <div class="row"><span lang="nl">Beltoon</span><span lang="en">Ringtone</span><div class="track"><i style="width:45%"></i><b style="left:45%"></b></div></div>
+        <div class="row"><span lang="nl">Meldingen</span><span lang="en">Notifications</span><div class="track"><i style="width:55%"></i><b style="left:55%"></b></div></div>
+        <div class="row"><span>Alarm</span><div class="track"><i style="width:85%"></i><b style="left:85%"></b></div></div>
+        <div class="row"><span lang="nl">Systeem</span><span lang="en">System</span><div class="track"><i style="width:30%"></i><b style="left:30%"></b></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WAT IS MY VAULT -->
+<section>
+  <div class="wrap">
+    <div class="kicker"><span lang="nl">Wat is My Vault</span><span lang="en">What is My Vault</span></div>
+    <div class="intro">
+      <h2><span lang="nl">Jouw privéplek op je eigen telefoon</span><span lang="en">Your private place on your own phone</span></h2>
+      <p lang="nl">My Vault is een kluis-app voor alles wat niet in je gewone galerij of downloads hoort: persoonlijke foto's en video's, maar ook documenten zoals PDF's, Word-bestanden en notities. Je voegt ze toe, de app versleutelt ze en haalt de originelen weg. Daarna bekijk, orden en bewerk je alles in de app zelf, zonder dat er ooit een onversleutelde kopie op je telefoon achterblijft.</p>
+      <p lang="en">My Vault is a vault app for everything that doesn't belong in your normal gallery or downloads: personal photos and videos, but also documents such as PDFs, Word files and notes. You add them, the app encrypts them and removes the originals. From then on you view, organise and edit everything inside the app, without an unencrypted copy ever being left on your phone.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3><span lang="nl">Alles versleuteld</span><span lang="en">Everything encrypted</span></h3>
+        <p lang="nl">Bestanden, miniaturen én de database met namen en mappen. Op de opslag staan alleen willekeurige, onleesbare bestandsnamen.</p>
+        <p lang="en">Files, thumbnails and the database with names and folders. Storage only holds random, unreadable file names.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 2l20 20M8.5 4.6A11 11 0 0 1 21 9M5 7.7A11 11 0 0 0 3 9M12 20h.01M8.5 16.4a5 5 0 0 1 7 0"/></svg></div>
+        <h3><span lang="nl">Geen internet, geen account</span><span lang="en">No internet, no account</span></h3>
+        <p lang="nl">De app vraagt geen internettoegang aan. Geen server, geen login, geen tracking: er kan niets weglekken.</p>
+        <p lang="en">The app doesn't request internet access. No server, no login, no tracking: nothing can leak.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 11c0-2 1.5-3 3-3M7 11a5 5 0 0 1 10 0c0 4-1 7-3 9M9 21c-1-2-2-5-2-8M4 9a8 8 0 0 1 16 0"/></svg></div>
+        <h3><span lang="nl">PIN of vingerafdruk</span><span lang="en">PIN or fingerprint</span></h3>
+        <p lang="nl">Snel open, en net zo snel weer dicht: bij het verlaten van de app, scherm uit, inactiviteit of met de paniekknop.</p>
+        <p lang="en">Quick to open, just as quick to close: on leaving the app, screen off, inactivity or with the panic button.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 18l18-14"/></svg></div>
+        <h3><span lang="nl">Niets op een screenshot</span><span lang="en">Nothing on a screenshot</span></h3>
+        <p lang="nl">Screenshots en schermopnames van de kluis zijn geblokkeerd; het overzicht van recente apps toont een leeg venster.</p>
+        <p lang="en">Screenshots and screen recordings of the vault are blocked; the recent-apps overview shows a blank window.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GEMAK -->
+<section class="alt" id="gemak">
+  <div class="wrap">
+    <div class="kicker"><span lang="nl">Gemak</span><span lang="en">Ease of use</span></div>
+    <div class="intro">
+      <h2><span lang="nl">Makkelijk toevoegen, overzichtelijk beheren</span><span lang="en">Easy to add, simple to manage</span></h2>
+      <p lang="nl">Een kluis gebruik je alleen als hij net zo prettig werkt als je galerij. Daarom draait My Vault om gemak: bestanden staan er in een paar tikken in, en daarna vind je alles snel terug.</p>
+      <p lang="en">You only use a vault if it is as pleasant as your gallery. That is why My Vault is built around ease: files are in with a few taps, and afterwards you find everything quickly.</p>
+    </div>
+    <div class="ease">
+      <div class="panel">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span><span lang="nl">Toevoegen</span><span lang="en">Adding</span></h3>
+        <div class="flow" lang="nl"><span>Media verbergen</span><i>→</i><span>kiezen</span><i>→</i><span>map</span><i>→</i><span>klaar</span></div>
+        <div class="flow" lang="en"><span>Hide media</span><i>→</i><span>pick</span><i>→</i><span>folder</span><i>→</i><span>done</span></div>
+        <ul class="check" lang="nl">
+          <li><strong>Foto's &amp; video's</strong> kies je in de vertrouwde fotokiezer van Android, één of veel tegelijk</li>
+          <li><strong>Documenten</strong> kies je in de bestandskiezer: PDF, Word (.docx), OpenDocument, RTF, Markdown, HTML en tekstbestanden (.txt, .csv, .json, .xml, .log)</li>
+          <li><strong>Delen naar de kluis</strong> vanuit andere apps: tik op Delen, kies My Vault, ontgrendel en kies een map</li>
+          <li><strong>Originelen verdwijnen</strong> daarna uit je galerij en bestandsbeheer (met of zonder vraag vooraf, instelbaar)</li>
+          <li>Versleutelen gebeurt op de achtergrond, met een <strong>voortgangsbalk</strong></li>
+          <li><strong>Zichtbaar maken</strong> zet een item met één actie terug: foto's naar Pictures, video's naar Movies, documenten naar Download</li>
+        </ul>
+        <ul class="check" lang="en">
+          <li><strong>Photos &amp; videos</strong> are picked in Android's familiar photo picker, one or many at once</li>
+          <li><strong>Documents</strong> are picked in the file picker: PDF, Word (.docx), OpenDocument, RTF, Markdown, HTML and text files (.txt, .csv, .json, .xml, .log)</li>
+          <li><strong>Share to the vault</strong> from other apps: tap Share, choose My Vault, unlock and pick a folder</li>
+          <li><strong>Originals disappear</strong> from your gallery and file manager afterwards (with or without asking first, configurable)</li>
+          <li>Encryption runs in the background, with a <strong>progress bar</strong></li>
+          <li><strong>Unhide</strong> puts an item back in one action: photos to Pictures, videos to Movies, documents to Download</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span lang="nl">Beheren</span><span lang="en">Managing</span></h3>
+        <div class="flow" lang="nl"><span>mappen</span><span>favorieten</span><span>sorteren</span><span>prullenbak</span></div>
+        <div class="flow" lang="en"><span>folders</span><span>favourites</span><span>sorting</span><span>recycle bin</span></div>
+        <ul class="check" lang="nl">
+          <li><strong>Mappen en submappen</strong>, elk met een omslag (automatisch, een gekozen foto of een van 24 kleuren) en tellers zoals "24 foto's, 3 video's"</li>
+          <li><strong>Selecteren</strong> met lang drukken, alles selecteren, of een <strong>bereik</strong>: lang drukken op een tweede item selecteert alles ertussen</li>
+          <li><strong>Verplaatsen</strong> (direct), <strong>kopiëren</strong>, hernoemen en verwijderen, voor één item of een hele selectie</li>
+          <li><strong>Favorieten</strong> met een hartje, verzameld uit alle mappen in één overzicht</li>
+          <li><strong>Sorteren</strong> op naam, datum, grootte of willekeurig, oplopend of aflopend</li>
+          <li><strong>Raster</strong> van 2 tot 24 miniaturen per rij (knijpen) of een <strong>lijst</strong> met details; snel scrollen met een greep die maand of beginletter toont</li>
+          <li>Videoduur en documenttype (PDF, DOCX…) direct op de miniatuur</li>
+          <li><strong>Prullenbak</strong>: verwijderde items blijven versleuteld 1 tot 90 dagen bewaard (standaard 30) en zijn terug te zetten</li>
+        </ul>
+        <ul class="check" lang="en">
+          <li><strong>Folders and subfolders</strong>, each with a cover (automatic, a chosen photo or one of 24 colours) and counts such as "24 photos, 3 videos"</li>
+          <li><strong>Select</strong> with a long-press, select all, or a <strong>range</strong>: long-press a second item to select everything in between</li>
+          <li><strong>Move</strong> (instant), <strong>copy</strong>, rename and delete, for one item or a whole selection</li>
+          <li><strong>Favourites</strong> with a heart, gathered from all folders in one view</li>
+          <li><strong>Sort</strong> by name, date, size or random, ascending or descending</li>
+          <li><strong>Grid</strong> of 2 to 24 thumbnails per row (pinch) or a <strong>list</strong> with details; fast scroll with a handle showing the month or first letter</li>
+          <li>Video length and document type (PDF, DOCX…) right on the thumbnail</li>
+          <li><strong>Recycle bin</strong>: deleted items stay encrypted for 1 to 90 days (30 by default) and can be restored</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALE FEATURES -->
+<section id="features">
+  <div class="wrap">
+    <div class="kicker"><span lang="nl">Speciale features</span><span lang="en">Special features</span></div>
+    <div class="intro">
+      <h2><span lang="nl">Meer dan een kluis</span><span lang="en">More than a vault</span></h2>
+      <p lang="nl">Vijf dingen die My Vault onderscheiden van een gewone kluis-app.</p>
+      <p lang="en">Five things that set My Vault apart from an ordinary vault app.</p>
+    </div>
+
+    <div class="special">
+
+      <!-- 1 Volume Manager -->
+      <article class="sf" id="volume-manager">
+        <div class="sf-head">
+          <div class="num">1</div>
+          <div>
+            <h3><span lang="nl">Volume Manager: de vermomming</span><span lang="en">Volume Manager: the disguise</span></h3>
+            <p lang="nl">Wil je niet dat iemand ziet dat je een kluis hebt? Laat My Vault zich dan voordoen als een gewone volumemixer. Kies in Instellingen → Vermomming tussen <strong>My Vault</strong> (hangslot) en <strong>Volume Manager</strong> (schuifregelaars).</p>
+            <p lang="en">Don't want anyone to see you have a vault? Let My Vault pose as an ordinary volume mixer. In Settings → Disguise, choose between <strong>My Vault</strong> (padlock) and <strong>Volume Manager</strong> (sliders).</p>
+          </div>
+        </div>
+        <div class="cols">
+          <div>
+            <h4><span lang="nl">Een echte volumemixer</span><span lang="en">A real volume mixer</span></h4>
+            <ul class="check" lang="nl">
+              <li>Schuifregelaars voor media, beltoon, meldingen, alarm, systeem en gesprek, die het volume echt aanpassen</li>
+              <li>Dempen per geluidsstroom; toont het huidige volume van de telefoon</li>
+              <li>Houdt rekening met Niet storen en apparaten met een vast volume</li>
+            </ul>
+            <ul class="check" lang="en">
+              <li>Sliders for media, ringtone, notifications, alarm, system and call that really change the volume</li>
+              <li>Mute per stream; shows the phone's current volume</li>
+              <li>Handles Do Not Disturb and devices with a fixed volume</li>
+            </ul>
+          </div>
+          <div>
+            <h4><span lang="nl">De verborgen ingang</span><span lang="en">The hidden entrance</span></h4>
+            <ul class="check" lang="nl">
+              <li>Naam en icoon in de app-lijst, het deelmenu en recente apps worden "Volume Manager"</li>
+              <li>Houd de titel vast om het PIN-scherm te openen; de tijd is instelbaar van 1 tot 15 seconden (standaard 5)</li>
+              <li>Vergrendelen, de paniekknop en herhaald foute PIN's brengen je terug naar de mixer</li>
+              <li>Zonder vermomming opent My Vault direct op het PIN-scherm</li>
+            </ul>
+            <ul class="check" lang="en">
+              <li>Name and icon in the app list, share menu and recent apps become "Volume Manager"</li>
+              <li>Hold the title to open the PIN screen; the time is adjustable from 1 to 15 seconds (5 by default)</li>
+              <li>Locking, the panic button and repeated wrong PINs bring you back to the mixer</li>
+              <li>Without the disguise, My Vault opens straight on the PIN screen</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 Mediaspeler -->
+      <article class="sf" id="mediaspeler">
+        <div class="sf-head">
+          <div class="num">2</div>
+          <div>
+            <h3><span lang="nl">Geïntegreerde mediaspeler</span><span lang="en">Integrated media player</span></h3>
+            <p lang="nl">Foto's, video's en documenten openen in de app zelf. Ze worden tijdens het bekijken in het geheugen ontsleuteld: er wordt nooit een tijdelijke onversleutelde kopie gemaakt, ook niet bij grote video's.</p>
+            <p lang="en">Photos, videos and documents open inside the app itself. They are decrypted in memory while you view them: no temporary unencrypted copy is ever made, not even for large videos.</p>
+          </div>
+        </div>
+        <div class="cols">
+          <div>
+            <h4><span lang="nl">Foto's</span><span lang="en">Photos</span></h4>
+            <ul class="check" lang="nl">
+              <li>Opent direct vanuit de miniatuur, daarna in volle resolutie</li>
+              <li>Knijpen om te zoomen, dubbeltikken om in of uit te zoomen, slepen om te verschuiven</li>
+              <li>Vegen naar links of rechts voor het vorige of volgende item</li>
+              <li>Zoom begint weer op normale grootte als je terugkeert naar een item</li>
+            </ul>
+            <ul class="check" lang="en">
+              <li>Opens instantly from the thumbnail, then at full resolution</li>
+              <li>Pinch to zoom, double-tap to zoom in or out, drag to pan</li>
+              <li>Swipe left or right for the previous or next item</li>
+              <li>Zoom starts at normal size again when you return to an item</li>
+            </ul>
+            <h4><span lang="nl">Documenten</span><span lang="en">Documents</span></h4>
+            <ul class="check" lang="nl">
+              <li>PDF-pagina's, met zoom</li>
+              <li>Word, OpenDocument, RTF, Markdown en HTML opgemaakt weergegeven: koppen, vet/cursief, lijsten en tabellen</li>
+              <li>Tekstbestanden (.txt, .csv, .json, .xml, .log) als tekst, met zoom</li>
+            </ul>
+            <ul class="check" lang="en">
+              <li>PDF pages, with zoom</li>
+              <li>Word, OpenDocument, RTF, Markdown and HTML shown formatted: headings, bold/italic, lists and tables</li>
+              <li>Text files (.txt, .csv, .json, .xml, .log) as text, with zoom</li>
+            </ul>
+          </div>
+          <div>
+            <h4><span lang="nl">Video's</span><span lang="en">Videos</span></h4>
+            <ul class="check" lang="nl">
+              <li>Afspelen en pauzeren, tijdbalk om te spoelen, 10 seconden terug of vooruit</li>
+              <li>Spelen en spoelen direct vanuit het versleutelde bestand</li>
+              <li>Geluid dempen</li>
+              <li>Volledig scherm; liggende video's draaien dan mee naar liggend</li>
+              <li>Knijpen om in te zoomen</li>
+              <li><strong>Afspeelsnelheid</strong> van 0,1× tot 2,5× in stappen van 0,05×; één tik zet terug op 1×</li>
+              <li><strong>Frame voor frame</strong> vooruit of terug tijdens pauze</li>
+              <li><strong>Automatisch herhalen</strong>, per video aan of uit, met een standaard in de instellingen</li>
+              <li><strong>Verder kijken</strong> waar je gebleven was (video's vanaf 1 minuut), met een knop "Vanaf het begin"</li>
+              <li><strong>Laatste frame vasthouden</strong>: 0, 1, 2, 3 of 5 seconden aan het eind, zonder bedieningsknoppen</li>
+              <li>Scherm blijft aan zolang een video speelt</li>
+            </ul>
+            <ul class="check" lang="en">
+              <li>Play and pause, seek bar, 10 seconds back or forward</li>
+              <li>Plays and seeks straight from the encrypted file</li>
+              <li>Mute</li>
+              <li>Fullscreen; landscape videos rotate to landscape</li>
+              <li>Pinch to zoom</li>
+              <li><strong>Playback speed</strong> from 0.1× to 2.5× in 0.05× steps; one tap resets to 1×</li>
+              <li><strong>Frame by frame</strong> forward or back while paused</li>
+              <li><strong>Auto-replay</strong>, on or off per video, with a default in Settings</li>
+              <li><strong>Resume</strong> where you left off (videos of 1 minute or longer), with a "Start from beginning" button</li>
+              <li><strong>Freeze last frame</strong>: 0, 1, 2, 3 or 5 seconds at the end, without controls</li>
+              <li>Screen stays on while a video plays</li>
+            </ul>
+            <h4><span lang="nl">Altijd</span><span lang="en">Always</span></h4>
+            <ul class="check" lang="nl">
+              <li><strong>Bestandsinfo</strong>: oorspronkelijke naam, type, opnamedatum, grootte, resolutie, duur en datum toegevoegd</li>
+              <li>Paniekknop en automatisch vergrendelen werken ook tijdens het kijken</li>
+            </ul>
+            <ul class="check" lang="en">
+              <li><strong>File info</strong>: original name, type, date taken, size, resolution, length and date added</li>
+              <li>Panic button and auto-lock keep working while you watch</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 Bewerken -->
+      <article class="sf" id="bewerken">
+        <div class="sf-head">
+          <div class="num">3</div>
+          <div>
+            <h3><span lang="nl">Eenvoudig bewerken</span><span lang="en">Simple editing</span></h3>
+            <p lang="nl">De meest gebruikte bewerkingen zitten in de kluis zelf, zodat je bestanden er nooit uit hoeven. Tussenresultaten blijven versleuteld.</p>
+            <p lang="en">The most common edits are built into the vault, so your files never have to leave it. Intermediate results stay encrypted.</p>
+          </div>
+        </div>
+        <div class="cols">
+          <ul class="check" lang="nl">
+            <li><strong>Naam wijzigen</strong> van bestanden en mappen</li>
+            <li><strong>Foto's bijsnijden</strong>, met een knop om het bijsnijden te resetten</li>
+            <li><strong>Foto's draaien</strong>, linksom of rechtsom</li>
+            <li><strong>Video's inkorten</strong>: begin en eind wegknippen</li>
+          </ul>
+          <ul class="check" lang="nl">
+            <li>Resultaat <strong>opslaan als kopie</strong> of <strong>het origineel vervangen</strong> (na bevestiging)</li>
+            <li><strong>Mapomslag</strong> kiezen: automatisch, een foto of een effen kleur</li>
+            <li>Verplaatsen en kopiëren tussen mappen</li>
+          </ul>
+          <ul class="check" lang="en">
+            <li><strong>Rename</strong> files and folders</li>
+            <li><strong>Crop photos</strong>, with a button to reset the crop</li>
+            <li><strong>Rotate photos</strong>, left or right</li>
+            <li><strong>Trim videos</strong>: cut off the start and end</li>
+          </ul>
+          <ul class="check" lang="en">
+            <li><strong>Save as a copy</strong> or <strong>replace the original</strong> (after confirmation)</li>
+            <li>Choose a <strong>folder cover</strong>: automatic, a photo or a plain colour</li>
+            <li>Move and copy between folders</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 4 Diavoorstelling -->
+      <article class="sf" id="diavoorstelling">
+        <div class="sf-head">
+          <div class="num">4</div>
+          <div>
+            <h3><span lang="nl">Diavoorstelling</span><span lang="en">Slideshow</span></h3>
+            <p lang="nl">Laat foto's en video's na elkaar zien, met de overgang van je keuze. Ideaal om terug te kijken, zonder dat iets de kluis verlaat.</p>
+            <p lang="en">Show photos and videos one after another, with the transition of your choice. Perfect for looking back, without anything leaving the vault.</p>
+          </div>
+        </div>
+        <div class="cols">
+          <div>
+            <h4><span lang="nl">Starten</span><span lang="en">Starting</span></h4>
+            <ul class="check" lang="nl">
+              <li>Voor een <strong>map</strong>, je <strong>favorieten</strong> of een <strong>selectie</strong></li>
+              <li>Keuze <strong>alleen foto's, alleen video's of gemengd</strong> (alleen gevraagd als beide aanwezig zijn)</li>
+              <li><strong>Willekeurige volgorde</strong> aan of uit</li>
+              <li><strong>Inclusief submappen</strong> aan of uit (standaard uit)</li>
+              <li>Volgt de sortering van de map; bij sortering "Willekeurig" elke start een nieuwe volgorde, die daarna gelijk blijft tot alles getoond is</li>
+            </ul>
+            <ul class="check" lang="en">
+              <li>For a <strong>folder</strong>, your <strong>favourites</strong> or a <strong>selection</strong></li>
+              <li>Choose <strong>photos only, videos only or mixed</strong> (only asked when both are present)</li>
+              <li><strong>Random order</strong> on or off</li>
+              <li><strong>Include subfolders</strong> on or off (off by default)</li>
+              <li>Follows the folder's sort order; with "Random" sorting each start gets a new order, which then stays the same until everything has been shown</li>
+            </ul>
+          </div>
+          <div>
+            <h4><span lang="nl">Tijdens het afspelen</span><span lang="en">While playing</span></h4>
+            <ul class="check" lang="nl">
+              <li><strong>Tijd per foto</strong>: 2, 3, 4, 5, 8, 10, 15, 20 of 30 seconden (standaard 4)</li>
+              <li><strong>Aftelbalk</strong> onderin die laat zien wanneer de volgende dia komt (aan/uit)</li>
+              <li>Video's spelen één keer tot het eind, daarna volgt het volgende item</li>
+              <li>"Laatste frame vasthouden" geldt ook vóór de volgende dia</li>
+              <li>Na het laatste item verder met het eerste, met één overgang</li>
+              <li>Documenten worden overgeslagen</li>
+              <li>Scherm blijft aan; automatisch vergrendelen wacht zolang de voorstelling loopt; de paniekknop werkt altijd</li>
+            </ul>
+            <ul class="check" lang="en">
+              <li><strong>Time per photo</strong>: 2, 3, 4, 5, 8, 10, 15, 20 or 30 seconds (4 by default)</li>
+              <li><strong>Countdown bar</strong> at the bottom showing when the next slide comes (on/off)</li>
+              <li>Videos play once to the end, then the next item follows</li>
+              <li>"Freeze last frame" also applies before the next slide</li>
+              <li>After the last item it continues with the first, in a single transition</li>
+              <li>Documents are skipped</li>
+              <li>Screen stays on; auto-lock waits while the show runs; the panic button always works</li>
+            </ul>
+          </div>
+        </div>
+        <h4 style="margin-top:14px"><span lang="nl">20 overgangen + geen, gekozen uit bewegende voorbeelden</span><span lang="en">20 transitions + none, picked from animated previews</span></h4>
+        <ul class="tags" lang="nl">
+          <li>Overvloeien</li><li>Via zwart overvloeien</li><li>Naar links schuiven</li><li>Naar rechts schuiven</li><li>Van boven schuiven</li><li>Van onder schuiven</li><li>Van rechts overdekken</li><li>Van boven overdekken</li><li>Inzoomen</li><li>Uitzoomen</li><li>Diepte</li><li>Kubus</li><li>Omdraaien</li><li>Verticaal omdraaien</li><li>Draaien</li><li>Naar rechts vegen</li><li>Naar beneden vegen</li><li>Cirkel</li><li>Jaloezieën</li><li>Middendoor openen</li>
+        </ul>
+        <ul class="tags" lang="en">
+          <li>Crossfade</li><li>Fade through black</li><li>Slide left</li><li>Slide right</li><li>Slide from top</li><li>Slide from bottom</li><li>Cover from right</li><li>Cover from top</li><li>Zoom in</li><li>Zoom out</li><li>Depth</li><li>Cube</li><li>Flip</li><li>Vertical flip</li><li>Spin</li><li>Wipe right</li><li>Wipe down</li><li>Circle</li><li>Blinds</li><li>Split open</li>
+        </ul>
+      </article>
+
+      <!-- 5 Back-up -->
+      <article class="sf" id="backup">
+        <div class="sf-head">
+          <div class="num">5</div>
+          <div>
+            <h3><span lang="nl">Automatische, versleutelde back-up</span><span lang="en">Automatic, encrypted backup</span></h3>
+            <p lang="nl">Je bestanden bestaan alleen in de app. Raakt je telefoon kwijt of kapot, of verwijder je de app, dan is de back-up je vangnet. Hij werkt vanzelf en blijft net zo goed beveiligd als de kluis.</p>
+            <p lang="en">Your files only exist inside the app. If your phone is lost or broken, or you uninstall the app, the backup is your safety net. It runs by itself and stays as secure as the vault.</p>
+          </div>
+        </div>
+        <div class="cols">
+          <div>
+            <h4><span lang="nl">Back-up maken</span><span lang="en">Backing up</span></h4>
+            <ul class="check" lang="nl">
+              <li><strong>Map naar keuze</strong>: SD-kaart, USB-stick of een map die met de cloud synchroniseert</li>
+              <li><strong>Eigen back-upwachtwoord</strong> (minstens 8 tekens), los van je PIN</li>
+              <li><strong>Volledig versleuteld</strong>: de bestanden worden versleuteld gekopieerd, de inhoudsopgave is ook versleuteld</li>
+              <li>Bevat bestanden, miniaturen, mappenstructuur, favorieten, prullenbak en videoposities</li>
+              <li><strong>Automatisch</strong> als je de kluis na wijzigingen vergrendelt</li>
+              <li>Én minstens elke 1, 3, 7, 14 of 30 dagen (standaard 7), ook zonder wijzigingen</li>
+              <li><strong>Incrementeel</strong>: alleen nieuwe of gewijzigde bestanden, dus snel</li>
+              <li><strong>Nu back-up maken</strong> met één knop</li>
+              <li>Geen achtergrondtaken en geen meldingen buiten de app</li>
+            </ul>
+            <ul class="check" lang="en">
+              <li><strong>Folder of your choice</strong>: SD card, USB stick or a cloud-synced folder</li>
+              <li><strong>Own backup password</strong> (at least 8 characters), separate from your PIN</li>
+              <li><strong>Fully encrypted</strong>: files are copied encrypted, the catalogue is encrypted too</li>
+              <li>Contains files, thumbnails, folder structure, favourites, recycle bin and video positions</li>
+              <li><strong>Automatic</strong> when you lock the vault after changes</li>
+              <li>And at least every 1, 3, 7, 14 or 30 days (7 by default), even without changes</li>
+              <li><strong>Incremental</strong>: only new or changed files, so it's fast</li>
+              <li><strong>Back up now</strong> with a single button</li>
+              <li>No background jobs and no notifications outside the app</li>
+            </ul>
+          </div>
+          <div>
+            <h4><span lang="nl">Bewaken</span><span lang="en">Monitoring</span></h4>
+            <ul class="check" lang="nl">
+              <li>Datum van de <strong>laatste back-up</strong> in de instellingen</li>
+              <li><strong>Herinnering</strong> in de kluis als de back-up te oud is of de map niet bereikbaar is (bijv. SD-kaart eruit)</li>
+              <li>Back-upwachtwoord wijzigen kan altijd, zolang je je PIN weet</li>
+              <li>Uitzetten laat de bestaande back-up staan</li>
+            </ul>
+            <ul class="check" lang="en">
+              <li>Date of the <strong>last backup</strong> in Settings</li>
+              <li><strong>Reminder</strong> inside the vault when the backup is too old or the folder can't be reached (e.g. SD card removed)</li>
+              <li>Change the backup password any time, as long as you know your PIN</li>
+              <li>Turning it off leaves the existing backup in place</li>
+            </ul>
+            <h4><span lang="nl">Herstellen</span><span lang="en">Restoring</span></h4>
+            <ul class="check" lang="nl">
+              <li>Op een nieuwe telefoon of na herinstallatie: <strong>Herstellen uit back-up</strong> op het PIN-scherm</li>
+              <li>Map kiezen, back-upwachtwoord invoeren, nieuwe PIN kiezen</li>
+              <li>De kluis wordt volledig opgebouwd, met alle mappen; je ziet de voortgang</li>
+              <li>Ontbrekende of beschadigde bestanden worden gemeld; de rest wordt gewoon hersteld</li>
+              <li>Mislukt het herstellen, dan blijft de back-up ongewijzigd</li>
+            </ul>
+            <ul class="check" lang="en">
+              <li>On a new phone or after reinstalling: <strong>Restore from backup</strong> on the PIN screen</li>
+              <li>Choose the folder, enter the backup password, choose a new PIN</li>
+              <li>The vault is rebuilt completely, with all folders; you see the progress</li>
+              <li>Missing or damaged files are reported; everything else is restored</li>
+              <li>If a restore fails, the backup stays unchanged</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- UITLEG -->
+<section class="alt" id="uitleg">
+  <div class="wrap">
+    <div class="kicker"><span lang="nl">Uitleg</span><span lang="en">How it works</span></div>
+    <div class="intro"><h2><span lang="nl">Zo ga je aan de slag</span><span lang="en">Getting started</span></h2></div>
+
+    <div class="steps" id="installeren">
+      <div class="step"><div>
+        <h3><span lang="nl">Installeren</span><span lang="en">Install</span></h3>
+        <p lang="nl">Download de APK op je telefoon en open hem. Android vraagt eenmalig of je browser of bestandsbeheerder apps mag installeren ("onbekende bronnen"); sta dat toe en tik op Installeren. Een update installeer je op dezelfde manier over de vorige versie heen; je kluis blijft behouden.</p>
+        <p lang="en">Download the APK on your phone and open it. Android asks once whether your browser or file manager may install apps ("unknown sources"); allow it and tap Install. An update installs the same way over the previous version; your vault is kept.</p>
+      </div></div>
+      <div class="step"><div>
+        <h3><span lang="nl">PIN aanmaken</span><span lang="en">Create a PIN</span></h3>
+        <p lang="nl">My Vault opent op het PIN-scherm. Maak een PIN aan (minimaal 4, liefst 6 of meer cijfers). Ontgrendelen met vingerafdruk zet je later aan in Instellingen. Heb je een back-up van een vorige telefoon? Kies dan "Herstellen uit back-up".</p>
+        <p lang="en">My Vault opens on the PIN screen. Create a PIN (at least 4, preferably 6 or more digits). Fingerprint unlock can be turned on later in Settings. Have a backup from a previous phone? Choose "Restore from backup".</p>
+      </div></div>
+      <div class="step"><div>
+        <h3><span lang="nl">Bestanden toevoegen</span><span lang="en">Add files</span></h3>
+        <p lang="nl">Tik op "Media verbergen" en kies Foto's &amp; video's of Documenten, of deel bestanden vanuit een andere app naar My Vault. Kies een map, en de app versleutelt alles en biedt aan de originelen te verwijderen.</p>
+        <p lang="en">Tap "Hide media" and choose Photos &amp; videos or Documents, or share files from another app to My Vault. Pick a folder, and the app encrypts everything and offers to remove the originals.</p>
+      </div></div>
+      <div class="step"><div>
+        <h3><span lang="nl">Back-up aanzetten</span><span lang="en">Turn on backup</span></h3>
+        <p lang="nl">Zet in Instellingen Automatische back-up aan, kies een map (bij voorkeur buiten de telefoon, zoals een SD-kaart of gesynchroniseerde map) en kies een back-upwachtwoord.</p>
+        <p lang="en">In Settings, turn on Automatic backup, choose a folder (preferably off the phone, such as an SD card or a synced folder) and set a backup password.</p>
+      </div></div>
+      <div class="step"><div>
+        <h3><span lang="nl">Optioneel: vermomming</span><span lang="en">Optional: disguise</span></h3>
+        <p lang="nl">Kies in Instellingen → Vermomming voor Volume Manager. Na het verlaten van de app heet hij Volume Manager en open je de kluis door de titel een paar seconden vast te houden. Soms moet je het startscherm-icoon opnieuw toevoegen vanuit de app-lijst.</p>
+        <p lang="en">Choose Volume Manager in Settings → Disguise. Once you leave the app it is called Volume Manager and you open the vault by holding the title for a few seconds. Sometimes you need to re-add the home-screen icon from the app list.</p>
+      </div></div>
+    </div>
+
+    <div class="callout">
+      <p lang="nl"><strong>Belangrijk:</strong> er is geen account, geen server en geen achterdeur. Vergeet je je PIN, dan kan niemand je kluis openen, ook de maker niet. Alleen een back-up met het bijbehorende back-upwachtwoord brengt je bestanden terug. Verwijder je de app, dan is de kluis weg.</p>
+      <p lang="en"><strong>Important:</strong> there is no account, no server and no back door. If you forget your PIN nobody can open your vault, not even the maker. Only a backup with its backup password brings your files back. Uninstalling the app deletes the vault.</p>
+      <p style="margin:0" class="muted"><span lang="nl">SHA-256 van de APK:</span><span lang="en">SHA-256 of the APK:</span> <span class="mono">6a2192804b0e7f9f6902a41d0031fc296ec709534cd263c866493b128bf7e929</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="kicker">FAQ</div>
+    <div class="intro"><h2><span lang="nl">Veelgestelde vragen</span><span lang="en">Frequently asked questions</span></h2></div>
+    <div class="faq">
+      <details><summary><span lang="nl">Op welke telefoons werkt My Vault?</span><span lang="en">Which phones does My Vault run on?</span></summary>
+        <div class="a"><p lang="nl">Op Android 8.0 of nieuwer, met een 64-bit ARM-processor. Dat zijn vrijwel alle telefoons van de afgelopen jaren. De app is niet beschikbaar voor iPhone.</p><p lang="en">Android 8.0 or newer, with a 64-bit ARM processor. That covers practically every phone of recent years. The app is not available for iPhone.</p></div></details>
+      <details><summary><span lang="nl">Welke bestanden kan ik toevoegen?</span><span lang="en">Which files can I add?</span></summary>
+        <div class="a"><p lang="nl">Foto's en video's in de formaten die je telefoon ondersteunt, en documenten: PDF, Word (.docx), OpenDocument-tekst (.odt), RTF, Markdown, HTML en platte-tekstbestanden (.txt, .csv, .json, .xml, .log en vergelijkbare). Oude Word-bestanden (.doc) worden niet ondersteund; sla ze eerst op als .docx of PDF.</p><p lang="en">Photos and videos in the formats your phone supports, and documents: PDF, Word (.docx), OpenDocument text (.odt), RTF, Markdown, HTML and plain-text files (.txt, .csv, .json, .xml, .log and similar). Old Word files (.doc) are not supported; save them as .docx or PDF first.</p></div></details>
+      <details><summary><span lang="nl">Waar worden mijn bestanden opgeslagen?</span><span lang="en">Where are my files stored?</span></summary>
+        <div class="a"><p lang="nl">Alleen op je telefoon, in de privéopslag van de app, en altijd versleuteld. De app heeft helemaal geen internettoegang, dus er wordt nergens iets geüpload. Een back-up wordt alleen weggeschreven naar de map die je zelf kiest.</p><p lang="en">Only on your phone, in the app's private storage, and always encrypted. The app has no internet access at all, so nothing is uploaded anywhere. A backup is only written to the folder you choose yourself.</p></div></details>
+      <details><summary><span lang="nl">Kan mijn PIN worden gereset of kunnen mijn bestanden worden teruggehaald?</span><span lang="en">Can my PIN be reset or my files recovered?</span></summary>
+        <div class="a"><p lang="nl">Nee. Niemand kan dat: er is geen account en geen kopie van je sleutel buiten je telefoon. Een back-up herstellen met het bijbehorende back-upwachtwoord is de enige manier om je bestanden terug te krijgen.</p><p lang="en">No. Nobody can: there is no account and no copy of your key outside your phone. Restoring a backup with its backup password is the only way to get your files back.</p></div></details>
+      <details><summary><span lang="nl">Wat gebeurt er als ik de app verwijder of de opslag wis?</span><span lang="en">What happens if I uninstall the app or clear its storage?</span></summary>
+        <div class="a"><p lang="nl">De kluis en alles erin worden definitief verwijderd. Alleen een eerder gemaakte back-up kan de bestanden terugbrengen.</p><p lang="en">The vault and everything in it is deleted permanently. Only a backup made beforehand can bring the files back.</p></div></details>
+      <details><summary><span lang="nl">Hoe zet ik mijn kluis over naar een nieuwe telefoon?</span><span lang="en">How do I move my vault to a new phone?</span></summary>
+        <div class="a"><p lang="nl">Maak een actuele back-up (Instellingen → Nu back-up maken) in een map die je kunt meenemen, zoals een SD-kaart of USB-stick. Kopieer de back-upmap naar de nieuwe telefoon, installeer de app, kies "Herstellen uit back-up" op het PIN-scherm en voer het back-upwachtwoord in. Daarna kies je een nieuwe PIN.</p><p lang="en">Make an up-to-date backup (Settings → Back up now) to a folder you can take with you, such as an SD card or USB stick. Copy the backup folder to the new phone, install the app, choose "Restore from backup" on the PIN screen and enter the backup password. You then choose a new PIN.</p></div></details>
+      <details><summary><span lang="nl">Wat als ik mijn back-upwachtwoord vergeet?</span><span lang="en">What if I forget my backup password?</span></summary>
+        <div class="a"><p lang="nl">Dan kan die back-up niet worden hersteld. Zolang je je PIN nog weet, open je de kluis en stel je een nieuw back-upwachtwoord in via Instellingen → Back-upwachtwoord; de volgende back-up gebruikt het nieuwe wachtwoord.</p><p lang="en">Then that backup can't be restored. As long as you still know your PIN, open the vault and set a new backup password in Settings → Backup password; the next backup uses the new password.</p></div></details>
+      <details><summary><span lang="nl">Waarom staat er in de Android-instellingen "Volume Manager"?</span><span lang="en">Why do Android's settings say "Volume Manager"?</span></summary>
+        <div class="a"><p lang="nl">Android toont in Instellingen → Apps, bij het verwijderen en in toestemmingsvragen altijd één vaste naam. Die is "Volume Manager", zodat de vermomming ook daar overeind blijft. Overal waar je de app zelf tegenkomt (app-lijst, deelmenu, recente apps) heet hij My Vault, tenzij je de vermomming kiest.</p><p lang="en">In Settings → Apps, when uninstalling and in permission prompts, Android always shows one fixed name. That name is "Volume Manager", so the disguise holds up there too. Everywhere you meet the app itself (app list, share menu, recent apps) it is called My Vault, unless you choose the disguise.</p></div></details>
+      <details><summary><span lang="nl">Kunnen anderen zien dat ik een kluis heb?</span><span lang="en">Can other people tell that I have a vault?</span></summary>
+        <div class="a"><p lang="nl">Zonder vermomming heet de app My Vault, dus dat is zichtbaar. Met de vermomming Volume Manager is het aan de buitenkant een werkende volumemixer en is de toegang verborgen. Wat het dan nog kan verraden: de vermelding in het deelmenu (uit te schakelen in Instellingen → Delen naar kluis), de opslaggrootte in de instellingen van Android, en iemand die ziet dat je de titel vasthoudt.</p><p lang="en">Without a disguise the app is called My Vault, so that is visible. With the Volume Manager disguise it is a working volume mixer on the outside and the entrance is hidden. What can still give it away: the share-menu entry (switch it off in Settings → Share to vault), the storage size in Android's settings, and someone watching you hold the title.</p></div></details>
+      <details><summary><span lang="nl">Waarom kan ik in de kluis geen screenshots maken?</span><span lang="en">Why can't I take screenshots in the vault?</span></summary>
+        <div class="a"><p lang="nl">Om je bestanden te beschermen worden screenshots en schermopnamen van de kluis geblokkeerd, en toont het overzicht van recente apps een leeg venster.</p><p lang="en">To protect your files, screenshots and screen recordings of the vault are blocked, and the recent-apps overview shows an empty window.</p></div></details>
+      <details><summary><span lang="nl">Vervangt de vingerafdruk mijn PIN?</span><span lang="en">Does fingerprint unlock replace my PIN?</span></summary>
+        <div class="a"><p lang="nl">Nee. Het is een extra manier om te ontgrendelen. Iedereen van wie een vingerafdruk op deze telefoon is geregistreerd, kan de kluis openen. Als er vingerafdrukken worden toegevoegd of verwijderd, wordt ontgrendelen met vingerafdruk uitgeschakeld en heb je je PIN nodig.</p><p lang="en">No. It is an extra way to unlock. Anyone whose fingerprint is enrolled on this phone can open the vault, and when fingerprints are added or removed, fingerprint unlock switches off and you need your PIN.</p></div></details>
+      <details><summary><span lang="nl">Zijn verwijderde items meteen weg?</span><span lang="en">Are deleted items gone immediately?</span></summary>
+        <div class="a"><p lang="nl">Nee. Ze blijven gedurende de bewaartijd die je hebt gekozen in de prullenbak, nog steeds versleuteld. Leeg de prullenbak of gebruik "Definitief verwijderen" om ze meteen te wissen.</p><p lang="en">No. They stay in the recycle bin, still encrypted, for the retention time you chose. Empty the bin or use "Delete forever" to erase them right away.</p></div></details>
+      <details><summary><span lang="nl">Verzamelt de app gegevens over mij?</span><span lang="en">Does the app collect information about me?</span></summary>
+        <div class="a"><p lang="nl">Nee. Er zijn geen accounts, geen analyses, geen advertenties en geen internettoegang. Niets over jou of je bestanden verlaat je telefoon, behalve een back-up in de map die je kiest.</p><p lang="en">No. There are no accounts, no analytics, no advertising and no internet access. Nothing about you or your files leaves your phone, except a backup in the folder you choose.</p></div></details>
+      <details><summary><span lang="nl">Hoe controleer ik of de download echt is?</span><span lang="en">How do I check the download is genuine?</span></summary>
+        <div class="a"><p lang="nl">Vergelijk de SHA-256-controlesom van het gedownloade bestand met de waarde onder "Uitleg". Komt die niet overeen, installeer het bestand dan niet.</p><p lang="en">Compare the SHA-256 checksum of the downloaded file with the value under "How it works". If it doesn't match, don't install the file.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="alt" id="disclaimer">
+  <div class="wrap">
+    <div class="kicker">Disclaimer</div>
+    <div class="intro"><h2><span lang="nl">Lees dit voordat je op de app vertrouwt</span><span lang="en">Please read this before you rely on the app</span></h2></div>
+    <div class="disc">
+      <div><h3><span lang="nl">Geleverd zoals hij is</span><span lang="en">Provided as is</span></h3>
+        <p lang="nl">Deze app wordt geleverd "zoals hij is", zonder enige garantie, uitdrukkelijk of stilzwijgend, ook niet wat betreft geschiktheid voor een bepaald doel. De app kan fouten bevatten en werkt mogelijk niet op elk apparaat.</p>
+        <p lang="en">This app is provided "as is", without any warranty, express or implied, including fitness for a particular purpose. It may contain errors and may not work on every device.</p></div>
+      <div><h3><span lang="nl">Jouw verantwoordelijkheid</span><span lang="en">Your responsibility</span></h3>
+        <p lang="nl">Alleen jij bent verantwoordelijk voor de bestanden die je in de app bewaart en voor de manier waarop je de app gebruikt. Gebruik de app alleen in overeenstemming met de wet en met respect voor de rechten van anderen. De makers van de app zijn niet verantwoordelijk voor wat je ermee doet.</p>
+        <p lang="en">You alone are responsible for the files you store in the app and for how you use it. Use it only in accordance with the law and with respect for the rights of others. The makers of the app are not responsible for anything you do with it.</p></div>
+      <div><h3><span lang="nl">Verlies van gegevens</span><span lang="en">Loss of data</span></h3>
+        <p lang="nl">De makers zijn niet aansprakelijk voor verlies van of schade aan gegevens of apparaten, ook niet voor verlies door een vergeten PIN of back-upwachtwoord, het verwijderen van de app, het wissen van de opslag ervan, een defecte of verloren telefoon of een fout in de app. Maak en controleer je eigen back-ups.</p>
+        <p lang="en">The makers are not liable for any loss of or damage to data or devices, including loss caused by a forgotten PIN or backup password, uninstalling the app, clearing its storage, a defective or lost phone, or an error in the app. Make and check your own backups.</p></div>
+      <div><h3><span lang="nl">We verzamelen geen gegevens</span><span lang="en">We do not collect information</span></h3>
+        <p lang="nl">De app verzamelt, verstuurt of verkoopt geen gegevens. De app heeft geen toestemming voor internettoegang, geen accounts, geen analyses en geen advertenties. Deze website gebruikt geen cookies of trackers van de maker.</p>
+        <p lang="en">The app does not collect, send or sell any information. It has no internet permission, no accounts, no analytics and no advertising. This website uses no cookies or trackers from the maker.</p></div>
+      <div><h3><span lang="nl">Grenzen van de beveiliging</span><span lang="en">Limits of protection</span></h3>
+        <p lang="nl">Versleuteling beschermt je bestanden zolang ze zijn opgeslagen, maar geen enkele app kan tegen alles beschermen: iemand die je PIN kent of meekijkt als je hem invoert, een geregistreerde vingerafdruk van iemand anders, of een gecompromitteerde of geroote telefoon.</p>
+        <p lang="en">Encryption protects your files at rest, but no app can protect against everything: someone who knows or watches your PIN, an enrolled fingerprint of someone else, or a compromised or rooted phone.</p></div>
+      <div><h3><span lang="nl">Aanvaarding</span><span lang="en">Acceptance</span></h3>
+        <p lang="nl">Door de app te gebruiken, ga je akkoord met deze disclaimer. Als je het er niet mee eens bent, gebruik de app dan niet.</p>
+        <p lang="en">By using the app you accept this disclaimer. If you do not agree, do not use the app.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>My Vault · <span lang="nl">versie</span><span lang="en">version</span> 1.5.1</span>
+    <span><a href="#top"><span lang="nl">Naar boven</span><span lang="en">Back to top</span></a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, saved=null;
+  try{saved=localStorage.getItem('vm-lang');}catch(e){}
+  var lang=saved||((navigator.language||'nl').toLowerCase().indexOf('nl')===0?'nl':'en');
+  function set(l){
+    root.setAttribute('data-lang',l); root.setAttribute('lang',l);
+    document.querySelectorAll('[data-set-lang]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.setLang===l));});
+    try{localStorage.setItem('vm-lang',l);}catch(e){}
+  }
+  document.querySelectorAll('[data-set-lang]').forEach(function(b){b.addEventListener('click',function(){set(b.dataset.setLang);});});
+  set(lang);
+})();
+</script>
+</body>
+</html>
