@@ -61,6 +61,7 @@ nav.links a:hover{color:var(--text)}
 .btn svg{width:20px;height:20px}
 .btn-ghost{color:var(--on-hero);text-decoration:none;border:1px solid rgba(255,255,255,.35);padding:11px 18px;border-radius:12px}
 .small{font-size:.83rem;opacity:.8;margin-top:12px}
+.update{margin:0 0 18px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);font-weight:600;max-width:34em}
 @media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.phones{justify-self:center}}
 
 /* phone mockups */
@@ -197,8 +198,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
         <li><span lang="nl">AES-256-versleuteld</span><span lang="en">AES-256 encrypted</span></li>
         <li><span lang="nl">100% offline</span><span lang="en">100% offline</span></li>
       </ul>
+      <p class="update" id="update" data-latest="1.10.2" hidden></p>
       <div class="cta">
-        <a class="btn" href="VolumeManager-1.10.2-release.apk" download>
+        <a class="btn" href="https://github.com/GosseVledder/My-Vault/releases/download/v1.10.2/VolumeManager-1.10.2-release.apk">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 11l6 6 6-6M5 21h14"/></svg>
           <span lang="nl">Download APK 1.10.2</span><span lang="en">Download APK 1.10.2</span>
         </a>
@@ -828,6 +830,22 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
   }
   document.querySelectorAll('[data-set-lang]').forEach(function(b){b.addEventListener('click',function(){set(b.dataset.setLang);});});
   set(lang);
+
+  // "Check for updates" in the app opens this page as ?v=<installed version> (the app itself has no internet access).
+  var box=document.getElementById('update'), m=/[?&]v=([0-9]+(?:\.[0-9]+){0,3})(?:&|$)/.exec(location.search);
+  if(box&&m){
+    var mine=m[1], latest=box.dataset.latest;
+    function cmp(a,b){a=a.split('.');b=b.split('.');for(var i=0;i<Math.max(a.length,b.length);i++){var d=(+a[i]||0)-(+b[i]||0);if(d)return d;}return 0;}
+    function add(l,t){var e=document.createElement('span');e.lang=l;e.textContent=t;box.appendChild(e);}
+    if(cmp(mine,latest)<0){
+      add('nl','Je hebt versie '+mine+'. Versie '+latest+' is beschikbaar: download hem hieronder en installeer hem over de oude heen. Je kluis blijft behouden.');
+      add('en','You have version '+mine+'. Version '+latest+' is available: download it below and install it over the old one. Your vault is kept.');
+    }else{
+      add('nl','Je hebt de nieuwste versie ('+mine+').');
+      add('en','You have the latest version ('+mine+').');
+    }
+    box.hidden=false;
+  }
 })();
 </script>
 </body>
