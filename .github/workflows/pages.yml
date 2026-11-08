@@ -3,11 +3,11 @@
 # Nothing is deployed unless the page's version, download link and SHA-256 match the APK; the old site then stays up.
 name: Pages
 
+# No `release` trigger: a release run starts on the tag, which the github-pages environment rejects (main only);
+# the site push that follows every release deploys it (README → Publishing).
 on:
   push:
     branches: [main]
-  release:
-    types: [published]
   workflow_dispatch:
 
 permissions:
