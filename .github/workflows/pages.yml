@@ -1,0 +1,59 @@
+# Publishes the download site on GitHub Pages together with the APK of the release the page names (D-70).
+# The APK is fetched from GitHub Releases with the workflow token and only lives in the Pages artifact, never in git.
+# Nothing is deployed unless the page's version, download link and SHA-256 match the APK; the old site then stays up.
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Build the site with the APK
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          version=$(grep -o 'data-latest="[0-9.]*"' index.html | cut -d'"' -f2)
+          apk="AISafe-${version}-release.apk"
+          echo "Page version: ${version}"
+          mkdir _site
+          find . -maxdepth 1 -type f ! -name '.*' -exec cp {} _site/ \;
+          gh release download "v${version}" --repo "$GITHUB_REPOSITORY" --pattern "$apk" --dir _site
+          expected=$(grep -oE '[0-9a-f]{64}' index.html | head -1)
+          actual=$(sha256sum "_site/${apk}" | cut -d' ' -f1)
+          if [ "$expected" != "$actual" ]; then
+            echo "::error::SHA-256 on the page (${expected}) does not match ${apk} (${actual})"; exit 1
+          fi
+          if ! grep -q "href=\"${apk}\"" index.html; then
+            echo "::error::The download button does not point to ${apk}"; exit 1
+          fi
+          ls -l _site
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v5
