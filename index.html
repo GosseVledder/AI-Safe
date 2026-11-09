@@ -199,11 +199,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
         <li><span lang="nl">AES-256-versleuteld</span><span lang="en">AES-256 encrypted</span></li>
         <li><span lang="nl">100% offline</span><span lang="en">100% offline</span></li>
       </ul>
-      <p class="update" id="update" data-latest="2.2.0" hidden></p>
+      <p class="update" id="update" data-latest="3.0.0" hidden></p>
       <div class="cta">
-        <a class="btn" href="AISafe-2.2.0-release.apk" download>
+        <a class="btn" href="AISafe-3.0.0-release.apk" download>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 11l6 6 6-6M5 21h14"/></svg>
-          <span lang="nl">Download APK 2.2.0</span><span lang="en">Download APK 2.2.0</span>
+          <span lang="nl">Download APK 3.0.0</span><span lang="en">Download APK 3.0.0</span>
         </a>
         <a class="btn-ghost" href="#installeren"><span lang="nl">Hoe installeer ik het?</span><span lang="en">How do I install it?</span></a>
       </div>
@@ -578,72 +578,66 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
         </ul>
       </article>
 
-      <!-- 5 Back-up -->
+      <!-- 5 Back-up (3.0.0: snapshots, D-80) -->
       <article class="sf" id="backup">
         <div class="sf-head">
           <div class="num">5</div>
           <div>
-            <h3><span lang="nl">Automatische, versleutelde back-up</span><span lang="en">Automatic, encrypted backup</span></h3>
-            <p lang="nl">Je bestanden bestaan alleen in de app. Raakt je telefoon kwijt of kapot, of verwijder je de app, dan is de back-up je vangnet. Hij werkt vanzelf en blijft net zo goed beveiligd als de kluis.</p>
-            <p lang="en">Your files only exist inside the app. If your phone is lost or broken, or you uninstall the app, the backup is your safety net. It runs by itself and stays as secure as the safe.</p>
+            <h3><span lang="nl">Versleutelde back-ups als momentopname</span><span lang="en">Encrypted backups as snapshots</span></h3>
+            <p lang="nl">Je kluis is één versleutelde map op je telefoon of SD-kaart. Raakt je telefoon kwijt of kapot, of verwijder je de app, dan is een back-up je vangnet. Elke back-up is een complete momentopname die daarna nooit meer verandert, met een eigen wachtwoord.</p>
+            <p lang="en">Your safe is one encrypted folder on your phone or SD card. If your phone is lost or broken, or you uninstall the app, a backup is your safety net. Every backup is a complete snapshot that never changes afterwards, with its own password.</p>
           </div>
         </div>
         <div class="cols">
           <div>
-            <h4><span lang="nl">Back-up maken</span><span lang="en">Backing up</span></h4>
+            <h4><span lang="nl">Back-up maken</span><span lang="en">Making a backup</span></h4>
             <ul class="check" lang="nl">
-              <li><strong>Map naar keuze</strong>: SD-kaart, USB-stick of een map die met de cloud synchroniseert</li>
-              <li><strong>Eigen back-upwachtwoord</strong> (minstens 12 tekens), los van je PIN</li>
-              <li><strong>Eigen back-upsleutel</strong> die bij elk nieuw wachtwoord wisselt: de hele back-up wordt dan opnieuw versleuteld en een oud wachtwoord opent hem niet meer</li>
-              <li><strong>Volledig versleuteld</strong>: de bestanden worden versleuteld gekopieerd, de inhoudsopgave is ook versleuteld</li>
+              <li><strong>Map naar keuze</strong>: op de telefoon, een SD-kaart, USB-stick of een cloudmap</li>
+              <li><strong>Eigen back-upwachtwoord</strong> (minstens 12 tekens), los van je PIN en je kluiswachtwoord</li>
+              <li><strong>Back-up maken</strong> met één knop, in Instellingen of direct via het ⋮-menu in de kluis</li>
+              <li>Elke back-up is een <strong>complete momentopname</strong> in een eigen map met datum en tijd; daarna wordt hij nooit meer gewijzigd</li>
+              <li><strong>Volledig versleuteld</strong>: elk bestand nog eens extra versleuteld, de inhoudsopgave ook</li>
               <li>Bevat bestanden, miniaturen, mappenstructuur, favorieten, prullenbak en videoposities</li>
-              <li><strong>Automatisch</strong> als je de kluis na wijzigingen vergrendelt</li>
-              <li>Én minstens elke 1, 3, 7, 14 of 30 dagen (standaard 7), ook zonder wijzigingen</li>
-              <li><strong>Incrementeel</strong>: alleen nieuwe of gewijzigde bestanden, dus snel</li>
-              <li><strong>Nu back-up bijwerken</strong> met één knop (alleen wat nieuw of gewijzigd is), in Instellingen of direct via het ⋮-menu in de kluis</li>
-              <li>Geen achtergrondtaken en geen meldingen buiten de app</li>
+              <li><strong>Bewaren</strong>: de nieuwste 1, 2, 3 of 5 back-ups, of alle (standaard 2); de oudste gaat pas weg als de nieuwe compleet is</li>
+              <li>Een onderbroken back-up telt niet mee en wordt opgeruimd</li>
             </ul>
             <ul class="check" lang="en">
-              <li><strong>Folder of your choice</strong>: SD card, USB stick or a cloud-synced folder</li>
-              <li><strong>Own backup password</strong> (at least 12 characters), separate from your PIN</li>
-              <li><strong>Own backup key</strong> that changes with every new password: the whole backup is then encrypted again and an old password no longer opens it</li>
-              <li><strong>Fully encrypted</strong>: files are copied encrypted, the catalogue is encrypted too</li>
+              <li><strong>Folder of your choice</strong>: on the phone, an SD card, a USB stick or a cloud folder</li>
+              <li><strong>Own backup password</strong> (at least 12 characters), separate from your PIN and your safe password</li>
+              <li><strong>Make backup</strong> with a single button, in Settings or straight from the ⋮ menu in the safe</li>
+              <li>Every backup is a <strong>complete snapshot</strong> in its own folder named after date and time; it is never changed afterwards</li>
+              <li><strong>Fully encrypted</strong>: every file encrypted once more, the catalogue too</li>
               <li>Contains files, thumbnails, folder structure, favourites, recycle bin and video positions</li>
-              <li><strong>Automatic</strong> when you lock the safe after changes</li>
-              <li>And at least every 1, 3, 7, 14 or 30 days (7 by default), even without changes</li>
-              <li><strong>Incremental</strong>: only new or changed files, so it's fast</li>
-              <li><strong>Update backup now</strong> with a single button (only what is new or changed), in Settings or straight from the ⋮ menu in the safe</li>
-              <li>No background jobs and no notifications outside the app</li>
+              <li><strong>Keep</strong>: the newest 1, 2, 3 or 5 backups, or all (2 by default); the oldest only goes once the new one is complete</li>
+              <li>An interrupted backup doesn't count and is cleaned up</li>
             </ul>
           </div>
           <div>
-            <h4><span lang="nl">Bewaken</span><span lang="en">Monitoring</span></h4>
+            <h4><span lang="nl">Herinneren</span><span lang="en">Reminders</span></h4>
             <ul class="check" lang="nl">
-              <li>Datum van de <strong>laatste back-up</strong> in de instellingen</li>
-              <li><strong>Herinnering</strong> in de kluis als de back-up te oud is of de map niet bereikbaar is (bijv. SD-kaart eruit)</li>
-              <li>Back-upwachtwoord wijzigen kan altijd, zolang je je PIN weet</li>
-              <li>Uitzetten laat de bestaande back-up staan</li>
+              <li><strong>Herinnering</strong> in de kluis elke dag, week, 2 weken of maand, of <strong>uit</strong> (standaard elke week), alleen als er sinds de vorige back-up iets is veranderd</li>
+              <li>Ook een melding als de map niet bereikbaar is (bijv. SD-kaart eruit)</li>
+              <li>Geen achtergrondtaken en geen meldingen buiten de app</li>
+              <li>Een nieuw back-upwachtwoord geldt voor nieuwe back-ups; eerdere houden hun oude wachtwoord</li>
             </ul>
             <ul class="check" lang="en">
-              <li>Date of the <strong>last backup</strong> in Settings</li>
-              <li><strong>Reminder</strong> inside the safe when the backup is too old or the folder can't be reached (e.g. SD card removed)</li>
-              <li>Change the backup password any time, as long as you know your PIN</li>
-              <li>Turning it off leaves the existing backup in place</li>
+              <li><strong>Reminder</strong> inside the safe every day, week, 2 weeks or month, or <strong>off</strong> (weekly by default), only when something changed since the last backup</li>
+              <li>Also a notice when the folder can't be reached (e.g. SD card removed)</li>
+              <li>No background jobs and no notifications outside the app</li>
+              <li>A new backup password applies to new backups; earlier ones keep their old password</li>
             </ul>
             <h4><span lang="nl">Herstellen</span><span lang="en">Restoring</span></h4>
             <ul class="check" lang="nl">
-              <li>Op een nieuwe telefoon of na herinstallatie: <strong>Herstellen uit back-up</strong> op het PIN-scherm</li>
-              <li>Map kiezen, back-upwachtwoord invoeren, nieuwe PIN kiezen</li>
-              <li>De kluis wordt volledig opgebouwd, met alle mappen; je ziet de voortgang</li>
-              <li>Ontbrekende of beschadigde bestanden worden gemeld; de rest wordt gewoon hersteld</li>
-              <li>Mislukt het herstellen, dan blijft de back-up ongewijzigd</li>
+              <li>Op een nieuwe telefoon of na herinstallatie: <strong>Herstellen uit back-up</strong> op het eerste scherm</li>
+              <li>Map kiezen en een back-up uit de lijst (nieuwste bovenaan), back-upwachtwoord invoeren, plek en kluiswachtwoord kiezen, nieuwe PIN kiezen</li>
+              <li>De kluis wordt volledig opgebouwd en elk bestand gecontroleerd; je ziet de voortgang</li>
+              <li>Back-ups van vóór 3.0 kun je nog steeds terugzetten</li>
             </ul>
             <ul class="check" lang="en">
-              <li>On a new phone or after reinstalling: <strong>Restore from backup</strong> on the PIN screen</li>
-              <li>Choose the folder, enter the backup password, choose a new PIN</li>
-              <li>The safe is rebuilt completely, with all folders; you see the progress</li>
-              <li>Missing or damaged files are reported; everything else is restored</li>
-              <li>If a restore fails, the backup stays unchanged</li>
+              <li>On a new phone or after reinstalling: <strong>Restore from backup</strong> on the first screen</li>
+              <li>Choose the folder and a backup from the list (newest first), enter the backup password, choose the place and a safe password, choose a new PIN</li>
+              <li>The safe is rebuilt completely and every file is checked; you see the progress</li>
+              <li>Backups from before 3.0 can still be restored</li>
             </ul>
           </div>
         </div>
@@ -710,9 +704,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
         <p lang="en">Download the APK on your phone and open it. Android asks once whether your browser or file manager may install apps ("unknown sources"); allow it and tap Install. An update installs the same way over the previous version; your safe is kept.</p>
       </div></div>
       <div class="step"><div>
-        <h3><span lang="nl">PIN aanmaken</span><span lang="en">Create a PIN</span></h3>
-        <p lang="nl">AI Safe opent op het PIN-scherm. Maak een PIN aan (minimaal 4, liefst 6 of meer cijfers). Ontgrendelen met vingerafdruk zet je later aan in Instellingen. Heb je een back-up van een vorige telefoon? Kies dan "Herstellen uit back-up".</p>
-        <p lang="en">AI Safe opens on the PIN screen. Create a PIN (at least 4, preferably 6 or more digits). Fingerprint unlock can be turned on later in Settings. Have a backup from a previous phone? Choose "Restore from backup".</p>
+        <h3><span lang="nl">Kluis aanmaken</span><span lang="en">Create your safe</span></h3>
+        <p lang="nl">Kies bij de eerste start "Kluis maken op de telefoon" of, met een SD-kaart, "Kluis maken op de SD-kaart"; de app bepaalt zelf de map. Kies dan een kluiswachtwoord (minstens 12 tekens, of laat er een voorstellen) en een PIN (minimaal 4, liefst 6 of meer cijfers). De app open je daarna met je PIN of vingerafdruk; het kluiswachtwoord heb je nodig op een andere telefoon of als je je PIN vergeet. Heb je een back-up van een vorige telefoon? Kies dan "Herstellen uit back-up".</p>
+        <p lang="en">On first start, choose "Create safe on the phone" or, with an SD card, "Create safe on the SD card"; the app picks the folder itself. Then choose a safe password (at least 12 characters, or let it suggest one) and a PIN (at least 4, preferably 6 or more digits). From then on you open the app with your PIN or fingerprint; you need the safe password on another phone or when you forget your PIN. Have a backup from a previous phone? Choose "Restore from backup".</p>
       </div></div>
       <div class="step"><div>
         <h3><span lang="nl">Bestanden toevoegen</span><span lang="en">Add files</span></h3>
@@ -720,9 +714,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
         <p lang="en">Tap + and choose Photos &amp; videos or Documents, or share files from another app to AI Safe. Pick a folder, and the app encrypts everything and offers to remove the originals.</p>
       </div></div>
       <div class="step"><div>
-        <h3><span lang="nl">Back-up aanzetten</span><span lang="en">Turn on backup</span></h3>
-        <p lang="nl">Zet in Instellingen Automatische back-up aan, kies een map (bij voorkeur buiten de telefoon, zoals een SD-kaart of gesynchroniseerde map) en kies een back-upwachtwoord.</p>
-        <p lang="en">In Settings, turn on Automatic backup, choose a folder (preferably off the phone, such as an SD card or a synced folder) and set a backup password.</p>
+        <h3><span lang="nl">Back-up instellen</span><span lang="en">Set up backups</span></h3>
+        <p lang="nl">Zet in Instellingen → Back-up de back-up aan, kies een map (bij voorkeur buiten de telefoon, zoals een SD-kaart, USB-stick of cloudmap) en een back-upwachtwoord. Tik daarna af en toe op "Back-up maken"; de kluis herinnert je eraan.</p>
+        <p lang="en">In Settings → Backup, turn on the backup, choose a folder (preferably off the phone, such as an SD card, USB stick or cloud folder) and a backup password. Then tap "Make backup" now and then; the safe reminds you.</p>
       </div></div>
       <div class="step"><div>
         <h3><span lang="nl">Optioneel: vermomming (extra)</span><span lang="en">Optional: disguise (extra)</span></h3>
@@ -732,9 +726,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
     </div>
 
     <div class="callout">
-      <p lang="nl"><strong>Belangrijk:</strong> er is geen account, geen server en geen achterdeur. Vergeet je je PIN, dan kan niemand je kluis openen, ook de maker niet. Alleen een back-up met het bijbehorende back-upwachtwoord brengt je bestanden terug. Verwijder je de app, dan is de kluis weg.</p>
-      <p lang="en"><strong>Important:</strong> there is no account, no server and no back door. If you forget your PIN nobody can open your safe, not even the maker. Only a backup with its backup password brings your files back. Uninstalling the app deletes the safe.</p>
-      <p style="margin:0" class="muted"><span lang="nl">SHA-256 van de APK:</span><span lang="en">SHA-256 of the APK:</span> <span class="mono">c64d914f5ac2f290f788aa30c0271f1e848d251b9cbf09e7d25f2e0c7a8e0d44</span></p>
+      <p lang="nl"><strong>Belangrijk:</strong> er is geen account, geen server en geen achterdeur. Vergeet je je PIN, dan open je de kluis met je kluiswachtwoord en kies je een nieuwe PIN. Ben je ook het kluiswachtwoord kwijt, dan kan niemand je kluis openen, ook de maker niet; alleen een back-up met het bijbehorende back-upwachtwoord brengt je bestanden dan terug. Verwijder je de app, dan is de kluis weg.</p>
+      <p lang="en"><strong>Important:</strong> there is no account, no server and no back door. If you forget your PIN, open the safe with your safe password and choose a new PIN. If you have lost the safe password too, nobody can open your safe, not even the maker; only a backup with its backup password brings your files back then. Uninstalling the app deletes the safe.</p>
+      <p style="margin:0" class="muted"><span lang="nl">SHA-256 van de APK:</span><span lang="en">SHA-256 of the APK:</span> <span class="mono">b9be784b512558b02ee72b7755166d056b8bfa65de0b9931584deb87e781149e</span></p>
     </div>
   </div>
 </section>
@@ -752,19 +746,21 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
       <details><summary><span lang="nl">Welke bestanden kan ik toevoegen?</span><span lang="en">Which files can I add?</span></summary>
         <div class="a"><p lang="nl">Foto's en video's in de formaten die je telefoon ondersteunt, en documenten: PDF, Word (.docx), OpenDocument-tekst (.odt), RTF, Markdown, HTML en platte-tekstbestanden (.txt, .csv, .json, .xml, .log en vergelijkbare). Oude Word-bestanden (.doc) worden niet ondersteund; sla ze eerst op als .docx of PDF.</p><p lang="en">Photos and videos in the formats your phone supports, and documents: PDF, Word (.docx), OpenDocument text (.odt), RTF, Markdown, HTML and plain-text files (.txt, .csv, .json, .xml, .log and similar). Old Word files (.doc) are not supported; save them as .docx or PDF first.</p></div></details>
       <details><summary><span lang="nl">Waar worden mijn bestanden opgeslagen?</span><span lang="en">Where are my files stored?</span></summary>
-        <div class="a"><p lang="nl">Alleen op je telefoon, in de privéopslag van de app, en altijd versleuteld. De app heeft helemaal geen internettoegang, dus er wordt nergens iets geüpload. Een back-up wordt alleen weggeschreven naar de map die je zelf kiest.</p><p lang="en">Only on your phone, in the app's private storage, and always encrypted. The app has no internet access at all, so nothing is uploaded anywhere. A backup is only written to the folder you choose yourself.</p></div></details>
-      <details><summary><span lang="nl">Kan mijn PIN worden gereset of kunnen mijn bestanden worden teruggehaald?</span><span lang="en">Can my PIN be reset or my files recovered?</span></summary>
-        <div class="a"><p lang="nl">Nee. Niemand kan dat: er is geen account en geen kopie van je sleutel buiten je telefoon. Een back-up herstellen met het bijbehorende back-upwachtwoord is de enige manier om je bestanden terug te krijgen.</p><p lang="en">No. Nobody can: there is no account and no copy of your key outside your phone. Restoring a backup with its backup password is the only way to get your files back.</p></div></details>
+        <div class="a"><p lang="nl">In één map, AISafeData: op je telefoon (in de afgeschermde opslag van de app) of op de SD-kaart (in de eigen map van de app), altijd versleuteld. Andere apps kunnen er niet bij (op een SD-kaart sinds Android 11). De app heeft helemaal geen internettoegang, dus er wordt nergens iets geüpload. Back-ups komen alleen in de map die je zelf kiest.</p><p lang="en">In one folder, AISafeData: on your phone (in the app's private storage) or on its SD card (in the app's own folder), always encrypted. Other apps can't reach it (on an SD card since Android 11). The app has no internet access at all, so nothing is uploaded anywhere. Backups are only written to the folder you choose yourself.</p></div></details>
+      <details><summary><span lang="nl">Ik ben mijn PIN vergeten. Kan ik er nog in?</span><span lang="en">I forgot my PIN. Can I still get in?</span></summary>
+        <div class="a"><p lang="nl">Ja, met je kluiswachtwoord: tik op het PIN-scherm op "PIN vergeten?", voer het kluiswachtwoord in en kies een nieuwe PIN. Zonder kluiswachtwoord kan niemand helpen: er is geen account en nergens een kopie van je sleutel. Een back-up met het back-upwachtwoord is dan de enige weg terug.</p><p lang="en">Yes, with your safe password: tap "Forgot your PIN?" on the PIN screen, enter the safe password and choose a new PIN. Without the safe password nobody can help: there is no account and no copy of your key anywhere else. A backup with its backup password is then the only way back.</p></div></details>
+      <details><summary><span lang="nl">Wat is het verschil tussen mijn PIN, het kluiswachtwoord en het back-upwachtwoord?</span><span lang="en">What is the difference between my PIN, the safe password and the backup password?</span></summary>
+        <div class="a"><p lang="nl"><strong>PIN (of vingerafdruk)</strong>: opent de app op deze telefoon, en alleen hier. <strong>Kluiswachtwoord</strong>: opent de kluis zelf, op een andere telefoon (SD-kaart) of als je je PIN vergeet. <strong>Back-upwachtwoord</strong>: opent je back-ups, op elke telefoon met AI Safe. Bewaar beide wachtwoorden los van je PIN en van de back-ups.</p><p lang="en"><strong>PIN (or fingerprint)</strong>: opens the app on this phone, and only here. <strong>Safe password</strong>: opens the safe itself, on another phone (SD card) or when you forget your PIN. <strong>Backup password</strong>: opens your backups, on any phone with AI Safe. Keep both passwords apart from your PIN and from the backups.</p></div></details>
       <details><summary><span lang="nl">Wat gebeurt er met mijn kluis bij bijwerken, verwijderen of opnieuw installeren?</span><span lang="en">What happens to my safe when I update, uninstall or reinstall?</span></summary>
-        <div class="a"><p lang="nl"><strong>Bijwerken</strong> (een nieuwe versie van deze pagina): je kluis blijft bewaard, met alle bestanden, mappen en instellingen. <strong>Verwijderen</strong>, <strong>opnieuw installeren</strong> of de <strong>opslag wissen</strong>: de kluis en alles erin worden definitief gewist. Een <strong>nieuwe telefoon</strong> neemt de kluis niet vanzelf mee. Met automatische back-up aan kun je de app opnieuw installeren en bij de eerste start "Herstellen uit back-up" kiezen; daarna back-upt de app gewoon verder naar dezelfde map.</p><p lang="en"><strong>Updating</strong> (a newer version from this page): your safe stays, with all files, folders and settings. <strong>Uninstalling</strong>, <strong>reinstalling</strong> or <strong>clearing storage</strong>: the safe and everything in it is deleted for good. A <strong>new phone</strong> doesn't take the safe along by itself. With automatic backup on you can reinstall the app and choose "Restore from backup" on the first start; the app then keeps backing up to the same folder.</p></div></details>
+        <div class="a"><p lang="nl"><strong>Bijwerken</strong> (een nieuwe versie van deze pagina): je kluis blijft bewaard, met alle bestanden, mappen en instellingen. Bij de update naar 3.0 kies je eenmalig een kluiswachtwoord. <strong>Verwijderen</strong>, <strong>opnieuw installeren</strong> of de <strong>opslag wissen</strong>: de kluis en alles erin worden definitief gewist, ook op een SD-kaart die erin zit. Een <strong>nieuwe telefoon</strong> neemt de kluis niet vanzelf mee, behalve als hij op de SD-kaart staat en je de kaart verhuist. Met een back-up kun je de app opnieuw installeren en bij de eerste start "Herstellen uit back-up" kiezen; nieuwe back-ups gaan daarna naar dezelfde map.</p><p lang="en"><strong>Updating</strong> (a newer version from this page): your safe stays, with all files, folders and settings. With the update to 3.0 you choose a safe password once. <strong>Uninstalling</strong>, <strong>reinstalling</strong> or <strong>clearing storage</strong>: the safe and everything in it is deleted for good, also on an inserted SD card. A <strong>new phone</strong> doesn't take the safe along by itself, unless it is on the SD card and you move the card. With a backup you can reinstall the app and choose "Restore from backup" on the first start; new backups then go to the same folder.</p></div></details>
       <details><summary><span lang="nl">Wat is een decoy-PIN?</span><span lang="en">What is a decoy PIN?</span></summary>
         <div class="a"><p lang="nl">Een tweede PIN die een aparte, onschuldige kluis opent, voor als iemand je dwingt de app te openen. Je vult die kluis zelf met gewone foto's. Niets op het scherm laat zien welke kluis open is. Zolang er een decoy-PIN is, staat ontgrendelen met vingerafdruk uit. Het beschermt tegen meekijken en druk, niet tegen forensisch onderzoek door iemand die deze app kent.</p><p lang="en">A second PIN that opens a separate, harmless safe, for when someone makes you open the app. You fill that safe with ordinary photos yourself. Nothing on screen shows which safe is open. While a decoy PIN is set, fingerprint unlock is off. It protects against prying eyes and pressure, not against a forensic examination by someone who knows this app.</p></div></details>
       <details><summary><span lang="nl">Hoe geef ik iemand veilig een paar bestanden?</span><span lang="en">How do I give someone a few files safely?</span></summary>
         <div class="a"><p lang="nl">Selecteer de items en kies ⋮ → Versleuteld delen. De app maakt één versleuteld bestand met een wachtzin (minstens 8 tekens, of vier voorgestelde woorden). Stuur het bestand en de wachtzin apart. Op de andere telefoon voegt + → Versleuteld bestand openen ze aan de kluis toe. Zo breng je ook bestanden naar een nieuwe telefoon zonder volledige back-up.</p><p lang="en">Select the items and choose ⋮ → Encrypted share. The app makes one encrypted file with a passphrase (at least 8 characters, or four suggested words). Send the file and the passphrase separately. On the other phone, + → Open encrypted file adds them to the safe. This also moves files to a new phone without a full backup.</p></div></details>
       <details><summary><span lang="nl">Hoe zet ik mijn kluis over naar een nieuwe telefoon?</span><span lang="en">How do I move my safe to a new phone?</span></summary>
-        <div class="a"><p lang="nl">Maak een actuele back-up (Instellingen → Nu back-up bijwerken) in een map die je kunt meenemen, zoals een SD-kaart of USB-stick. Kopieer de back-upmap naar de nieuwe telefoon, installeer de app, kies "Herstellen uit back-up" op het PIN-scherm en voer het back-upwachtwoord in. Daarna kies je een nieuwe PIN.</p><p lang="en">Make an up-to-date backup (Settings → Update backup now) to a folder you can take with you, such as an SD card or USB stick. Copy the backup folder to the new phone, install the app, choose "Restore from backup" on the PIN screen and enter the backup password. You then choose a new PIN.</p></div></details>
+        <div class="a"><p lang="nl">Op twee manieren. <strong>Met een back-up</strong>: maak een back-up (Instellingen → Back-up maken) in een map die je kunt meenemen, zoals een SD-kaart, USB-stick of cloudmap. Installeer de app op de nieuwe telefoon, kies "Herstellen uit back-up" en voer het back-upwachtwoord in. <strong>Met de SD-kaart</strong>: staat je kluis op de SD-kaart, zet de kaart dan in de nieuwe telefoon en installeer de app. Die vindt de kluis; open hem met het kluiswachtwoord en kies een nieuwe PIN.</p><p lang="en">Two ways. <strong>With a backup</strong>: make a backup (Settings → Make backup) to a folder you can take with you, such as an SD card, USB stick or cloud folder. Install the app on the new phone, choose "Restore from backup" and enter the backup password. <strong>With the SD card</strong>: if your safe is on the SD card, put the card in the new phone and install the app. It finds the safe; open it with the safe password and choose a new PIN.</p></div></details>
       <details><summary><span lang="nl">Wat als ik mijn back-upwachtwoord vergeet?</span><span lang="en">What if I forget my backup password?</span></summary>
-        <div class="a"><p lang="nl">Dan kan die back-up niet worden hersteld. Zolang je je PIN nog weet, open je de kluis en stel je een nieuw back-upwachtwoord in via Instellingen → Back-upwachtwoord; de volgende back-up gebruikt het nieuwe wachtwoord.</p><p lang="en">Then that backup can't be restored. As long as you still know your PIN, open the safe and set a new backup password in Settings → Backup password; the next backup uses the new password.</p></div></details>
+        <div class="a"><p lang="nl">Dan kun je de back-ups met dat wachtwoord niet terugzetten. Zolang je de kluis nog kunt openen, stel je in Instellingen → Back-upwachtwoord een nieuw wachtwoord in en maak je meteen een nieuwe back-up.</p><p lang="en">Then the backups made with that password can't be restored. As long as you can open the safe, set a new backup password in Settings → Backup password and make a new backup straight away.</p></div></details>
       <details><summary><span lang="nl">Waarom staat er met een vermomming toch "AI Safe" in de Android-instellingen?</span><span lang="en">Why do Android's settings show "AI Safe" even with a disguise?</span></summary>
         <div class="a"><p lang="nl">Android toont in Instellingen → Apps, bij het verwijderen en in toestemmingsvragen altijd één vaste naam: "AI Safe". Een vermomming verandert alleen de naam en het icoon in de app-lijst, het deelmenu en recente apps. Daarom is de vermomming een extra laag; de bescherming zelf is de versleuteling, en die werkt met en zonder vermomming.</p><p lang="en">In Settings → Apps, when uninstalling and in permission prompts, Android always shows one fixed name: "AI Safe". A disguise only changes the name and icon in the app list, the share menu and recent apps. That is why the disguise is an extra layer; the protection itself is the encryption, which works with or without a disguise.</p></div></details>
       <details><summary><span lang="nl">Kunnen anderen zien dat ik een kluis heb?</span><span lang="en">Can other people tell that I have a safe?</span></summary>
@@ -776,7 +772,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
       <details><summary><span lang="nl">Zijn verwijderde items meteen weg?</span><span lang="en">Are deleted items gone immediately?</span></summary>
         <div class="a"><p lang="nl">Nee. Ze blijven gedurende de bewaartijd die je hebt gekozen in de prullenbak, nog steeds versleuteld. Leeg de prullenbak of gebruik "Definitief verwijderen" om ze meteen te wissen.</p><p lang="en">No. They stay in the recycle bin, still encrypted, for the retention time you chose. Empty the bin or use "Delete forever" to erase them right away.</p></div></details>
       <details><summary><span lang="nl">Verzamelt de app gegevens over mij?</span><span lang="en">Does the app collect information about me?</span></summary>
-        <div class="a"><p lang="nl">Nee. Er zijn geen accounts, geen analyses, geen advertenties en geen internettoegang. Niets over jou of je bestanden verlaat je telefoon, behalve een back-up in de map die je kiest.</p><p lang="en">No. There are no accounts, no analytics, no advertising and no internet access. Nothing about you or your files leaves your phone, except a backup in the folder you choose.</p></div></details>
+        <div class="a"><p lang="nl">Nee. Er zijn geen accounts, geen analyses, geen advertenties en geen internettoegang. Niets over jou of je bestanden verlaat je telefoon, behalve back-ups in de map die je kiest.</p><p lang="en">No. There are no accounts, no analytics, no advertising and no internet access. Nothing about you or your files leaves your phone, except backups in the folder you choose.</p></div></details>
       <details><summary><span lang="nl">Hoe controleer ik of de download echt is?</span><span lang="en">How do I check the download is genuine?</span></summary>
         <div class="a"><p lang="nl">Vergelijk de SHA-256-controlesom van het gedownloade bestand met de waarde onder "Uitleg". Komt die niet overeen, installeer het bestand dan niet.</p><p lang="en">Compare the SHA-256 checksum of the downloaded file with the value under "How it works". If it doesn't match, don't install the file.</p></div></details>
     </div>
@@ -796,8 +792,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
         <p lang="nl">Alleen jij bent verantwoordelijk voor de bestanden die je in de app bewaart en voor de manier waarop je de app gebruikt. Gebruik de app alleen in overeenstemming met de wet en met respect voor de rechten van anderen. De makers van de app zijn niet verantwoordelijk voor wat je ermee doet.</p>
         <p lang="en">You alone are responsible for the files you store in the app and for how you use it. Use it only in accordance with the law and with respect for the rights of others. The makers of the app are not responsible for anything you do with it.</p></div>
       <div><h3><span lang="nl">Verlies van gegevens</span><span lang="en">Loss of data</span></h3>
-        <p lang="nl">De makers zijn niet aansprakelijk voor verlies van of schade aan gegevens of apparaten, ook niet voor verlies door een vergeten PIN of back-upwachtwoord, het verwijderen van de app, het wissen van de opslag ervan, een defecte of verloren telefoon of een fout in de app. Maak en controleer je eigen back-ups.</p>
-        <p lang="en">The makers are not liable for any loss of or damage to data or devices, including loss caused by a forgotten PIN or backup password, uninstalling the app, clearing its storage, a defective or lost phone, or an error in the app. Make and check your own backups.</p></div>
+        <p lang="nl">De makers zijn niet aansprakelijk voor verlies van of schade aan gegevens of apparaten, ook niet voor verlies door een vergeten PIN, kluiswachtwoord of back-upwachtwoord, het verwijderen van de app, het wissen van de opslag ervan, een defecte of verloren telefoon of SD-kaart of een fout in de app. Maak en controleer je eigen back-ups.</p>
+        <p lang="en">The makers are not liable for any loss of or damage to data or devices, including loss caused by a forgotten PIN, safe password or backup password, uninstalling the app, clearing its storage, a defective or lost phone or SD card, or an error in the app. Make and check your own backups.</p></div>
       <div><h3><span lang="nl">We verzamelen geen gegevens</span><span lang="en">We do not collect information</span></h3>
         <p lang="nl">De app verzamelt, verstuurt of verkoopt geen gegevens. De app heeft geen toestemming voor internettoegang, geen accounts, geen analyses en geen advertenties. Deze website gebruikt geen cookies of trackers van de maker.</p>
         <p lang="en">The app does not collect, send or sell any information. It has no internet permission, no accounts, no analytics and no advertising. This website uses no cookies or trackers from the maker.</p></div>
@@ -814,7 +810,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 
 <footer>
   <div class="wrap">
-    <span>AI Safe · <span lang="nl">veilig voor AI</span><span lang="en">safe from AI</span> · <span lang="nl">versie</span><span lang="en">version</span> 2.2.0</span>
+    <span>AI Safe · <span lang="nl">veilig voor AI</span><span lang="en">safe from AI</span> · <span lang="nl">versie</span><span lang="en">version</span> 3.0.0</span>
     <span><a href="#top"><span lang="nl">Naar boven</span><span lang="en">Back to top</span></a></span>
   </div>
 </footer>
