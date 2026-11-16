@@ -101,7 +101,11 @@ section.alt{background:var(--surface-2)}
 .card .ic{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 15%,transparent);color:var(--accent);margin-bottom:12px}
 .card .ic svg{width:22px;height:22px}
 .card p{color:var(--muted);margin:0;font-size:.95rem}
-.card .num{color:var(--accent);margin-right:6px}
+.cards.six{grid-template-columns:repeat(6,1fr);gap:12px}
+.cards.six .card{padding:16px}
+.cards.six h3{font-size:1rem}
+@media (max-width:980px){.cards.six{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.cards.six{grid-template-columns:1fr}}
 .card dl{margin:0;font-size:.95rem}
 .card dt{font-weight:600;margin-top:10px}
 .card dd{margin:2px 0 0;color:var(--muted)}
@@ -256,40 +260,40 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
       <p lang="nl">AI Safe is een kluis: een veilige plek om je informatie te bewaren, beschermd tegen AI. Persoonlijke foto's en video's, maar ook documenten zoals PDF's, Word-bestanden en notities. Je voegt ze toe, de app versleutelt ze en haalt de originelen weg. Daarna zijn ze buiten bereik van de galerij, cloudback-ups, AI-diensten en assistenten die het scherm vastleggen. Je bekijkt, ordent en bewerkt alles in de app zelf, zonder dat er ooit een onversleutelde kopie op je telefoon achterblijft. De app bevat zelf geen AI.</p>
       <p lang="en">AI Safe is a safe: a safe place to store your information, protected from AI. Personal photos and videos, but also documents such as PDFs, Word files and notes. You add them, the app encrypts them and removes the originals. From then on they are out of reach of the gallery, cloud backups, AI services and assistants that capture the screen. You view, organise and edit everything inside the app itself, without an unencrypted copy ever being left on your phone. The app itself contains no AI.</p>
     </div>
-    <div class="cards">
+    <div class="cards six">
       <div class="card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
-        <h3><span class="num">1.</span><span lang="nl">Alles versleuteld</span><span lang="en">Everything encrypted</span></h3>
+        <h3><span lang="nl">Alles versleuteld</span><span lang="en">Everything encrypted</span></h3>
         <dl lang="nl"><dt>Het risico</dt><dd>Een AI-app of -dienst leest je bestanden op de telefoon en analyseert ze.</dd><dt>Hoe AI Safe beschermt</dt><dd>Alles in de kluis is versleuteld: bestanden, miniaturen, namen en mappen. Zonder jouw PIN is het onleesbaar.</dd></dl>
         <dl lang="en"><dt>The risk</dt><dd>An AI app or service reads the files on your phone and analyses them.</dd><dt>How AI Safe protects</dt><dd>Everything in the safe is encrypted: files, thumbnails, names and folders. Without your PIN it is unreadable.</dd></dl>
       </div>
       <div class="card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 2l20 20M8.5 4.6A11 11 0 0 1 21 9M5 7.7A11 11 0 0 0 3 9M12 20h.01M8.5 16.4a5 5 0 0 1 7 0"/></svg></div>
-        <h3><span class="num">2.</span><span lang="nl">Geen internet, geen account</span><span lang="en">No internet, no account</span></h3>
+        <h3><span lang="nl">Geen internet, geen account</span><span lang="en">No internet, no account</span></h3>
         <dl lang="nl"><dt>Het risico</dt><dd>Je bestanden gaan naar een server of cloud en worden daar door AI verwerkt.</dd><dt>Hoe AI Safe beschermt</dt><dd>De app heeft geen internettoegang. Er is geen server en geen account. Je bestanden kunnen de telefoon niet via de app verlaten.</dd></dl>
         <dl lang="en"><dt>The risk</dt><dd>Your files go to a server or cloud and are processed there by AI.</dd><dt>How AI Safe protects</dt><dd>The app has no internet access. There is no server and no account. Your files cannot leave the phone through the app.</dd></dl>
       </div>
       <div class="card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 11c0-2 1.5-3 3-3M7 11a5 5 0 0 1 10 0c0 4-1 7-3 9M9 21c-1-2-2-5-2-8M4 9a8 8 0 0 1 16 0"/></svg></div>
-        <h3><span class="num">3.</span><span lang="nl">PIN of vingerafdruk</span><span lang="en">PIN or fingerprint</span></h3>
+        <h3><span lang="nl">PIN of vingerafdruk</span><span lang="en">PIN or fingerprint</span></h3>
         <dl lang="nl"><dt>Het risico</dt><dd>Iemand of iets bekijkt de kluis terwijl die openstaat.</dd><dt>Hoe AI Safe beschermt</dt><dd>Alleen jij opent de kluis. Hij sluit vanzelf bij verlaten, scherm uit, niets doen of telefoon omgedraaid.</dd></dl>
         <dl lang="en"><dt>The risk</dt><dd>Someone or something looks at the safe while it is open.</dd><dt>How AI Safe protects</dt><dd>Only you open the safe. It closes by itself on leaving, screen off, inactivity or phone face down.</dd></dl>
       </div>
       <div class="card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 18l18-14"/></svg></div>
-        <h3><span class="num">4.</span><span lang="nl">Niets op een screenshot</span><span lang="en">Nothing on a screenshot</span></h3>
+        <h3><span lang="nl">Niets op een screenshot</span><span lang="en">Nothing on a screenshot</span></h3>
         <dl lang="nl"><dt>Het risico</dt><dd>AI verzamelt gegevens door screenshots of schermopnames te maken en te analyseren.</dd><dt>Hoe AI Safe beschermt</dt><dd>AI Safe blokkeert screenshots en schermopnames van de kluis. Ze blijven zwart. Ook recente apps toont een leeg venster.</dd></dl>
         <dl lang="en"><dt>The risk</dt><dd>AI collects data by taking and analysing screenshots or screen recordings.</dd><dt>How AI Safe protects</dt><dd>AI Safe blocks screenshots and screen recordings of the safe. They stay black. Recent apps shows a blank window too.</dd></dl>
       </div>
       <div class="card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg></div>
-        <h3><span class="num">5.</span><span lang="nl">Ingebouwde speler en editor</span><span lang="en">Built-in player and editor</span></h3>
+        <h3><span lang="nl">Ingebouwde speler en editor</span><span lang="en">Built-in player and editor</span></h3>
         <dl lang="nl"><dt>Het risico</dt><dd>Je opent een bestand in een andere app. Die app (of de AI erin) krijgt een onversleutelde kopie.</dd><dt>Hoe AI Safe beschermt</dt><dd>Je bekijkt, speelt af en bewerkt alles in AI Safe zelf. Er komt geen andere app aan te pas en er blijft geen onversleutelde kopie achter.</dd></dl>
         <dl lang="en"><dt>The risk</dt><dd>You open a file in another app. That app (or its AI) gets an unencrypted copy.</dd><dt>How AI Safe protects</dt><dd>You view, play and edit everything inside AI Safe. No other app is involved and no unencrypted copy is left behind.</dd></dl>
       </div>
       <div class="card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
-        <h3><span class="num">6.</span><span lang="nl">Ingebouwde foto- en videocamera</span><span lang="en">Built-in photo and video camera</span></h3>
+        <h3><span lang="nl">Ingebouwde foto- en videocamera</span><span lang="en">Built-in photo and video camera</span></h3>
         <dl lang="nl"><dt>Het risico</dt><dd>Een gewone camera-app zet je foto in de galerij. Van daaruit gaat hij naar de cloud en AI-analyse.</dd><dt>Hoe AI Safe beschermt</dt><dd>De camera in AI Safe slaat foto's en video's direct versleuteld op in de kluis. Ze komen nooit in de galerij of een cloudback-up.</dd></dl>
         <dl lang="en"><dt>The risk</dt><dd>A normal camera app puts your photo in the gallery. From there it goes to the cloud and AI analysis.</dd><dt>How AI Safe protects</dt><dd>The camera in AI Safe stores photos and videos straight into the safe, encrypted. They never reach the gallery or a cloud backup.</dd></dl>
       </div>
