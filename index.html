@@ -102,12 +102,10 @@ section.alt{background:var(--surface-2)}
 .card .ic svg{width:22px;height:22px}
 .card p{color:var(--muted);margin:0;font-size:.95rem}
 .cards.six{grid-template-columns:1fr;gap:12px}
-.cards.six .card{display:grid;grid-template-columns:40px 200px 1fr;gap:0 16px;align-items:start;padding:18px}
+.cards.six .card{display:grid;grid-template-columns:40px 1fr;gap:0 14px;align-items:center;padding:18px}
 .cards.six .card .ic,.cards.six h3{margin:0}
-.cards.six h3{font-size:1.05rem;align-self:center}
-.cards.six dl{display:grid;grid-template-rows:auto auto;grid-auto-flow:column;grid-auto-columns:1fr;gap:0 20px}
-.cards.six dt{margin-top:0}
-@media (max-width:760px){.cards.six .card{grid-template-columns:40px 1fr}.cards.six dl{grid-column:1/-1;display:block;margin-top:8px}.cards.six dt{margin-top:10px}}
+.cards.six h3{font-size:1.05rem}
+.cards.six dl{grid-column:1/-1;margin-top:4px}
 .card dl{margin:0;font-size:.95rem}
 .card dt{font-weight:600;margin-top:10px}
 .card dd{margin:2px 0 0;color:var(--muted)}
