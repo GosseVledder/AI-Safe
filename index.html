@@ -105,6 +105,8 @@ section.alt{background:var(--surface-2)}
 .cards.six .card{display:grid;grid-template-columns:40px 1fr;gap:0 14px;align-items:center;padding:18px}
 .cards.six .card .ic,.cards.six h3{margin:0}
 .cards.six h3{font-size:1.05rem}
+.cards.six ul.more{grid-column:1/-1;margin:12px 0 0;padding-left:20px;color:var(--muted);font-size:.95rem}
+.cards.six ul.more li{margin:4px 0}
 .cards.six dl{grid-column:1/-1;margin-top:12px;display:grid;grid-template-columns:190px 1fr;border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .cards.six dt,.cards.six dd{margin:0;padding:8px 12px}
 .cards.six dt{background:color-mix(in srgb,var(--accent) 8%,transparent)}
@@ -302,16 +304,22 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
         <dl lang="en"><dt>The risk</dt><dd>The safe stays open. Someone else, or an app or AI assistant, looks along.</dd><dt>How AI Safe protects</dt><dd>The safe closes by itself when you leave the app, the screen turns off, you turn the phone face down or you don't touch the screen for a while (30 seconds to 10 minutes, 2 by default). It waits during a video or slideshow. So you never have to think about it.</dd></dl>
       </div>
       <div class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8 10h.01M16 10h.01M8 15c2.5 2 5.5 2 8 0"/></svg></div>
-        <h3><span lang="nl">Camoufleer de app</span><span lang="en">Disguise the app</span></h3>
-        <dl lang="nl"><dt>Het risico</dt><dd>Iemand, of een app die je telefoon doorzoekt, ziet dat je een kluis-app hebt en gaat daar gericht naar zoeken.</dd><dt>Hoe AI Safe beschermt</dt><dd>Optioneel (extra): de app verschijnt als Volume Manager, Rekenmachine of Notities, met eigen naam en icoon. Alleen jij weet hoe je de kluis opent. Je bestanden zijn ook zonder camouflage versleuteld.</dd></dl>
-        <dl lang="en"><dt>The risk</dt><dd>Someone, or an app searching your phone, sees that you have a safe app and goes looking for it.</dd><dt>How AI Safe protects</dt><dd>Optional (extra): the app appears as Volume Manager, Calculator or Notes, with its own name and icon. Only you know how to open the safe. Your files are encrypted without a disguise too.</dd></dl>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></div>
+        <h3><span lang="nl">Toetsenbord leert niet mee</span><span lang="en">The keyboard doesn't learn</span></h3>
+        <dl lang="nl"><dt>Het risico</dt><dd>Je toetsenbord onthoudt wat je typt en gebruikt dat voor suggesties of stuurt het naar een AI-dienst.</dd><dt>Hoe AI Safe beschermt</dt><dd>In de kluis vraagt AI Safe het toetsenbord om niets te onthouden. Namen en notities die je daar typt, komen niet in de woordsuggesties.</dd></dl>
+        <dl lang="en"><dt>The risk</dt><dd>Your keyboard remembers what you type and uses it for suggestions or sends it to an AI service.</dd><dt>How AI Safe protects</dt><dd>Inside the safe, AI Safe asks the keyboard not to remember anything. Names and notes you type there don't end up in its suggestions.</dd></dl>
       </div>
       <div class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 11c0-2 1.5-3 3-3M7 11a5 5 0 0 1 10 0c0 4-1 7-3 9M9 21c-1-2-2-5-2-8M4 9a8 8 0 0 1 16 0"/></svg></div>
-        <h3><span lang="nl">PIN, patroon of vingerafdruk</span><span lang="en">PIN, pattern or fingerprint</span></h3>
-        <dl lang="nl"><dt>Het risico</dt><dd>Iemand anders opent de kluis en bekijkt je bestanden.</dd><dt>Hoe AI Safe beschermt</dt><dd>Alleen jij opent de kluis: met je PIN, een patroon (minstens 4 punten) of je vingerafdruk.</dd></dl>
-        <dl lang="en"><dt>The risk</dt><dd>Someone else opens the safe and looks at your files.</dd><dt>How AI Safe protects</dt><dd>Only you open the safe: with your PIN, a pattern (at least 4 dots) or your fingerprint.</dd></dl>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v12M8 7l4-4 4 4"/></svg></div>
+        <h3><span lang="nl">Versleuteld delen</span><span lang="en">Encrypted sharing</span></h3>
+        <dl lang="nl"><dt>Het risico</dt><dd>Je deelt een bestand via e-mail, chat of cloud. Onderweg en bij de ontvanger kan AI het lezen.</dd><dt>Hoe AI Safe beschermt</dt><dd>Bestanden verlaten de kluis alleen versleuteld, met een wachtzin die je apart stuurt. Heeft de ontvanger ook AI Safe, dan opent die het bestand en zet het direct in de eigen kluis. Zo wissel je bestanden veilig uit tussen kluizen van verschillende mensen.</dd></dl>
+        <dl lang="en"><dt>The risk</dt><dd>You share a file by e-mail, chat or cloud. On the way and at the recipient, AI can read it.</dd><dt>How AI Safe protects</dt><dd>Files only leave the safe encrypted, with a passphrase you send separately. If the recipient also has AI Safe, they open the file straight into their own safe. That way you exchange files safely between different people's safes.</dd></dl>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3><span lang="nl">Meer beveiliging</span><span lang="en">More security</span></h3>
+        <ul class="more" lang="nl"><li><strong>PIN, patroon of vingerafdruk</strong>: alleen jij opent de kluis; een patroon heeft minstens 4 punten</li><li><strong>Camoufleer de app</strong> (extra): AI Safe verschijnt als Volume Manager, Rekenmachine of Notities</li><li><strong>Decoy-PIN</strong>: een tweede PIN opent een aparte, onschuldige kluis; niets laat zien welke kluis open is</li><li><strong>Foute PIN's worden afgeremd</strong>: na 2 fouten een wachttijd die verdubbelt tot 15 minuten; herstarten of de klok verzetten helpt niet</li><li><strong>PIN nodig</strong> voor gevoelige wijzigingen: back-up, vingerafdruk, automatisch vergrendelen uit</li><li><strong>Versleutelde back-ups</strong> met een eigen wachtwoord van minstens 12 tekens</li><li><strong>Geknoei wordt gezien</strong>: verwisselde of hernoemde kluisbestanden worden herkend</li><li><strong>Bewegingssensor</strong> alleen in gebruik als de kluis open en in beeld is</li></ul>
+        <ul class="more" lang="en"><li><strong>PIN, pattern or fingerprint</strong>: only you open the safe; a pattern has at least 4 dots</li><li><strong>Disguise the app</strong> (extra): AI Safe appears as Volume Manager, Calculator or Notes</li><li><strong>Decoy PIN</strong>: a second PIN opens a separate, harmless safe; nothing shows which safe is open</li><li><strong>Wrong PINs are slowed down</strong>: after 2 mistakes a waiting time that doubles up to 15 minutes; restarting or changing the clock doesn't help</li><li><strong>PIN needed</strong> for sensitive changes: backup, fingerprint, auto-lock off</li><li><strong>Encrypted backups</strong> with their own password of at least 12 characters</li><li><strong>Tampering is noticed</strong>: swapped or renamed safe files are detected</li><li><strong>Motion sensor</strong> only used while the safe is open and on screen</li></ul>
       </div>
     </div>
   </div>
