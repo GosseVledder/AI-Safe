@@ -107,10 +107,15 @@ section.alt{background:var(--surface-2)}
 .cards.six h3{font-size:1.05rem}
 .cards.six ul.more{grid-column:1/-1;margin:12px 0 0;padding-left:20px;color:var(--muted);font-size:.95rem}
 .cards.six ul.more li{margin:4px 0}
-.cards.six dl{grid-column:1/-1;margin-top:12px;display:grid;grid-template-columns:190px 1fr;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.cards.six dl{grid-column:1/-1;margin-top:12px;display:grid;grid-template-columns:190px 1fr;border:1px solid var(--line);border-radius:10px 10px 0 0;overflow:hidden}
 .cards.six dt,.cards.six dd{margin:0;padding:8px 12px}
 .cards.six dt{background:color-mix(in srgb,var(--accent) 8%,transparent)}
 .cards.six dt:nth-of-type(2),.cards.six dd:nth-of-type(2){border-top:1px solid var(--line)}
+.cards.six details.news{grid-column:1/-1;margin:0;border:1px solid var(--line);border-top:0;border-radius:0 0 10px 10px;overflow:hidden;font-size:.95rem}
+.cards.six details.news summary{padding:8px 12px;background:color-mix(in srgb,var(--accent) 8%,transparent);align-items:center}
+.cards.six details.news ul{margin:0;padding:10px 14px 10px 30px;color:var(--muted);border-top:1px solid var(--line)}
+.cards.six details.news li{margin:6px 0}
+.cards.six details.news li strong{color:var(--text);font-weight:600}
 @media (max-width:560px){.cards.six dl{grid-template-columns:110px 1fr}}
 .card dl{margin:0;font-size:.95rem}
 .card dt{font-weight:600;margin-top:10px}
@@ -271,42 +276,112 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
         <h3><span lang="nl">Alles versleuteld</span><span lang="en">Everything encrypted</span></h3>
         <dl lang="nl"><dt>Het risico</dt><dd>AI kan je bestanden op de telefoon lezen en analyseren via een app of dienst die erbij kan.</dd><dt>Hoe AI-Safe beschermt</dt><dd>Alles in de kluis is versleuteld: bestanden, miniaturen, namen en mappen. Zonder jouw PIN is het onleesbaar.</dd></dl>
         <dl lang="en"><dt>The risk</dt><dd>AI can read and analyse the files on your phone through an app or service that has access to them.</dd><dt>How AI-Safe protects</dt><dd>Everything in the safe is encrypted: files, thumbnails, names and folders. Without your PIN it is unreadable.</dd></dl>
+        <details class="news"><summary><span lang="nl">Voorbeelden in het nieuws</span><span lang="en">Examples in the news</span></summary>
+          <ul lang="nl">
+            <li><strong>Meta's toegang tot de Android-galerij (november 2026)</strong>: De Italiaanse privacytoezichthouder (Garante) legde Meta een boete van 805 miljoen euro op omdat de Facebook-app op Android via haar galerijmachtiging het fotoarchief op het toestel uitleesde voor suggesties, cloud- en AI-verwerking, zonder specifieke toestemming van de gebruiker.</li>
+            <li><strong>Lokale bestandstoegang door AI-agents (2026)</strong>: Met de komst van agent-functies zoals Gemini Task (Spark) en systeemintegraties op telefoons en computers krijgen AI-assistenten de mogelijkheid om lokale mappen en bestanden op het toestel door te spitten om taken uit te voeren.</li>
+          </ul>
+          <ul lang="en">
+            <li><strong>Meta's access to the Android gallery (November 2026)</strong>: The Italian data protection authority (Garante) fined Meta €805 million because the Facebook app on Android used its gallery permission to read the photo archive on the device for suggestions, cloud and AI processing, without the user's specific consent.</li>
+            <li><strong>Local file access by AI agents (2026)</strong>: With the arrival of agent features such as Gemini Task (Spark) and system integrations on phones and computers, AI assistants have gained the ability to search through local folders and files on the device to carry out tasks.</li>
+          </ul>
+        </details>
       </div>
       <div class="card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 2l20 20M8.5 4.6A11 11 0 0 1 21 9M5 7.7A11 11 0 0 0 3 9M12 20h.01M8.5 16.4a5 5 0 0 1 7 0"/></svg></div>
         <h3><span lang="nl">Geen internet, geen account</span><span lang="en">No internet, no account</span></h3>
         <dl lang="nl"><dt>Het risico</dt><dd>AI kan je bestanden verwerken als een app ze naar een server of cloud stuurt.</dd><dt>Hoe AI-Safe beschermt</dt><dd>De app heeft geen internettoegang. Er is geen server en geen account. Je bestanden kunnen de telefoon niet via de app verlaten.</dd></dl>
         <dl lang="en"><dt>The risk</dt><dd>AI can process your files when an app sends them to a server or cloud.</dd><dt>How AI-Safe protects</dt><dd>The app has no internet access. There is no server and no account. Your files cannot leave the phone through the app.</dd></dl>
+        <details class="news"><summary><span lang="nl">Voorbeelden in het nieuws</span><span lang="en">Examples in the news</span></summary>
+          <ul lang="nl">
+            <li><strong>Cloud-scanning en Chat Control (2022–2026)</strong>: Zowel de eerdere plannen van Apple (automatische scanning voor iCloud-foto's) als de Europese Chat Control 1.0-wetgeving (verlengd in juli 2026) draaien om het automatisch met AI-algoritmes scannen van foto's en berichten op niet-end-to-end-versleutelde cloud- en onlinediensten.</li>
+            <li><strong>AI-training op clouddiensten (2024–2026)</strong>: Diverse techbedrijven (waaronder Google bij Gemini en cloudopslag) lagen onder vuur van o.a. de Consumentenbond omdat standaardinstellingen gebruikersdata op servers bewaren om te analyseren en AI-modellen verder te trainen.</li>
+          </ul>
+          <ul lang="en">
+            <li><strong>Cloud scanning and Chat Control (2022–2026)</strong>: Both Apple's earlier plans (automated scanning for iCloud Photos) and the European Chat Control 1.0 legislation (extended in July 2026) revolve around automatically scanning photos and messages with AI algorithms on non-end-to-end-encrypted cloud and online services.</li>
+            <li><strong>AI training on cloud services (2024–2026)</strong>: Various tech companies (including Google with Gemini and cloud storage) came under fire from consumer organisations such as the Dutch Consumentenbond because default settings keep user data on servers to analyse it and train AI models further.</li>
+          </ul>
+        </details>
       </div>
       <div class="card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 18l18-14"/></svg></div>
         <h3><span lang="nl">Niets op een screenshot</span><span lang="en">Nothing on a screenshot</span></h3>
         <dl lang="nl"><dt>Het risico</dt><dd>AI kan gegevens verzamelen door screenshots of schermopnames te maken en te analyseren.</dd><dt>Hoe AI-Safe beschermt</dt><dd>AI-Safe blokkeert screenshots en schermopnames van de kluis. Ze blijven zwart. Ook recente apps toont een leeg venster.</dd></dl>
         <dl lang="en"><dt>The risk</dt><dd>AI can collect data by taking and analysing screenshots or screen recordings.</dd><dt>How AI-Safe protects</dt><dd>AI-Safe blocks screenshots and screen recordings of the safe. They stay black. Recent apps shows a blank window too.</dd></dl>
+        <details class="news"><summary><span lang="nl">Voorbeelden in het nieuws</span><span lang="en">Examples in the news</span></summary>
+          <ul lang="nl">
+            <li><strong>Signal blokkeert AI-agents (november 2026)</strong>: Signal kondigde aan standaard screenshots te blokkeren op Android en iOS om te voorkomen dat AI-agents (zoals Meta's Muse, Siri en Gemini) meelezen met gesprekken. Aanleiding was onder meer een door Reuters gemeld incident waarbij Meta's AI-agent Muse ongevraagd berichten in Signal las via schermtoegang van het besturingssysteem.</li>
+            <li><strong>Microsoft Windows Recall (2024–2025)</strong>: Microsofts functie Recall kwam wereldwijd onder vuur te liggen omdat deze continu screenshots maakt van alles wat op het scherm gebeurt om het met AI doorzoekbaar te maken, waarbij bleek dat gevoelige gegevens zoals wachtwoorden en creditcardnummers werden vastgelegd.</li>
+          </ul>
+          <ul lang="en">
+            <li><strong>Signal blocks AI agents (November 2026)</strong>: Signal announced it would block screenshots by default on Android and iOS to stop AI agents (such as Meta's Muse, Siri and Gemini) from reading along with conversations, prompted among other things by a Reuters-reported incident in which Meta's AI agent Muse read Signal messages unasked via operating-system screen access.</li>
+            <li><strong>Microsoft Windows Recall (2024–2025)</strong>: Microsoft's Recall feature came under worldwide fire for continuously taking screenshots of everything happening on screen to make it searchable with AI, which turned out to capture sensitive data such as passwords and credit-card numbers.</li>
+          </ul>
+        </details>
       </div>
       <div class="card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg></div>
         <h3><span lang="nl">Ingebouwde speler en editor</span><span lang="en">Built-in player and editor</span></h3>
         <dl lang="nl"><dt>Het risico</dt><dd>AI kan je bestand lezen als je het in een andere app opent. Die app krijgt dan een onversleutelde kopie.</dd><dt>Hoe AI-Safe beschermt</dt><dd>Je bekijkt, speelt af en bewerkt alles in AI-Safe zelf. Er komt geen andere app aan te pas en er blijft geen onversleutelde kopie achter, tenzij je zelf een foto als achtergrond instelt of zichtbaar maakt.</dd></dl>
         <dl lang="en"><dt>The risk</dt><dd>AI can read your file when you open it in another app. That app then gets an unencrypted copy.</dd><dt>How AI-Safe protects</dt><dd>You view, play and edit everything inside AI-Safe. No other app is involved and no unencrypted copy is left behind, unless you set a photo as wallpaper or unhide it yourself.</dd></dl>
+        <details class="news"><summary><span lang="nl">Voorbeelden in het nieuws</span><span lang="en">Examples in the news</span></summary>
+          <ul lang="nl">
+            <li><strong>AI-assistenten in externe PDF- en document-apps (2024–2026)</strong>: Veelgebruikte apps waarin je een PDF of Word-document opent (zoals Adobe Acrobat Reader met AI Assistant, Microsoft 365 met Copilot en Google Drive/Docs met Gemini) krijgen bij het openen een onversleutelde kopie en verwerken documenten via cloudservers voor AI-samenvattingen en analyse.</li>
+            <li><strong>Externe foto- en video-editors met cloud-AI (2024–2026)</strong>: Zodra je een foto of video opent in een externe galerij- of bewerkingsapp (zoals Google Foto's met Magic Editor of CapCut), ontvangt die app een onversleutelde kopie en worden AI-bewerkingen en beeldanalyses vaak op externe servers uitgevoerd.</li>
+          </ul>
+          <ul lang="en">
+            <li><strong>AI assistants in external PDF and document apps (2024–2026)</strong>: Popular apps in which you open a PDF or Word document (such as Adobe Acrobat Reader with AI Assistant, Microsoft 365 with Copilot and Google Drive/Docs with Gemini) receive an unencrypted copy when opened and process documents on cloud servers for AI summaries and analysis.</li>
+            <li><strong>External photo and video editors with cloud AI (2024–2026)</strong>: As soon as you open a photo or video in an external gallery or editing app (such as Google Photos with Magic Editor or CapCut), that app receives an unencrypted copy and AI edits and image analysis are often carried out on external servers.</li>
+          </ul>
+        </details>
       </div>
       <div class="card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
         <h3><span lang="nl">Ingebouwde foto- en videocamera</span><span lang="en">Built-in photo and video camera</span></h3>
         <dl lang="nl"><dt>Het risico</dt><dd>AI kan je foto's en video's analyseren als de camera-app ze in de galerij zet. Van daaruit gaan ze ook naar de cloud.</dd><dt>Hoe AI-Safe beschermt</dt><dd>De camera in AI-Safe slaat foto's en video's direct versleuteld op in de kluis. Ze komen nooit in de galerij of een cloudback-up.</dd></dl>
         <dl lang="en"><dt>The risk</dt><dd>AI can analyse your photos and videos when the camera app puts them in the gallery. From there they also go to the cloud.</dd><dt>How AI-Safe protects</dt><dd>The camera in AI-Safe stores photos and videos straight into the safe, encrypted. They never reach the gallery or a cloud backup.</dd></dl>
+        <details class="news"><summary><span lang="nl">Voorbeelden in het nieuws</span><span lang="en">Examples in the news</span></summary>
+          <ul lang="nl">
+            <li><strong>Facebooks cloudverwerking van je filmrol (2025–2026)</strong>: Meta introduceerde een functie in Facebook die ongedeelde foto's uit de standaardgalerij naar Meta's cloud uploadt voor AI-analyse en creatieve suggesties, en kreeg in november 2026 van de Italiaanse toezichthouder Garante een boete van 805 miljoen euro voor het zonder specifieke toestemming uitlezen van de Android-galerij.</li>
+            <li><strong>Automatische AI-indexering van nieuwe galerijfoto's (2024–2026)</strong>: Zodra een gewone camera-app een foto of video in de galerij opslaat, wordt die bij standaardinstellingen gesynchroniseerd met clouddiensten zoals Google Foto's (<em>Ask Photos</em> met Gemini) of iCloud en automatisch door AI geïndexeerd op gezichten, tekst, documenten en locaties.</li>
+          </ul>
+          <ul lang="en">
+            <li><strong>Facebook's cloud processing of your camera roll (2025–2026)</strong>: Meta introduced a Facebook feature that uploads unshared photos from the default gallery to Meta's cloud for AI analysis and creative suggestions, and in November 2026 was fined €805 million by the Italian regulator Garante for reading the Android gallery without specific consent.</li>
+            <li><strong>Automatic AI indexing of new gallery photos (2024–2026)</strong>: As soon as a normal camera app saves a photo or video to the gallery, default settings sync it with cloud services such as Google Photos (<em>Ask Photos</em> with Gemini) or iCloud and automatically index it with AI for faces, text, documents and locations.</li>
+          </ul>
+        </details>
       </div>
       <div class="card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></div>
         <h3><span lang="nl">Toetsenbord leert niet mee</span><span lang="en">The keyboard doesn't learn</span></h3>
         <dl lang="nl"><dt>Het risico</dt><dd>AI kan meelezen met wat je typt via het toetsenbord. Dat onthoudt je tekst voor suggesties of stuurt die naar een AI-dienst.</dd><dt>Hoe AI-Safe beschermt</dt><dd>In de kluis vraagt AI-Safe het toetsenbord om niets te onthouden. Namen en notities die je daar typt, komen niet in de woordsuggesties.</dd></dl>
         <dl lang="en"><dt>The risk</dt><dd>AI can read along with what you type through the keyboard. It remembers your text for suggestions or sends it to an AI service.</dd><dt>How AI-Safe protects</dt><dd>Inside the safe, AI-Safe asks the keyboard not to remember anything. Names and notes you type there don't end up in its suggestions.</dd></dl>
+        <details class="news"><summary><span lang="nl">Voorbeelden in het nieuws</span><span lang="en">Examples in the news</span></summary>
+          <ul lang="nl">
+            <li><strong>Reconstructie en opslag van typgegevens via Gboard (2024–2026)</strong>: Privacyorganisaties en onderzoekers (aangehaald door o.a. Proton) wezen erop dat moderne AI-toetsenborden zoals Gboard en Samsung Keyboard met lokale AI en <em>federated learning</em> leren van wat je typt. Als een app de "incognito/no-learning"-vlag niet afdwingt, worden gevoelige getypte woorden en namen opgenomen in de leermodellen en woordsuggesties.</li>
+            <li><strong>Cloud-toetsenborden en AI-schrijfhulpen versturen tekst (2023–2026)</strong>: Onderzoek van Citizen Lab toonde aan dat populaire toetsenbord-apps met cloudvoorspelling toetsaanslagen naar servers stuurden en blootstelden, terwijl ingebouwde AI-herschrijffuncties in mobiele toetsenborden getypte tekst naar externe AI-diensten doorsturen.</li>
+          </ul>
+          <ul lang="en">
+            <li><strong>Reconstruction and storage of typing data via Gboard (2024–2026)</strong>: Privacy organisations and researchers (cited by Proton, among others) pointed out that modern AI keyboards such as Gboard and Samsung Keyboard use local AI and federated learning to learn from what you type. If an app does not enforce the "incognito/no-learning" flag, sensitive typed words and names end up in the learning models and word suggestions.</li>
+            <li><strong>Cloud keyboards and AI writing tools transmitting text (2023–2026)</strong>: Research by Citizen Lab showed that popular keyboard apps with cloud prediction sent and exposed keystrokes to servers, while built-in AI rewrite features in mobile keyboards forward typed text to external AI services.</li>
+          </ul>
+        </details>
       </div>
       <div class="card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v12M8 7l4-4 4 4"/></svg></div>
         <h3><span lang="nl">Versleuteld delen</span><span lang="en">Encrypted sharing</span></h3>
         <dl lang="nl"><dt>Het risico</dt><dd>AI kan een gedeeld bestand lezen als je het onversleuteld via e-mail, chat of cloud stuurt, onderweg en bij de ontvanger.</dd><dt>Hoe AI-Safe beschermt</dt><dd>Normaal voeg je bestanden toe aan de kluis of haal je ze eruit. Daarnaast is er een extra optie: <strong>Versleuteld delen</strong>. Het bestand verlaat de kluis dan versleuteld, met een wachtzin die je apart stuurt. Heeft de ontvanger ook AI-Safe, dan zet die het bestand direct in de eigen kluis. Zo wissel je bestanden veilig uit tussen de kluizen van verschillende mensen.</dd></dl>
         <dl lang="en"><dt>The risk</dt><dd>AI can read a shared file when you send it unencrypted by e-mail, chat or cloud, on the way and at the recipient.</dd><dt>How AI-Safe protects</dt><dd>Normally you add files to the safe or take them out. On top of that there is an extra option: <strong>Encrypted share</strong>. The file then leaves the safe encrypted, with a passphrase you send separately. If the recipient also has AI-Safe, they put the file straight into their own safe. That way you exchange files safely between different people's safes.</dd></dl>
+        <details class="news"><summary><span lang="nl">Voorbeelden in het nieuws</span><span lang="en">Examples in the news</span></summary>
+          <ul lang="nl">
+            <li><strong>Scannen van onversleutelde e-mails en chats (juli 2026)</strong>: Onder de verlengde Europese Chat Control 1.0-regels mogen aanbieders van niet-end-to-end-versleutelde diensten (zoals Gmail, Outlook, Instagram DM's en Xbox) bijlagen en berichten automatisch laten scannen door AI-classificatiesystemen, waarbij ook gewone vakantiefoto's en documenten door het systeem gaan.</li>
+            <li><strong>AI-assistenten lezen e-mailbijlagen mee (2024–2026)</strong>: Grote e-mail- en clouddiensten zoals Gmail (met Gemini) en Microsoft Outlook/OneDrive (met Copilot) analyseren standaard onversleutelde berichten en bijlagen (zoals PDF's en foto's) op de server van verzender en ontvanger om ze automatisch met AI samen te vatten en doorzoekbaar te maken.</li>
+          </ul>
+          <ul lang="en">
+            <li><strong>Scanning of unencrypted e-mails and chats (July 2026)</strong>: Under the extended European Chat Control 1.0 rules, providers of non-end-to-end-encrypted services (such as Gmail, Outlook, Instagram DMs and Xbox) are allowed to automatically scan attachments and messages with AI classification systems, sending ordinary holiday photos and documents through the system as well.</li>
+            <li><strong>AI assistants reading e-mail attachments (2024–2026)</strong>: Major e-mail and cloud services such as Gmail (with Gemini) and Microsoft Outlook/OneDrive (with Copilot) analyse unencrypted messages and attachments (such as PDFs and photos) on the sender's and recipient's servers by default to summarise and index them automatically with AI.</li>
+          </ul>
+        </details>
       </div>
       <div class="card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
