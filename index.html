@@ -156,10 +156,7 @@ details.more .body h4:first-child{margin-top:0}
 .editions{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
 .editions > p{color:var(--muted);margin:6px 0 0}
 details.cmp{border-top:1px solid var(--line);margin-top:14px;padding-top:12px}
-details.cmp > summary{font-size:1rem;color:var(--text);width:100%}
-.cmp-count{margin-left:auto;font-size:.78rem;font-weight:600;color:var(--muted)}
-.cmp-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-@media (max-width:640px){.cmp-cols{grid-template-columns:1fr}}
+details.cmp > summary{font-size:1rem;color:var(--text)}
 
 /* features */
 .features{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
@@ -834,250 +831,145 @@ footer .brand{font-size:.95rem}
         </details>
       </div>
     </div>
-    <!-- Free en Full (PLAN_EDITIONS, D-87/D-88) -->
-    <div class="editions" id="free-full">
-      <h3><span lang="nl">Free en Full: wat zit waar</span><span lang="en">Free and Full: what is where</span></h3>
-      <p lang="nl"><strong>Free</strong> is een complete, onbeperkte kluis: alles wat je bestanden beschermt is gratis, zonder limiet op bestanden of mappen. <strong>Full</strong> voegt verbergen, versleuteld delen, creëren en meer kijkplezier toe. Klap een onderdeel open; in de kolom Full staat alles, met <span class="badge">Full</span> bij wat alleen in Full zit.</p>
-      <p lang="en"><strong>Free</strong> is a complete, unlimited safe: everything that protects your files is free, with no limit on files or folders. <strong>Full</strong> adds hiding, encrypted sharing, creating and more viewing pleasure. Expand a topic; the Full column lists everything, with <span class="badge">Full</span> next to what is Full only.</p>
+  </div>
+</section>
+
+<!-- FREE EN FULL (PLAN_EDITIONS, D-87/D-88) -->
+<section id="free-full">
+  <div class="wrap">
+    <div class="kicker">Free &amp; Full</div>
+    <div class="intro">
+      <h2><span lang="nl">Free en Full: wat zit waar</span><span lang="en">Free and Full: what is where</span></h2>
+      <p lang="nl"><strong>Free</strong> is een complete, onbeperkte kluis: alles wat je bestanden beschermt is gratis, zonder limiet op bestanden of mappen. <strong>Full</strong> voegt verbergen, versleuteld delen, creëren en meer kijkplezier toe. Klap een onderdeel open; wat alleen in Full zit, heeft het label <span class="badge">Full</span>.</p>
+      <p lang="en"><strong>Free</strong> is a complete, unlimited safe: everything that protects your files is free, with no limit on files or folders. <strong>Full</strong> adds hiding, encrypted sharing, creating and more viewing pleasure. Expand a topic; what is Full only carries the <span class="badge">Full</span> label.</p>
+    </div>
+    <div class="editions">
       <p class="muted" lang="nl">Full is nog niet te koop. Tot dat kan, krijgt iedereen alles. Wat al in je kluis staat, blijft altijd bruikbaar, ook in Free. Free: 41 functies · Full: 63.</p>
       <p class="muted" lang="en">Full can't be bought yet. Until it can, everyone gets everything. What is already in your safe always stays usable, also in Free. Free: 41 features · Full: 63.</p>
       <details class="more cmp">
-        <summary><span lang="nl">Ontgrendelen en beveiliging</span><span lang="en">Unlocking and security</span><span class="cmp-count">Free 8 · Full 10</span></summary>
-        <div class="body cmp-cols">
-          <div>
-            <h4>Free</h4>
-            <ul>
-              <li><span lang="nl">PIN (4–16 cijfers) of patroon, met wachttijd na foute pogingen</span><span lang="en">PIN (4–16 digits) or pattern, with a delay after wrong attempts</span></li>
-              <li><span lang="nl">Ontgrendelen met vingerafdruk</span><span lang="en">Fingerprint unlock</span></li>
-              <li><span lang="nl">Kluiswachtwoord en <em>PIN vergeten?</em></span><span lang="en">Safe password and <em>Forgot your PIN?</em></span></li>
-              <li><span lang="nl">Automatisch vergrendelen: app verlaten, scherm uit, inactiviteit</span><span lang="en">Auto-lock: leaving the app, screen off, inactivity</span></li>
-              <li><span lang="nl">Vergrendelen met het scherm naar beneden</span><span lang="en">Lock when placed face down</span></li>
-              <li><span lang="nl">Altijd aan: AES-256, screenshots zwart, toetsenbord leert niet, geen internet, geen account</span><span lang="en">Always on: AES-256, screenshots blocked, keyboard doesn't learn, no internet, no account</span></li>
-              <li><span lang="nl">Locatie en herleidbare gegevens verwijderd bij delen (standaard aan)</span><span lang="en">Location and identifying data removed when sharing (on by default)</span></li>
-              <li><span lang="nl">Eigen kleur voor je kluis</span><span lang="en">Your own colour for the safe</span></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Full</h4>
-            <ul>
-              <li><span lang="nl">PIN (4–16 cijfers) of patroon, met wachttijd na foute pogingen</span><span lang="en">PIN (4–16 digits) or pattern, with a delay after wrong attempts</span></li>
-              <li><span lang="nl">Ontgrendelen met vingerafdruk</span><span lang="en">Fingerprint unlock</span></li>
-              <li><span lang="nl">Kluiswachtwoord en <em>PIN vergeten?</em></span><span lang="en">Safe password and <em>Forgot your PIN?</em></span></li>
-              <li><span lang="nl">Automatisch vergrendelen: app verlaten, scherm uit, inactiviteit</span><span lang="en">Auto-lock: leaving the app, screen off, inactivity</span></li>
-              <li><span lang="nl">Vergrendelen met het scherm naar beneden</span><span lang="en">Lock when placed face down</span></li>
-              <li><span lang="nl">Altijd aan: AES-256, screenshots zwart, toetsenbord leert niet, geen internet, geen account</span><span lang="en">Always on: AES-256, screenshots blocked, keyboard doesn't learn, no internet, no account</span></li>
-              <li><span lang="nl">Locatie en herleidbare gegevens verwijderd bij delen (standaard aan)</span><span lang="en">Location and identifying data removed when sharing (on by default)</span></li>
-              <li><span lang="nl">Eigen kleur voor je kluis</span><span lang="en">Your own colour for the safe</span></li>
-              <li><span lang="nl">1 tot 4 extra kluizen, elk met eigen PIN, naam, kleur en vingerafdruk</span><span lang="en">1 to 4 extra safes, each with its own PIN, name, colour and fingerprint</span> <span class="badge">Full</span></li>
-              <li><span lang="nl"><em>Sinds je laatste bezoek</em>: laatste opening en foute PIN-pogingen</span><span lang="en"><em>Since your last visit</em>: last opening and wrong PIN attempts</span> <span class="badge">Full</span></li>
-            </ul>
-          </div>
+        <summary><span lang="nl">Ontgrendelen en beveiliging</span><span lang="en">Unlocking and security</span></summary>
+        <div class="body">
+          <ul>
+            <li><span lang="nl">PIN (4–16 cijfers) of patroon, met wachttijd na foute pogingen</span><span lang="en">PIN (4–16 digits) or pattern, with a delay after wrong attempts</span></li>
+            <li><span lang="nl">Ontgrendelen met vingerafdruk</span><span lang="en">Fingerprint unlock</span></li>
+            <li><span lang="nl">Kluiswachtwoord en <em>PIN vergeten?</em></span><span lang="en">Safe password and <em>Forgot your PIN?</em></span></li>
+            <li><span lang="nl">Automatisch vergrendelen: app verlaten, scherm uit, inactiviteit</span><span lang="en">Auto-lock: leaving the app, screen off, inactivity</span></li>
+            <li><span lang="nl">Vergrendelen met het scherm naar beneden</span><span lang="en">Lock when placed face down</span></li>
+            <li><span lang="nl">Altijd aan: AES-256, screenshots zwart, toetsenbord leert niet, geen internet, geen account</span><span lang="en">Always on: AES-256, screenshots blocked, keyboard doesn't learn, no internet, no account</span></li>
+            <li><span lang="nl">Locatie en herleidbare gegevens verwijderd bij delen (standaard aan)</span><span lang="en">Location and identifying data removed when sharing (on by default)</span></li>
+            <li><span lang="nl">Eigen kleur voor je kluis</span><span lang="en">Your own colour for the safe</span></li>
+            <li><span lang="nl">1 tot 4 extra kluizen, elk met eigen PIN, naam, kleur en vingerafdruk</span><span lang="en">1 to 4 extra safes, each with its own PIN, name, colour and fingerprint</span> <span class="badge">Full</span></li>
+            <li><span lang="nl"><em>Sinds je laatste bezoek</em>: laatste opening en foute PIN-pogingen</span><span lang="en"><em>Since your last visit</em>: last opening and wrong PIN attempts</span> <span class="badge">Full</span></li>
+          </ul>
         </div>
       </details>
       <details class="more cmp">
-        <summary><span lang="nl">Camouflage</span><span lang="en">Camouflage</span><span class="cmp-count">Free 1 · Full 2</span></summary>
-        <div class="body cmp-cols">
-          <div>
-            <h4>Free</h4>
-            <ul>
-              <li><span lang="nl">Gewoon zichtbaar als AI-Safe</span><span lang="en">Plainly visible as AI-Safe</span></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Full</h4>
-            <ul>
-              <li><span lang="nl">Gewoon zichtbaar als AI-Safe</span><span lang="en">Plainly visible as AI-Safe</span></li>
-              <li><span lang="nl">Vermomming als werkende Volume Manager, Rekenmachine of Notities</span><span lang="en">Disguise as a working Volume Manager, Calculator or Notes app</span> <span class="badge">Full</span></li>
-            </ul>
-          </div>
+        <summary><span lang="nl">Camouflage</span><span lang="en">Camouflage</span></summary>
+        <div class="body">
+          <ul>
+            <li><span lang="nl">Gewoon zichtbaar als AI-Safe</span><span lang="en">Plainly visible as AI-Safe</span></li>
+            <li><span lang="nl">Vermomming als werkende Volume Manager, Rekenmachine of Notities</span><span lang="en">Disguise as a working Volume Manager, Calculator or Notes app</span> <span class="badge">Full</span></li>
+          </ul>
         </div>
       </details>
       <details class="more cmp">
-        <summary><span lang="nl">Toevoegen en vastleggen</span><span lang="en">Adding and capturing</span><span class="cmp-count">Free 7 · Full 9</span></summary>
-        <div class="body cmp-cols">
-          <div>
-            <h4>Free</h4>
-            <ul>
-              <li><span lang="nl">Foto's en video's via de fotokiezer, zonder limiet</span><span lang="en">Photos and videos via the photo picker, no limit</span></li>
-              <li><span lang="nl">Documenten: PDF, Word, OpenDocument, RTF, Markdown, HTML, tekst</span><span lang="en">Documents: PDF, Word, OpenDocument, RTF, Markdown, HTML, text</span></li>
-              <li><span lang="nl">Hele galerijmap importeren, met submappen</span><span lang="en">Import a whole gallery folder, with subfolders</span></li>
-              <li><span lang="nl">Delen naar de kluis vanuit andere apps</span><span lang="en">Share to the safe from other apps</span></li>
-              <li><span lang="nl">Originelen verwijderen + herinnering aan de cloudkopie</span><span lang="en">Remove originals + reminder about the cloud copy</span></li>
-              <li><span lang="nl">Camera direct in de kluis, met rasterlijnen en zelfontspanner</span><span lang="en">Camera straight into the safe, with grid lines and self-timer</span></li>
-              <li><span lang="nl">Versleuteld bestand van iemand anders openen</span><span lang="en">Open an encrypted file from someone else</span></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Full</h4>
-            <ul>
-              <li><span lang="nl">Foto's en video's via de fotokiezer, zonder limiet</span><span lang="en">Photos and videos via the photo picker, no limit</span></li>
-              <li><span lang="nl">Documenten: PDF, Word, OpenDocument, RTF, Markdown, HTML, tekst</span><span lang="en">Documents: PDF, Word, OpenDocument, RTF, Markdown, HTML, text</span></li>
-              <li><span lang="nl">Hele galerijmap importeren, met submappen</span><span lang="en">Import a whole gallery folder, with subfolders</span></li>
-              <li><span lang="nl">Delen naar de kluis vanuit andere apps</span><span lang="en">Share to the safe from other apps</span></li>
-              <li><span lang="nl">Originelen verwijderen + herinnering aan de cloudkopie</span><span lang="en">Remove originals + reminder about the cloud copy</span></li>
-              <li><span lang="nl">Camera direct in de kluis, met rasterlijnen en zelfontspanner</span><span lang="en">Camera straight into the safe, with grid lines and self-timer</span></li>
-              <li><span lang="nl">Versleuteld bestand van iemand anders openen</span><span lang="en">Open an encrypted file from someone else</span></li>
-              <li><span lang="nl">Documentscanner: randen, perspectief, zwart-wit, PDF</span><span lang="en">Document scanner: edges, perspective, black & white, PDF</span> <span class="badge">Full</span></li>
-              <li><span lang="nl">Spraakmemo's opnemen en audiobestanden toevoegen</span><span lang="en">Record voice memos and add audio files</span> <span class="badge">Full</span></li>
-            </ul>
-          </div>
+        <summary><span lang="nl">Toevoegen en vastleggen</span><span lang="en">Adding and capturing</span></summary>
+        <div class="body">
+          <ul>
+            <li><span lang="nl">Foto's en video's via de fotokiezer, zonder limiet</span><span lang="en">Photos and videos via the photo picker, no limit</span></li>
+            <li><span lang="nl">Documenten: PDF, Word, OpenDocument, RTF, Markdown, HTML, tekst</span><span lang="en">Documents: PDF, Word, OpenDocument, RTF, Markdown, HTML, text</span></li>
+            <li><span lang="nl">Hele galerijmap importeren, met submappen</span><span lang="en">Import a whole gallery folder, with subfolders</span></li>
+            <li><span lang="nl">Delen naar de kluis vanuit andere apps</span><span lang="en">Share to the safe from other apps</span></li>
+            <li><span lang="nl">Originelen verwijderen + herinnering aan de cloudkopie</span><span lang="en">Remove originals + reminder about the cloud copy</span></li>
+            <li><span lang="nl">Camera direct in de kluis, met rasterlijnen en zelfontspanner</span><span lang="en">Camera straight into the safe, with grid lines and self-timer</span></li>
+            <li><span lang="nl">Versleuteld bestand van iemand anders openen</span><span lang="en">Open an encrypted file from someone else</span></li>
+            <li><span lang="nl">Documentscanner: randen, perspectief, zwart-wit, PDF</span><span lang="en">Document scanner: edges, perspective, black & white, PDF</span> <span class="badge">Full</span></li>
+            <li><span lang="nl">Spraakmemo's opnemen en audiobestanden toevoegen</span><span lang="en">Record voice memos and add audio files</span> <span class="badge">Full</span></li>
+          </ul>
         </div>
       </details>
       <details class="more cmp">
-        <summary><span lang="nl">Ordenen en terugvinden</span><span lang="en">Organising and finding</span><span class="cmp-count">Free 9 · Full 11</span></summary>
-        <div class="body cmp-cols">
-          <div>
-            <h4>Free</h4>
-            <ul>
-              <li><span lang="nl">Mappen, submappen, omslag, icoon en kleur per map</span><span lang="en">Folders, subfolders, cover, icon and colour per folder</span></li>
-              <li><span lang="nl">Zoeken op naam in de hele kluis</span><span lang="en">Search by name in the whole safe</span></li>
-              <li><span lang="nl">Filter op foto's, video's, documenten of audio</span><span lang="en">Filter on photos, videos, documents or audio</span></li>
-              <li><span lang="nl">Sorteren (ook op toegevoegd), per map onthouden, kop per maand</span><span lang="en">Sorting (also by date added), remembered per folder, a heading per month</span></li>
-              <li><span lang="nl">Mappen bovenaan vastzetten</span><span lang="en">Pin folders to the top</span></li>
-              <li><span lang="nl">Slepend selecteren, verplaatsen, kopiëren, hernoemen</span><span lang="en">Drag-select, move, copy, rename</span></li>
-              <li><span lang="nl">Ongedaan maken na verplaatsen of verwijderen</span><span lang="en">Undo after moving or deleting</span></li>
-              <li><span lang="nl">Favorieten, prullenbak, raster 2–24 per rij of lijst</span><span lang="en">Favourites, recycle bin, grid 2–24 per row or list</span></li>
-              <li><span lang="nl">Zichtbaar maken (terug naar de galerij)</span><span lang="en">Unhide (back to the gallery)</span></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Full</h4>
-            <ul>
-              <li><span lang="nl">Mappen, submappen, omslag, icoon en kleur per map</span><span lang="en">Folders, subfolders, cover, icon and colour per folder</span></li>
-              <li><span lang="nl">Zoeken op naam in de hele kluis</span><span lang="en">Search by name in the whole safe</span></li>
-              <li><span lang="nl">Filter op foto's, video's, documenten of audio</span><span lang="en">Filter on photos, videos, documents or audio</span></li>
-              <li><span lang="nl">Sorteren (ook op toegevoegd), per map onthouden, kop per maand</span><span lang="en">Sorting (also by date added), remembered per folder, a heading per month</span></li>
-              <li><span lang="nl">Mappen bovenaan vastzetten</span><span lang="en">Pin folders to the top</span></li>
-              <li><span lang="nl">Slepend selecteren, verplaatsen, kopiëren, hernoemen</span><span lang="en">Drag-select, move, copy, rename</span></li>
-              <li><span lang="nl">Ongedaan maken na verplaatsen of verwijderen</span><span lang="en">Undo after moving or deleting</span></li>
-              <li><span lang="nl">Favorieten, prullenbak, raster 2–24 per rij of lijst</span><span lang="en">Favourites, recycle bin, grid 2–24 per row or list</span></li>
-              <li><span lang="nl">Zichtbaar maken (terug naar de galerij)</span><span lang="en">Unhide (back to the gallery)</span></li>
-              <li><span lang="nl">Statistieken: inhoud, speelduur, opslag, back-upstatus</span><span lang="en">Statistics: content, playing time, storage, backup status</span> <span class="badge">Full</span></li>
-              <li><span lang="nl">Kluis op de SD-kaart, kluis verplaatsen</span><span lang="en">Safe on the SD card, move the safe</span> <span class="badge">Full</span></li>
-            </ul>
-          </div>
+        <summary><span lang="nl">Ordenen en terugvinden</span><span lang="en">Organising and finding</span></summary>
+        <div class="body">
+          <ul>
+            <li><span lang="nl">Mappen, submappen, omslag, icoon en kleur per map</span><span lang="en">Folders, subfolders, cover, icon and colour per folder</span></li>
+            <li><span lang="nl">Zoeken op naam in de hele kluis</span><span lang="en">Search by name in the whole safe</span></li>
+            <li><span lang="nl">Filter op foto's, video's, documenten of audio</span><span lang="en">Filter on photos, videos, documents or audio</span></li>
+            <li><span lang="nl">Sorteren (ook op toegevoegd), per map onthouden, kop per maand</span><span lang="en">Sorting (also by date added), remembered per folder, a heading per month</span></li>
+            <li><span lang="nl">Mappen bovenaan vastzetten</span><span lang="en">Pin folders to the top</span></li>
+            <li><span lang="nl">Slepend selecteren, verplaatsen, kopiëren, hernoemen</span><span lang="en">Drag-select, move, copy, rename</span></li>
+            <li><span lang="nl">Ongedaan maken na verplaatsen of verwijderen</span><span lang="en">Undo after moving or deleting</span></li>
+            <li><span lang="nl">Favorieten, prullenbak, raster 2–24 per rij of lijst</span><span lang="en">Favourites, recycle bin, grid 2–24 per row or list</span></li>
+            <li><span lang="nl">Zichtbaar maken (terug naar de galerij)</span><span lang="en">Unhide (back to the gallery)</span></li>
+            <li><span lang="nl">Statistieken: inhoud, speelduur, opslag, back-upstatus</span><span lang="en">Statistics: content, playing time, storage, backup status</span> <span class="badge">Full</span></li>
+            <li><span lang="nl">Kluis op de SD-kaart, kluis verplaatsen</span><span lang="en">Safe on the SD card, move the safe</span> <span class="badge">Full</span></li>
+          </ul>
         </div>
       </details>
       <details class="more cmp">
-        <summary><span lang="nl">Bekijken en afspelen</span><span lang="en">Viewing and playing</span><span class="cmp-count">Free 5 · Full 10</span></summary>
-        <div class="body cmp-cols">
-          <div>
-            <h4>Free</h4>
-            <ul>
-              <li><span lang="nl">Foto's, video's, audio en documenten openen in de app</span><span lang="en">Open photos, videos, audio and documents inside the app</span></li>
-              <li><span lang="nl">Zoomen; vegen voor volgende, omlaag sluiten, omhoog info</span><span lang="en">Zoom; swipe for next, down to close, up for info</span></li>
-              <li><span lang="nl">Videospeler: spoelen, ±10 s, dempen, volledig scherm, herhalen, verder kijken</span><span lang="en">Video player: seek, ±10 s, mute, full screen, repeat, resume</span></li>
-              <li><span lang="nl">Helderheid en volume vegen in volledig scherm</span><span lang="en">Swipe brightness and volume in full screen</span></li>
-              <li><span lang="nl">Openen met een andere app (na waarschuwing)</span><span lang="en">Open with another app (after a warning)</span></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Full</h4>
-            <ul>
-              <li><span lang="nl">Foto's, video's, audio en documenten openen in de app</span><span lang="en">Open photos, videos, audio and documents inside the app</span></li>
-              <li><span lang="nl">Zoomen; vegen voor volgende, omlaag sluiten, omhoog info</span><span lang="en">Zoom; swipe for next, down to close, up for info</span></li>
-              <li><span lang="nl">Videospeler: spoelen, ±10 s, dempen, volledig scherm, herhalen, verder kijken</span><span lang="en">Video player: seek, ±10 s, mute, full screen, repeat, resume</span></li>
-              <li><span lang="nl">Helderheid en volume vegen in volledig scherm</span><span lang="en">Swipe brightness and volume in full screen</span></li>
-              <li><span lang="nl">Openen met een andere app (na waarschuwing)</span><span lang="en">Open with another app (after a warning)</span></li>
-              <li><span lang="nl">Snelheid 0,1×–2,5×, standaardsnelheid, snelheid per video onthouden</span><span lang="en">Speed 0.1×–2.5×, default speed, speed remembered per video</span> <span class="badge">Full</span></li>
-              <li><span lang="nl">Beeld voor beeld, laatste beeld vasthouden, frame als foto opslaan</span><span lang="en">Frame by frame, hold last frame, save a frame as a photo</span> <span class="badge">Full</span></li>
-              <li><span lang="nl">A-B herhalen</span><span lang="en">A-B repeat</span> <span class="badge">Full</span></li>
-              <li><span lang="nl">Audio doorspelen naar het volgende bestand</span><span lang="en">Audio continues with the next file</span> <span class="badge">Full</span></li>
-              <li><span lang="nl">Bewegende GIF's en WebP-animaties</span><span lang="en">Animated GIFs and WebP animations</span> <span class="badge">Full</span></li>
-            </ul>
-          </div>
+        <summary><span lang="nl">Bekijken en afspelen</span><span lang="en">Viewing and playing</span></summary>
+        <div class="body">
+          <ul>
+            <li><span lang="nl">Foto's, video's, audio en documenten openen in de app</span><span lang="en">Open photos, videos, audio and documents inside the app</span></li>
+            <li><span lang="nl">Zoomen; vegen voor volgende, omlaag sluiten, omhoog info</span><span lang="en">Zoom; swipe for next, down to close, up for info</span></li>
+            <li><span lang="nl">Videospeler: spoelen, ±10 s, dempen, volledig scherm, herhalen, verder kijken</span><span lang="en">Video player: seek, ±10 s, mute, full screen, repeat, resume</span></li>
+            <li><span lang="nl">Helderheid en volume vegen in volledig scherm</span><span lang="en">Swipe brightness and volume in full screen</span></li>
+            <li><span lang="nl">Openen met een andere app (na waarschuwing)</span><span lang="en">Open with another app (after a warning)</span></li>
+            <li><span lang="nl">Snelheid 0,1×–2,5×, standaardsnelheid, snelheid per video onthouden</span><span lang="en">Speed 0.1×–2.5×, default speed, speed remembered per video</span> <span class="badge">Full</span></li>
+            <li><span lang="nl">Beeld voor beeld, laatste beeld vasthouden, frame als foto opslaan</span><span lang="en">Frame by frame, hold last frame, save a frame as a photo</span> <span class="badge">Full</span></li>
+            <li><span lang="nl">A-B herhalen</span><span lang="en">A-B repeat</span> <span class="badge">Full</span></li>
+            <li><span lang="nl">Audio doorspelen naar het volgende bestand</span><span lang="en">Audio continues with the next file</span> <span class="badge">Full</span></li>
+            <li><span lang="nl">Bewegende GIF's en WebP-animaties</span><span lang="en">Animated GIFs and WebP animations</span> <span class="badge">Full</span></li>
+          </ul>
         </div>
       </details>
       <details class="more cmp">
-        <summary><span lang="nl">Diavoorstelling</span><span lang="en">Slideshow</span><span class="cmp-count">Free 3 · Full 7</span></summary>
-        <div class="body cmp-cols">
-          <div>
-            <h4>Free</h4>
-            <ul>
-              <li><span lang="nl">Map, favorieten of selectie; foto's, video's of gemengd</span><span lang="en">Folder, favourites or selection; photos, videos or mixed</span></li>
-              <li><span lang="nl">Tijd per foto, willekeurig, submappen, aftelbalk</span><span lang="en">Time per photo, shuffle, subfolders, countdown bar</span></li>
-              <li><span lang="nl">Overgang <em>Geen</em> en één eenvoudige</span><span lang="en">Transition <em>None</em> and one simple one</span></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Full</h4>
-            <ul>
-              <li><span lang="nl">Map, favorieten of selectie; foto's, video's of gemengd</span><span lang="en">Folder, favourites or selection; photos, videos or mixed</span></li>
-              <li><span lang="nl">Tijd per foto, willekeurig, submappen, aftelbalk</span><span lang="en">Time per photo, shuffle, subfolders, countdown bar</span></li>
-              <li><span lang="nl">Overgang <em>Geen</em> en één eenvoudige</span><span lang="en">Transition <em>None</em> and one simple one</span></li>
-              <li><span lang="nl">Alle 20 overgangen en de duur van de overgang</span><span lang="en">All 20 transitions and the transition duration</span> <span class="badge">Full</span></li>
-              <li><span lang="nl">Beweging (Ken Burns), rustig of sterk</span><span lang="en">Motion (Ken Burns), calm or strong</span> <span class="badge">Full</span></li>
-              <li><span lang="nl">Muziek uit de kluis</span><span lang="en">Music from the safe</span> <span class="badge">Full</span></li>
-              <li><span lang="nl">Onderschrift met datum (en naam)</span><span lang="en">Caption with date (and name)</span> <span class="badge">Full</span></li>
-            </ul>
-          </div>
+        <summary><span lang="nl">Diavoorstelling</span><span lang="en">Slideshow</span></summary>
+        <div class="body">
+          <ul>
+            <li><span lang="nl">Map, favorieten of selectie; foto's, video's of gemengd</span><span lang="en">Folder, favourites or selection; photos, videos or mixed</span></li>
+            <li><span lang="nl">Tijd per foto, willekeurig, submappen, aftelbalk</span><span lang="en">Time per photo, shuffle, subfolders, countdown bar</span></li>
+            <li><span lang="nl">Overgang <em>Geen</em> en één eenvoudige</span><span lang="en">Transition <em>None</em> and one simple one</span></li>
+            <li><span lang="nl">Alle 20 overgangen en de duur van de overgang</span><span lang="en">All 20 transitions and the transition duration</span> <span class="badge">Full</span></li>
+            <li><span lang="nl">Beweging (Ken Burns), rustig of sterk</span><span lang="en">Motion (Ken Burns), calm or strong</span> <span class="badge">Full</span></li>
+            <li><span lang="nl">Muziek uit de kluis</span><span lang="en">Music from the safe</span> <span class="badge">Full</span></li>
+            <li><span lang="nl">Onderschrift met datum (en naam)</span><span lang="en">Caption with date (and name)</span> <span class="badge">Full</span></li>
+          </ul>
         </div>
       </details>
       <details class="more cmp">
-        <summary><span lang="nl">Bewerken</span><span lang="en">Editing</span><span class="cmp-count">Free 3 · Full 6</span></summary>
-        <div class="body cmp-cols">
-          <div>
-            <h4>Free</h4>
-            <ul>
-              <li><span lang="nl">Hernoemen, mapomslag kiezen</span><span lang="en">Rename, choose a folder cover</span></li>
-              <li><span lang="nl">Redigeren van foto's en PDF's: echt onleesbaar maken</span><span lang="en">Redact photos and PDFs: make things truly unreadable</span></li>
-              <li><span lang="nl">Foto als achtergrond (na waarschuwing)</span><span lang="en">Photo as wallpaper (after a warning)</span></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Full</h4>
-            <ul>
-              <li><span lang="nl">Hernoemen, mapomslag kiezen</span><span lang="en">Rename, choose a folder cover</span></li>
-              <li><span lang="nl">Redigeren van foto's en PDF's: echt onleesbaar maken</span><span lang="en">Redact photos and PDFs: make things truly unreadable</span></li>
-              <li><span lang="nl">Foto als achtergrond (na waarschuwing)</span><span lang="en">Photo as wallpaper (after a warning)</span></li>
-              <li><span lang="nl">Foto's bijsnijden en draaien, video's inkorten</span><span lang="en">Crop and rotate photos, trim videos</span> <span class="badge">Full</span></li>
-              <li><span lang="nl">Foto aanpassen: helderheid, contrast, verzadiging, filters</span><span lang="en">Adjust photos: brightness, contrast, saturation, filters</span> <span class="badge">Full</span></li>
-              <li><span lang="nl">Andere documenten redigeren tot een PDF</span><span lang="en">Redact other documents into a PDF</span> <span class="badge">Full</span></li>
-            </ul>
-          </div>
+        <summary><span lang="nl">Bewerken</span><span lang="en">Editing</span></summary>
+        <div class="body">
+          <ul>
+            <li><span lang="nl">Hernoemen, mapomslag kiezen</span><span lang="en">Rename, choose a folder cover</span></li>
+            <li><span lang="nl">Redigeren van foto's en PDF's: echt onleesbaar maken</span><span lang="en">Redact photos and PDFs: make things truly unreadable</span></li>
+            <li><span lang="nl">Foto als achtergrond (na waarschuwing)</span><span lang="en">Photo as wallpaper (after a warning)</span></li>
+            <li><span lang="nl">Foto's bijsnijden en draaien, video's inkorten</span><span lang="en">Crop and rotate photos, trim videos</span> <span class="badge">Full</span></li>
+            <li><span lang="nl">Foto aanpassen: helderheid, contrast, verzadiging, filters</span><span lang="en">Adjust photos: brightness, contrast, saturation, filters</span> <span class="badge">Full</span></li>
+            <li><span lang="nl">Andere documenten redigeren tot een PDF</span><span lang="en">Redact other documents into a PDF</span> <span class="badge">Full</span></li>
+          </ul>
         </div>
       </details>
       <details class="more cmp">
-        <summary><span lang="nl">Delen</span><span lang="en">Sharing</span><span class="cmp-count">Free 2 · Full 5</span></summary>
-        <div class="body cmp-cols">
-          <div>
-            <h4>Free</h4>
-            <ul>
-              <li><span lang="nl">Delen met een app zonder kopie op je telefoon (na waarschuwing)</span><span lang="en">Share to an app without a copy on your phone (after a warning)</span></li>
-              <li><span lang="nl">Versleuteld deelbestand ontvangen en openen</span><span lang="en">Receive and open an encrypted share file</span></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Full</h4>
-            <ul>
-              <li><span lang="nl">Delen met een app zonder kopie op je telefoon (na waarschuwing)</span><span lang="en">Share to an app without a copy on your phone (after a warning)</span></li>
-              <li><span lang="nl">Versleuteld deelbestand ontvangen en openen</span><span lang="en">Receive and open an encrypted share file</span></li>
-              <li><span lang="nl">Versleuteld delen: zelf een deelbestand maken</span><span lang="en">Encrypted share: create a share file yourself</span> <span class="badge">Full</span></li>
-              <li><span lang="nl">Wachtzin als QR-code tonen en scannen</span><span lang="en">Show and scan the passphrase as a QR code</span> <span class="badge">Full</span></li>
-              <li><span lang="nl">Afdrukken van foto's en PDF's</span><span lang="en">Print photos and PDFs</span> <span class="badge">Full</span></li>
-            </ul>
-          </div>
+        <summary><span lang="nl">Delen</span><span lang="en">Sharing</span></summary>
+        <div class="body">
+          <ul>
+            <li><span lang="nl">Delen met een app zonder kopie op je telefoon (na waarschuwing)</span><span lang="en">Share to an app without a copy on your phone (after a warning)</span></li>
+            <li><span lang="nl">Versleuteld deelbestand ontvangen en openen</span><span lang="en">Receive and open an encrypted share file</span></li>
+            <li><span lang="nl">Versleuteld delen: zelf een deelbestand maken</span><span lang="en">Encrypted share: create a share file yourself</span> <span class="badge">Full</span></li>
+            <li><span lang="nl">Wachtzin als QR-code tonen en scannen</span><span lang="en">Show and scan the passphrase as a QR code</span> <span class="badge">Full</span></li>
+            <li><span lang="nl">Afdrukken van foto's en PDF's</span><span lang="en">Print photos and PDFs</span> <span class="badge">Full</span></li>
+          </ul>
         </div>
       </details>
       <details class="more cmp">
-        <summary><span lang="nl">Back-up en app</span><span lang="en">Backup and app</span><span class="cmp-count">Free 3 · Full 3</span></summary>
-        <div class="body cmp-cols">
-          <div>
-            <h4>Free</h4>
-            <ul>
-              <li><span lang="nl">Versleutelde back-ups met eigen wachtwoord, herinnering, herstellen</span><span lang="en">Encrypted backups with their own password, reminder, restore</span></li>
-              <li><span lang="nl">Back-up controleren zonder terug te zetten</span><span lang="en">Check a backup without restoring it</span></li>
-              <li><span lang="nl">Thema, 6 talen, uitleg en FAQ, controleren op updates</span><span lang="en">Theme, 6 languages, help and FAQ, check for updates</span></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Full</h4>
-            <ul>
-              <li><span lang="nl">Versleutelde back-ups met eigen wachtwoord, herinnering, herstellen</span><span lang="en">Encrypted backups with their own password, reminder, restore</span></li>
-              <li><span lang="nl">Back-up controleren zonder terug te zetten</span><span lang="en">Check a backup without restoring it</span></li>
-              <li><span lang="nl">Thema, 6 talen, uitleg en FAQ, controleren op updates</span><span lang="en">Theme, 6 languages, help and FAQ, check for updates</span></li>
-            </ul>
-          </div>
+        <summary><span lang="nl">Back-up en app</span><span lang="en">Backup and app</span></summary>
+        <div class="body">
+          <ul>
+            <li><span lang="nl">Versleutelde back-ups met eigen wachtwoord, herinnering, herstellen</span><span lang="en">Encrypted backups with their own password, reminder, restore</span></li>
+            <li><span lang="nl">Back-up controleren zonder terug te zetten</span><span lang="en">Check a backup without restoring it</span></li>
+            <li><span lang="nl">Thema, 6 talen, uitleg en FAQ, controleren op updates</span><span lang="en">Theme, 6 languages, help and FAQ, check for updates</span></li>
+          </ul>
         </div>
       </details>
     </div>
