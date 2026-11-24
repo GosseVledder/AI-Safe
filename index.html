@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI-Safe – houd je privégegevens safe voor AI</title>
-<meta name="description" content="Je privégegevens en documenten zijn momenteel niet safe voor AI. AI-Safe is een versleutelde, offline kluis voor je foto's, video's en documenten, buiten de galerij, de cloud en het bereik van AI.">
+<title>AI-Safe – Android-app die je privégegevens safe houdt voor AI</title>
+<meta name="description" content="Je privégegevens en documenten zijn momenteel niet safe voor AI. AI-Safe is een Android-app: een versleutelde, offline kluis voor je foto's, video's en documenten, buiten de galerij, de cloud en het bereik van AI.">
 <meta name="theme-color" content="#07121e">
 <link rel="icon" href="icon-safe.svg" type="image/svg+xml">
 <style>
@@ -79,8 +79,6 @@ nav.links a:hover{color:#fff}
 .grad{background:linear-gradient(90deg,#5eead4,#38bdf8 55%,#a5b4fc);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .lead{font-size:clamp(1.05rem,1.6vw,1.2rem);color:rgba(234,243,248,.85);max-width:34em;margin-bottom:28px}
 .cta{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
-.promo{display:inline-flex;align-items:center;gap:10px;margin:0;padding:6px 14px 6px 10px;border-radius:999px;background:rgba(242,119,107,.12);border:1px solid rgba(242,119,107,.35);color:#ffd3cd;font-size:.88rem;font-weight:700}
-.promo .dot{width:8px;height:8px;border-radius:50%;background:#f2776b;flex:none}
 .howto{display:inline-flex;align-items:center;gap:8px;color:#5eead4;text-decoration:none;font-weight:600;font-size:.95rem}
 .howto svg{width:18px;height:18px}
 .howto .arrow{transition:transform .2s}
@@ -169,9 +167,10 @@ details.more .body li{margin:6px 0}
 details.more .body strong{color:var(--text);font-weight:600}
 details.more .body h4{font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;color:var(--text);margin:14px 0 4px}
 details.more .body h4:first-child{margin-top:0}
+
 .editions{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
-.editions > p{color:var(--muted);margin:6px 0 0}
 details.cmp{border-top:1px solid var(--line);margin-top:14px;padding-top:12px}
+details.cmp:first-child{border-top:0;margin-top:0;padding-top:0}
 details.cmp > summary{font-size:1rem;color:var(--text)}
 
 /* features */
@@ -183,8 +182,6 @@ details.cmp > summary{font-size:1rem;color:var(--text)}
 .extra{margin-top:16px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 10%,var(--surface)),var(--surface));border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
 .extra .ic{margin:0}
 .extra p{color:var(--muted);margin:0}
-.editions .count{font-size:.8rem;color:var(--muted);margin:10px 0 0}
-.badge{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);vertical-align:middle;margin-left:6px}
 @media (max-width:560px){.extra{grid-template-columns:1fr}}
 
 /* steps */
@@ -222,13 +219,40 @@ footer{background:#07121e;color:rgba(234,243,248,.7);padding:32px 0;font-size:.8
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
 footer a{color:#5eead4}
 footer .brand{font-size:.95rem}
+
+/* illustrations (owner 2026-11-24: every part gets at least one picture) */
+.art{height:118px;margin:0 0 16px;border-radius:14px;border:1px solid var(--line);overflow:hidden;
+  background:radial-gradient(120% 120% at 0% 0%,var(--accent-soft),transparent 60%),var(--surface-2)}
+.art svg{display:block;width:100%;height:100%}
+.art-sm{height:96px}
+.art-wide{height:150px;max-width:560px;margin:0 0 28px}
+.art-dark{width:min(320px,100%);height:120px;margin:0 auto 18px;border-color:rgba(255,255,255,.1);background:radial-gradient(80% 90% at 50% 40%,rgba(61,220,132,.16),transparent 70%)}
+.art .ink{color:var(--text)} .art .acc{color:var(--accent)} .art .mut{color:var(--muted)} .art .rsk{color:var(--risk)} .art .on{color:#fff}
+.art .ph{fill:var(--surface);stroke:var(--line);stroke-width:2}
+.art .scr{fill:var(--surface-2)}
+.art .blk{fill:#05080d}
+.art .fa{fill:var(--accent)} .art .fa2{fill:var(--accent);opacity:.28} .art .fm{fill:var(--muted);opacity:.28}
+.art .soft{fill:var(--accent-soft)} .art .bad{fill:var(--risk)}
+.art .dot{fill:none;stroke:var(--muted);stroke-width:1.6}
+.art .key{fill:var(--surface);stroke:var(--line);stroke-width:1.5}
+.art .la{fill:none;stroke:var(--accent);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.art .ln{fill:none;stroke:var(--muted);stroke-width:2;stroke-dasharray:3 6;stroke-linecap:round;opacity:.8}
+.art text{font:700 11px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;fill:var(--muted)}
+.art .mono-t{font:600 12px ui-monospace,SFMono-Regular,Consolas,monospace;fill:var(--muted)}
+.extra .art{width:240px;height:118px;margin:0;align-self:start}
+@media (max-width:560px){.extra .art{width:100%;height:118px}}
+.step .art{margin-top:-2px}
+/* Android, said up front */
+.plat{font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:999px;background:rgba(61,220,132,.16);color:#7ee8a8;border:1px solid rgba(61,220,132,.35)}
+.navkeys{display:flex;justify-content:center;gap:26px;margin-top:10px;color:#5d6f84;font-size:.7rem;line-height:1}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.1 9.2 4.5 4.5 0 0 0 7 18z"/></symbol><symbol id="i-photo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="M21 16l-5-5-9 9"/></symbol><symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6z"/><path d="M14 2v5h5M9 13h7M9 17h5"/></symbol><symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></symbol><symbol id="i-cam" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol><symbol id="i-safe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="17" rx="3"/><rect x="6" y="6" width="12" height="11" rx="1.5"/><circle cx="11" cy="11.5" r="2.4"/><path d="M15.5 10v3M6 20v1.5M18 20v1.5"/></symbol><symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></symbol><symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol><symbol id="i-kbd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></symbol><symbol id="i-ai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol><symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol><symbol id="i-sd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2h8l4 4v16H7z"/><path d="M10 5v3M13 5v3M16 7v1"/></symbol><symbol id="i-usb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="9" width="8" height="13" rx="2"/><path d="M9 9V3h6v6M11 5h.01M13 5h.01"/></symbol><symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol><symbol id="i-scan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3M7 12h10"/></symbol><symbol id="i-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></symbol><symbol id="i-calc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h4"/></symbol><symbol id="i-notes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h11l3 3v15H5z"/><path d="M8 9h8M8 13h8M8 17h5"/></symbol><symbol id="i-android" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 17a7.5 7.5 0 0 1 15 0z"/><path d="M7.6 10.4L5.8 7.6M16.4 10.4l1.8-2.8"/><circle cx="9.3" cy="13.6" r=".9" fill="currentColor"/><circle cx="14.7" cy="13.6" r=".9" fill="currentColor"/></symbol><symbol id="i-qr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3z"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM18 14h3M14 18v3"/></symbol><symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol><symbol id="i-timer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></symbol><symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></symbol><symbol id="i-dl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 11l6 6 6-6M5 21h14"/></symbol><symbol id="i-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h1M7 8v8M11 5v14M15 9v6M19 7v10"/></symbol><symbol id="i-q" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H9l-5 4z"/><path d="M10 8.5a2 2 0 1 1 2.8 1.8c-.5.3-.8.7-.8 1.2M12 13.5h.01"/></symbol><symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></symbol><symbol id="i-gallery" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="15" height="13" rx="2"/><path d="M3 7v12a2 2 0 0 0 2 2h12"/></symbol><symbol id="i-app" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 12h6M12 9v6"/></symbol></svg>
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="icon-safe.svg" alt="">AI-Safe</a>
+    <a class="brand" href="#top"><img src="icon-safe.svg" alt="">AI-Safe <span class="plat">Android</span></a>
     <nav class="links">
       <a href="#waarom"><span lang="nl">Waarom</span><span lang="en">Why</span></a>
       <a href="#features"><span lang="nl">Features</span><span lang="en">Features</span></a>
@@ -258,8 +282,8 @@ footer .brand{font-size:.95rem}
         <span lang="en">Keep your private data<br> <span class="grad">safe from AI.</span></span>
       </h1>
       <p class="lead">
-        <span lang="nl">AI-Safe is een kluis op je Android-telefoon voor je foto's, video's en documenten. Versleuteld, offline en alleen voor jou.</span>
-        <span lang="en">AI-Safe is a safe on your Android phone for your photos, videos and documents. Encrypted, offline and for you only.</span>
+        <span lang="nl">AI-Safe is een Android-app: een kluis op je telefoon voor je foto's, video's en documenten. Versleuteld, offline en alleen voor jou.</span>
+        <span lang="en">AI-Safe is an Android app: a safe on your phone for your photos, videos and documents. Encrypted, offline and for you only.</span>
       </p>
       <p class="why">
         <span lang="nl">Je galerij, je cloud en je toetsenbord worden steeds vaker door AI gelezen. Wat in AI-Safe staat, niet.</span>
@@ -268,7 +292,7 @@ footer .brand{font-size:.95rem}
       <div class="hero-cta">
         <a class="btn" href="#download">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 11l6 6 6-6M5 21h14"/></svg>
-          <span lang="nl">Download</span><span lang="en">Download</span>
+          <span lang="nl">Download voor Android</span><span lang="en">Download for Android</span>
         </a>
         <a class="btn-ghost" href="#waarom"><span lang="nl">Waarom AI-Safe?</span><span lang="en">Why AI-Safe?</span></a>
       </div>
@@ -296,6 +320,7 @@ footer .brand{font-size:.95rem}
           <div style="background:linear-gradient(135deg,#5b5b5b,#a9a9a9)"></div>
         </div>
         <div class="fab">+</div>
+        <div class="navkeys"><span>◁</span><span>○</span><span>□</span></div>
       </div>
       <div class="float f1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span lang="nl">Versleuteld</span><span lang="en">Encrypted</span></div>
       <div class="float f2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2 2l20 20M8.5 4.6A11 11 0 0 1 21 9M5 7.7A11 11 0 0 0 3 9M8.5 16.4a5 5 0 0 1 7 0"/></svg><span lang="nl">Offline</span><span lang="en">Offline</span></div>
@@ -307,22 +332,22 @@ footer .brand{font-size:.95rem}
 <!-- DOWNLOAD -->
 <section class="dl" id="download">
   <div class="wrap">
-    <div class="kicker"><span lang="nl">Download</span><span lang="en">Download</span></div>
+<div class="art art-dark" aria-hidden="true"><svg viewBox="0 0 300 110"><rect x="112" y="6" width="76" height="98" rx="13" fill="#0d1520" stroke="#2c3d52" stroke-width="2"/><rect x="119" y="16" width="62" height="74" rx="6" fill="#132233"/><use href="#i-android" x="130" y="22" width="40" height="40" style="color:#3ddc84"/><use href="#i-dl" x="138" y="60" width="24" height="24" style="color:#5eead4"/><rect x="144" y="96" width="12" height="2.5" rx="1.25" fill="#2c3d52"/><text x="56" y="60" style="fill:#9fb3c8;font:800 13px system-ui">APK</text><text x="204" y="60" style="fill:#9fb3c8;font:800 13px system-ui">8.0+</text></svg></div>
+    <div class="kicker"><span lang="nl">Download voor Android</span><span lang="en">Download for Android</span></div>
     <p class="update" id="update" data-latest="4.3.1" hidden></p>
       <div class="cta">
         <a class="btn" href="AISafe-4.3.1-release.apk" download>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 11l6 6 6-6M5 21h14"/></svg>
-          <span lang="nl">Download APK 4.3.1 - Volledige versie</span><span lang="en">Download APK 4.3.1 - Full version</span>
+          <span lang="nl">Download de Android-app (APK 4.3.1)</span><span lang="en">Download the Android app (APK 4.3.1)</span>
         </a>
-        <p class="promo"><span class="dot"></span><span lang="nl">De volledige versie is gratis tot 1/1/2027</span><span lang="en">The full version is free until 1/1/2027</span></p>
         <a class="howto" href="#installeren">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5V14M12 17h.01"/></svg>
           <span lang="nl">Hoe installeer ik de app?</span><span lang="en">How do I install the app?</span><span class="arrow">→</span>
         </a>
       </div>
       <p class="meta">
-        <span lang="nl">Android 8.0 of nieuwer · 64-bit ARM · ca. 13 MB · NL, EN, DE, FR, IT, ES · Werkt de download niet? <a href="https://github.com/GosseVledder/AI-Safe/releases/latest">GitHub Releases</a></span>
-        <span lang="en">Android 8.0 or newer · 64-bit ARM · approx. 13 MB · NL, EN, DE, FR, IT, ES · Download not working? <a href="https://github.com/GosseVledder/AI-Safe/releases/latest">GitHub Releases</a></span>
+        <span lang="nl">Android-app · Android 8.0 of nieuwer · 64-bit ARM · ca. 13 MB · NL, EN, DE, FR, IT, ES · Werkt de download niet? <a href="https://github.com/GosseVledder/AI-Safe/releases/latest">GitHub Releases</a></span>
+        <span lang="en">Android app · Android 8.0 or newer · 64-bit ARM · approx. 13 MB · NL, EN, DE, FR, IT, ES · Download not working? <a href="https://github.com/GosseVledder/AI-Safe/releases/latest">GitHub Releases</a></span>
       </p>
   </div>
 </section>
@@ -340,7 +365,7 @@ footer .brand{font-size:.95rem}
     <div class="threats">
       <!-- 1 -->
       <article class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <div class="art" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><use href="#i-photo" class="ink" x="34" y="18" width="30" height="30"/><use href="#i-doc" class="ink" x="34" y="62" width="30" height="30"/><path class="la" d="M78 55L112 55M106 50L112 55L106 60"/><circle class="soft" cx="148" cy="55" r="30"/><use href="#i-lock" class="acc" x="130" y="37" width="36" height="36"/><path class="la" d="M186 55L214 55M208 50L214 55L208 60"/><text class="mono-t" x="224" y="40">a9F#k2</text><text class="mono-t" x="224" y="56">Qz7!pR</text><text class="mono-t" x="224" y="72">0x3E+m</text></svg></div>
         <h3><span lang="nl">Alles versleuteld</span><span lang="en">Everything encrypted</span></h3>
         <ul class="rp" lang="nl">
           <li class="r"><i>!</i><div><span class="tag">Het risico</span>AI kan je bestanden op de telefoon lezen en analyseren via een app of dienst die erbij kan.</div></li>
@@ -365,7 +390,7 @@ footer .brand{font-size:.95rem}
       </article>
       <!-- 2 -->
       <article class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 2l20 20M8.5 4.6A11 11 0 0 1 21 9M5 7.7A11 11 0 0 0 3 9M12 20h.01M8.5 16.4a5 5 0 0 1 7 0"/></svg></div>
+        <div class="art" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><rect class="ph" x="127" y="14" width="46" height="82" rx="9"/><rect class="scr" x="132" y="22" width="36" height="64" rx="4"/><rect class="fm" x="144.0" y="90" width="12" height="2.5" rx="1.25"/><use href="#i-lock" class="acc" x="138" y="38" width="24" height="24"/><path class="ln" d="M176 44 L214 30"/><path class="ln" d="M176 66 L214 80"/><path class="ln" d="M124 55 L84 55"/><use href="#i-cloud" class="mut" x="218" y="12" width="34" height="34"/><circle class="bad" cx="254" cy="16" r="11"/><use href="#i-x" class="on" x="247" y="9" width="14" height="14"/><use href="#i-ai" class="mut" x="218" y="62" width="34" height="34"/><circle class="bad" cx="254" cy="66" r="11"/><use href="#i-x" class="on" x="247" y="59" width="14" height="14"/><use href="#i-mail" class="mut" x="40" y="38" width="34" height="34"/><circle class="bad" cx="36" cy="38" r="11"/><use href="#i-x" class="on" x="29" y="31" width="14" height="14"/></svg></div>
         <h3><span lang="nl">Geen internet, geen account</span><span lang="en">No internet, no account</span></h3>
         <ul class="rp" lang="nl">
           <li class="r"><i>!</i><div><span class="tag">Het risico</span>AI kan je bestanden verwerken als een app ze naar een server of cloud stuurt.</div></li>
@@ -390,7 +415,7 @@ footer .brand{font-size:.95rem}
       </article>
       <!-- 3 -->
       <article class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 18l18-14"/></svg></div>
+        <div class="art" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><rect class="ph" x="84" y="14" width="46" height="82" rx="9"/><rect class="blk" x="89" y="22" width="36" height="64" rx="4"/><rect class="fm" x="101.0" y="90" width="12" height="2.5" rx="1.25"/><g transform="rotate(8 200 55)"><rect class="ph" x="176" y="22" width="44" height="66" rx="6"/><rect class="blk" x="181" y="28" width="34" height="54" rx="3"/></g><path class="ln" d="M136 55L168 55M162 50L168 55L162 60"/><use href="#i-ai" class="rsk" x="240" y="18" width="30" height="30"/><circle class="bad" cx="255" cy="72" r="11"/><use href="#i-x" class="on" x="248" y="65" width="14" height="14"/><circle class="fa" cx="107" cy="56" r="4"/></svg></div>
         <h3><span lang="nl">Niets op een screenshot</span><span lang="en">Nothing on a screenshot</span></h3>
         <ul class="rp" lang="nl">
           <li class="r"><i>!</i><div><span class="tag">Het risico</span>AI kan gegevens verzamelen door screenshots of schermopnames te maken en te analyseren.</div></li>
@@ -415,7 +440,7 @@ footer .brand{font-size:.95rem}
       </article>
       <!-- 4 -->
       <article class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg></div>
+        <div class="art" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><rect class="ph" x="70" y="14" width="46" height="82" rx="9"/><rect class="scr" x="75" y="22" width="36" height="64" rx="4"/><rect class="fm" x="87.0" y="90" width="12" height="2.5" rx="1.25"/><use href="#i-play" class="acc" x="79" y="36" width="28" height="28"/><use href="#i-doc" class="acc" x="85" y="66" width="16" height="16"/><path class="ln" d="M122 55 L186 55"/><circle class="bad" cx="154" cy="55" r="11"/><use href="#i-x" class="on" x="147" y="48" width="14" height="14"/><use href="#i-app" class="mut" x="196" y="32" width="46" height="46"/></svg></div>
         <h3><span lang="nl">Ingebouwde speler en editor</span><span lang="en">Built-in player and editor</span></h3>
         <ul class="rp" lang="nl">
           <li class="r"><i>!</i><div><span class="tag">Het risico</span>AI kan je bestand lezen als je het in een andere app opent. Die app krijgt dan een onversleutelde kopie.</div></li>
@@ -440,7 +465,7 @@ footer .brand{font-size:.95rem}
       </article>
       <!-- 5 -->
       <article class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+        <div class="art" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><use href="#i-cam" class="acc" x="28" y="36" width="38" height="38"/><path class="la" d="M74 55L196 55M190 50L196 55L190 60"/><use href="#i-safe" class="acc" x="206" y="31" width="48" height="48"/><path class="ln" d="M110 55 C110 30 124 22 140 22"/><use href="#i-gallery" class="mut" x="146" y="8" width="28" height="28"/><circle class="bad" cx="186" cy="22" r="11"/><use href="#i-x" class="on" x="179" y="15" width="14" height="14"/></svg></div>
         <h3><span lang="nl">Ingebouwde camera, scanner en recorder</span><span lang="en">Built-in camera, scanner and recorder</span></h3>
         <ul class="rp" lang="nl">
           <li class="r"><i>!</i><div><span class="tag">Het risico</span>AI kan je foto's en video's analyseren als de camera-app ze in de galerij zet. Van daaruit gaan ze ook naar de cloud.</div></li>
@@ -465,7 +490,7 @@ footer .brand{font-size:.95rem}
       </article>
       <!-- 6 -->
       <article class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></div>
+        <div class="art" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><use href="#i-kbd" class="ink" x="92" y="28" width="72" height="72"/><path class="ln" d="M164 50 L206 34"/><use href="#i-ai" class="mut" x="212" y="14" width="32" height="32"/><circle class="bad" cx="250" cy="22" r="11"/><use href="#i-x" class="on" x="243" y="15" width="14" height="14"/><use href="#i-lock" class="acc" x="60" y="40" width="26" height="26"/></svg></div>
         <h3><span lang="nl">Toetsenbord leert niet mee</span><span lang="en">The keyboard doesn't learn</span></h3>
         <ul class="rp" lang="nl">
           <li class="r"><i>!</i><div><span class="tag">Het risico</span>AI kan meelezen met wat je typt via het toetsenbord. Dat onthoudt je tekst voor suggesties of stuurt die naar een AI-dienst.</div></li>
@@ -490,7 +515,7 @@ footer .brand{font-size:.95rem}
       </article>
       <!-- 7 -->
       <article class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v12M8 7l4-4 4 4"/></svg></div>
+        <div class="art" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><rect class="ph" x="22" y="14" width="46" height="82" rx="9"/><rect class="scr" x="27" y="22" width="36" height="64" rx="4"/><rect class="fm" x="39.0" y="90" width="12" height="2.5" rx="1.25"/><use href="#i-lock" class="acc" x="33" y="40" width="24" height="24"/><rect class="ph" x="232" y="14" width="46" height="82" rx="9"/><rect class="scr" x="237" y="22" width="36" height="64" rx="4"/><rect class="fm" x="249.0" y="90" width="12" height="2.5" rx="1.25"/><use href="#i-safe" class="acc" x="243" y="40" width="24" height="24"/><path class="la" d="M74 44L226 44M220 39L226 44L220 49"/><rect class="ph" x="128" y="30" width="44" height="30" rx="5"/><use href="#i-mail" class="ink" x="136" y="31" width="28" height="28"/><use href="#i-lock" class="acc" x="160" y="18" width="16" height="16"/><path class="ln" d="M74 72 C120 100 180 100 226 72"/><use href="#i-key" class="mut" x="138" y="76" width="24" height="24"/></svg></div>
         <h3><span lang="nl">Versleuteld delen</span><span lang="en">Encrypted sharing</span></h3>
         <ul class="rp" lang="nl">
           <li class="r"><i>!</i><div><span class="tag">Het risico</span>AI kan een gedeeld bestand lezen als je het onversleuteld via e-mail, chat of cloud stuurt, onderweg en bij de ontvanger.</div></li>
@@ -515,7 +540,7 @@ footer .brand{font-size:.95rem}
       </article>
       <!-- 8 -->
       <article class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div class="art" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><circle class="fa" cx="60" cy="38" r="6"/><circle class="fa" cx="78" cy="38" r="6"/><circle class="fa" cx="96" cy="38" r="6"/><circle class="fa" cx="114" cy="38" r="6"/><circle class="dot" cx="132" cy="38" r="6"/><circle class="dot" cx="150" cy="38" r="6"/><rect class="key" x="58" y="56" width="30" height="13" rx="4"/><rect class="key" x="96" y="56" width="30" height="13" rx="4"/><rect class="key" x="134" y="56" width="30" height="13" rx="4"/><rect class="key" x="58" y="74" width="30" height="13" rx="4"/><rect class="key" x="96" y="74" width="30" height="13" rx="4"/><rect class="key" x="134" y="74" width="30" height="13" rx="4"/><use href="#i-timer" class="mut" x="196" y="22" width="34" height="34"/><use href="#i-shield" class="acc" x="236" y="48" width="40" height="40"/></svg></div>
         <h3><span lang="nl">Overige beveiliging</span><span lang="en">Other security</span></h3>
         <p class="muted" style="font-size:.94rem;margin:0" lang="nl">Ook tegen mensen die meekijken of aandringen: PIN, patroon of vingerafdruk, automatisch vergrendelen, extra kluizen met een eigen PIN en een rem op het raden van je PIN.</p>
         <p class="muted" style="font-size:.94rem;margin:0" lang="en">Also against people who look along or put on pressure: PIN, pattern or fingerprint, auto-lock, extra safes with their own PIN and a brake on guessing your PIN.</p>
@@ -530,7 +555,7 @@ footer .brand{font-size:.95rem}
             <li><strong>Versleutelde back-ups</strong> met een eigen wachtwoord van minstens 12 tekens</li>
             <li><strong>Geknoei wordt gezien</strong>: verwisselde of hernoemde kluisbestanden worden herkend</li>
             <li><strong>Bewegingssensor</strong> alleen in gebruik als de kluis open en in beeld is</li>
-            <li><strong>Stealth-instellingen</strong> (extra, volledige versie): AI-Safe verschijnt als Volume Manager, Rekenmachine of Notities, en staat desgewenst niet in de deelmenu's van andere apps</li>
+            <li><strong>Stealth-instellingen</strong> (extra laag): AI-Safe verschijnt als Volume Manager, Rekenmachine of Notities, en staat desgewenst niet in de deelmenu's van andere apps</li>
           </ul>
           <ul lang="en">
             <li><strong>PIN, pattern or fingerprint</strong>: a PIN of 6 to 16 digits, or a pattern through at least 5 dots; the PIN screen opens with what you used last</li>
@@ -541,7 +566,7 @@ footer .brand{font-size:.95rem}
             <li><strong>Encrypted backups</strong> with their own password of at least 12 characters</li>
             <li><strong>Tampering is noticed</strong>: swapped or renamed safe files are detected</li>
             <li><strong>Motion sensor</strong> only used while the safe is open and on screen</li>
-            <li><strong>Stealth settings</strong> (extra, Full version): AI-Safe appears as Volume Manager, Calculator or Notes, and can stay out of the share menus of other apps</li>
+            <li><strong>Stealth settings</strong> (an extra layer): AI-Safe appears as Volume Manager, Calculator or Notes, and can stay out of the share menus of other apps</li>
           </ul>
           </div>
         </details>
@@ -569,7 +594,7 @@ footer .brand{font-size:.95rem}
     <div class="features">
       <!-- Toevoegen -->
       <article class="card feature">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="art" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><use href="#i-gallery" class="ink" x="22" y="34" width="40" height="40"/><use href="#i-doc" class="ink" x="64" y="36" width="36" height="36"/><path class="la" d="M104 55L176 55M170 50L176 55L170 60"/><circle class="fa" cx="140" cy="55" r="14"/><use href="#i-plus" class="on" x="131" y="46" width="18" height="18"/><use href="#i-safe" class="acc" x="190" y="30" width="50" height="50"/></svg></div>
         <h3><span lang="nl">In een paar tikken toegevoegd</span><span lang="en">Added in a few taps</span></h3>
         <p lang="nl">Foto's, video's, documenten of een hele galerijmap. De originelen verdwijnen daarna uit je galerij.</p>
         <p lang="en">Photos, videos, documents or a whole gallery folder. The originals then disappear from your gallery.</p>
@@ -579,7 +604,7 @@ footer .brand{font-size:.95rem}
             <li><strong>Foto's &amp; video's</strong> via de vertrouwde fotokiezer van Android, één of veel tegelijk</li>
             <li><strong>Documenten</strong> via de bestandskiezer: PDF, Word (.docx), OpenDocument, RTF, Markdown, HTML, tekstbestanden (.txt, .csv, .json, .xml, .log) en audiobestanden</li>
             <li><strong>Map importeren</strong>: kies een galerijmap (bijv. Camera of WhatsApp Images), eventueel met submappen; zonder limiet op het aantal bestanden. Opnieuw importeren vult dezelfde map aan</li>
-            <li><strong>Delen naar de kluis</strong> vanuit andere apps: Delen → AI-Safe → ontgrendelen → map kiezen (standaard aan; uitzetten in de volledige versie, onder Stealth)</li>
+            <li><strong>Delen naar de kluis</strong> vanuit andere apps: Delen → AI-Safe → ontgrendelen → map kiezen (standaard aan; uit te zetten onder Stealth)</li>
             <li><strong>Versleuteld bestand openen</strong>: een versleuteld deelbestand van iemand anders toevoegen</li>
             <li><strong>Originelen verdwijnen</strong> uit galerij en bestandsbeheer, met of zonder vraag vooraf</li>
             <li>Versleutelen op de achtergrond, met een <strong>voortgangsbalk</strong></li>
@@ -589,7 +614,7 @@ footer .brand{font-size:.95rem}
             <li><strong>Photos &amp; videos</strong> through Android's familiar photo picker, one or many at once</li>
             <li><strong>Documents</strong> through the file picker: PDF, Word (.docx), OpenDocument, RTF, Markdown, HTML, text files (.txt, .csv, .json, .xml, .log) and audio files</li>
             <li><strong>Import folder</strong>: pick a gallery folder (e.g. Camera or WhatsApp Images), optionally with subfolders; no limit on the number of files. Importing again adds to the same folder</li>
-            <li><strong>Share to the safe</strong> from other apps: Share → AI-Safe → unlock → pick a folder (on by default; can be switched off in the Full version, under Stealth)</li>
+            <li><strong>Share to the safe</strong> from other apps: Share → AI-Safe → unlock → pick a folder (on by default; can be switched off under Stealth)</li>
             <li><strong>Open encrypted file</strong>: add an encrypted share file from someone else</li>
             <li><strong>Originals disappear</strong> from gallery and file manager, with or without asking first</li>
             <li>Encryption in the background, with a <strong>progress bar</strong></li>
@@ -601,7 +626,7 @@ footer .brand{font-size:.95rem}
 
       <!-- Vastleggen -->
       <article class="card feature">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+        <div class="art" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><circle class="soft" cx="70" cy="46" r="26"/><use href="#i-cam" class="acc" x="55" y="31" width="30" height="30"/><use href="#i-lock" class="ink" x="80" y="64" width="16" height="16"/><circle class="soft" cx="150" cy="46" r="26"/><use href="#i-scan" class="acc" x="135" y="31" width="30" height="30"/><use href="#i-lock" class="ink" x="160" y="64" width="16" height="16"/><circle class="soft" cx="230" cy="46" r="26"/><use href="#i-mic" class="acc" x="215" y="31" width="30" height="30"/><use href="#i-lock" class="ink" x="240" y="64" width="16" height="16"/><path class="la" d="M44 96 H256"/></svg></div>
         <h3><span lang="nl">Camera, scanner en spraakmemo</span><span lang="en">Camera, scanner and voice memo</span></h3>
         <p lang="nl">Nieuwe foto's, video's, scans en opnames gaan rechtstreeks de kluis in, nooit eerst de galerij.</p>
         <p lang="en">New photos, videos, scans and recordings go straight into the safe, never into the gallery first.</p>
@@ -623,7 +648,7 @@ footer .brand{font-size:.95rem}
 
       <!-- Ordenen -->
       <article class="card feature">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+        <div class="art" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><rect class="ph" x="22" y="14" width="46" height="82" rx="9"/><rect class="scr" x="27" y="22" width="36" height="64" rx="4"/><rect class="fm" x="39.0" y="90" width="12" height="2.5" rx="1.25"/><rect x="27" y="24" width="16" height="11" rx="3" style="fill:#14b8a6"/><rect x="46" y="24" width="16" height="11" rx="3" style="fill:#6366f1"/><rect x="27" y="38" width="16" height="11" rx="3" style="fill:#f59e0b"/><rect x="46" y="38" width="16" height="11" rx="3" style="fill:#e11d48"/><rect class="fm" x="27.0" y="56" width="10" height="10" rx="2"/><rect class="fm" x="39.5" y="56" width="10" height="10" rx="2"/><rect class="fm" x="52.0" y="56" width="10" height="10" rx="2"/><rect class="fm" x="27.0" y="68" width="10" height="10" rx="2"/><rect class="fm" x="39.5" y="68" width="10" height="10" rx="2"/><rect class="fm" x="52.0" y="68" width="10" height="10" rx="2"/><rect class="ph" x="94" y="18" width="190" height="74" rx="10"/><text x="106" y="36">2026 · 11</text><rect x="106" y="44" width="24" height="24" rx="4" class="fm"/><rect x="135" y="44" width="24" height="24" rx="4" class="fa2"/><rect x="164" y="44" width="24" height="24" rx="4" class="fm"/><rect x="193" y="44" width="24" height="24" rx="4" class="fa2"/><rect x="222" y="44" width="24" height="24" rx="4" class="fm"/><rect x="251" y="44" width="24" height="24" rx="4" class="fa2"/><use href="#i-folder" class="acc" x="106" y="72" width="16" height="16"/><rect class="fm" x="126" y="77" width="60" height="6" rx="3"/></svg></div>
         <h3><span lang="nl">Overzichtelijk ordenen</span><span lang="en">Neatly organised</span></h3>
         <p lang="nl">Zoeken, mappen, favorieten, sorteren per maand, een prullenbak en een raster dat je zelf instelt.</p>
         <p lang="en">Search, folders, favourites, sorting by month, a recycle bin and a grid you set yourself.</p>
@@ -661,7 +686,7 @@ footer .brand{font-size:.95rem}
 
       <!-- Bekijken -->
       <article class="card feature">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg></div>
+        <div class="art" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><rect class="ph" x="30" y="14" width="150" height="84" rx="10"/><rect class="scr" x="38" y="22" width="134" height="52" rx="6"/><path class="fa" d="M98 36 L120 48 L98 60z"/><rect class="fm" x="40" y="84" width="130" height="4" rx="2"/><rect class="fa" x="40" y="84" width="70" height="4" rx="2"/><circle class="fa" cx="110" cy="86" r="6"/><rect class="ph" x="196" y="14" width="34" height="84" rx="17"/><rect class="fa2" x="203" y="40" width="20" height="52" rx="10"/><text x="200" y="32">1.5×</text><use href="#i-doc" class="ink" x="244" y="34" width="40" height="40"/></svg></div>
         <h3><span lang="nl">Bekijken en afspelen</span><span lang="en">View and play</span></h3>
         <p lang="nl">Foto's, video's, audio en documenten openen in de app zelf, ontsleuteld in het geheugen. Nooit een tijdelijke kopie.</p>
         <p lang="en">Photos, videos, audio and documents open inside the app, decrypted in memory. Never a temporary copy.</p>
@@ -695,7 +720,7 @@ footer .brand{font-size:.95rem}
 
       <!-- Bewerken -->
       <article class="card feature">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v14a2 2 0 0 0 2 2h14M18 22V8a2 2 0 0 0-2-2H2"/></svg></div>
+        <div class="art" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><rect class="ph" x="70" y="12" width="160" height="86" rx="8"/><path class="fa2" d="M78 90 L128 48 L160 74 L184 56 L222 90z"/><circle class="fa2" cx="196" cy="32" r="9"/><rect class="blk" x="92" y="28" width="74" height="16" rx="3"/><path class="la" d="M58 30 V8 H80 M220 8 H242 V30 M242 80 V102 H220 M80 102 H58 V80"/></svg></div>
         <h3><span lang="nl">Bewerken zonder de kluis te verlaten</span><span lang="en">Edit without leaving the safe</span></h3>
         <p lang="nl">Redigeren, bijsnijden, draaien, aanpassen, video's inkorten en een frame als foto bewaren. Tussenresultaten blijven versleuteld.</p>
         <p lang="en">Redact, crop, rotate, adjust, trim videos and save a frame as a photo. Intermediate results stay encrypted.</p>
@@ -725,7 +750,7 @@ footer .brand{font-size:.95rem}
 
       <!-- Delen -->
       <article class="card feature" id="delen">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v12M8 7l4-4 4 4"/></svg></div>
+        <div class="art" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><use href="#i-doc" class="ink" x="30" y="28" width="46" height="46"/><use href="#i-lock" class="acc" x="60" y="58" width="22" height="22"/><path class="la" d="M98 55L150 55M144 50L150 55L144 60"/><use href="#i-qr" class="acc" x="160" y="28" width="50" height="50"/><path class="ln" d="M218 55 L250 55"/><rect class="ph" x="250" y="14" width="40" height="82" rx="9"/><rect class="scr" x="255" y="22" width="30" height="64" rx="4"/><rect class="fm" x="264.0" y="90" width="12" height="2.5" rx="1.25"/><circle class="fa" cx="270" cy="52" r="3"/><circle class="fa" cx="279" cy="52" r="3"/><circle class="fa" cx="261" cy="52" r="3"/></svg></div>
         <h3><span lang="nl">Veilig delen</span><span lang="en">Sharing safely</span></h3>
         <p lang="nl">Bestanden versleuteld uitwisselen, ook tussen de kluizen van verschillende mensen.</p>
         <p lang="en">Exchange files encrypted, also between different people's safes.</p>
@@ -755,7 +780,7 @@ footer .brand{font-size:.95rem}
 
       <!-- Back-ups -->
       <article class="card feature" id="backup">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></svg></div>
+        <div class="art" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><rect class="ph" x="22" y="14" width="46" height="82" rx="9"/><rect class="scr" x="27" y="22" width="36" height="64" rx="4"/><rect class="fm" x="39.0" y="90" width="12" height="2.5" rx="1.25"/><use href="#i-safe" class="acc" x="33" y="40" width="24" height="24"/><path class="la" d="M74 55 H120 M120 55 L170 22 M120 55 H170 M120 55 L170 88"/><use href="#i-sd" class="ink" x="178" y="6" width="32" height="32"/><use href="#i-lock" class="acc" x="210" y="18" width="16" height="16"/><use href="#i-usb" class="ink" x="178" y="39" width="32" height="32"/><use href="#i-lock" class="acc" x="210" y="51" width="16" height="16"/><use href="#i-cloud" class="ink" x="178" y="72" width="32" height="32"/><use href="#i-lock" class="acc" x="210" y="84" width="16" height="16"/><use href="#i-check" class="acc" x="244" y="40" width="30" height="30"/></svg></div>
         <h3><span lang="nl">Versleutelde back-up</span><span lang="en">Encrypted backup</span></h3>
         <p lang="nl">Eén complete, versleutelde kopie van je kluis met een eigen wachtwoord, in een map naar keuze: je vangnet bij verlies of een kapotte telefoon.</p>
         <p lang="en">One complete, encrypted copy of your safe with its own password, in a folder of your choice: your safety net for a lost or broken phone.</p>
@@ -785,7 +810,7 @@ footer .brand{font-size:.95rem}
 
       <!-- Diavoorstelling -->
       <article class="card feature">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="14" height="12" rx="2"/><path d="M20 8v10a2 2 0 0 1-2 2H6"/></svg></div>
+        <div class="art" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><rect class="ph" x="40" y="26" width="100" height="66" rx="8" opacity=".55"/><rect class="ph" x="80" y="18" width="120" height="78" rx="8"/><path class="fa2" d="M86 90 L126 58 L150 76 L168 64 L194 90z"/><circle class="fa2" cx="176" cy="36" r="8"/><rect class="ph" x="170" y="12" width="96" height="66" rx="8" opacity=".85"/><use href="#i-photo" class="mut" x="200" y="27" width="36" height="36"/><path class="la" d="M210 92 h56"/><path class="ln" d="M150 104 h120"/></svg></div>
         <h3><span lang="nl">Diavoorstelling</span><span lang="en">Slideshow</span></h3>
         <p lang="nl">Foto's en video's na elkaar, met 20 overgangen om uit te kiezen. Zonder dat iets de kluis verlaat.</p>
         <p lang="en">Photos and videos one after another, with 20 transitions to choose from. Without anything leaving the safe.</p>
@@ -815,7 +840,7 @@ footer .brand{font-size:.95rem}
 
       <!-- Meerdere kluizen -->
       <article class="card feature">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="13" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-5"/></svg></div>
+        <div class="art" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><rect x="26" y="22" width="42" height="42" rx="8" style="fill:#0d9488"/><use href="#i-lock" class="on" x="35" y="31" width="24" height="24"/><circle class="fa" cx="33" cy="80" r="2.6"/><circle class="fa" cx="40" cy="80" r="2.6"/><circle class="fa" cx="47" cy="80" r="2.6"/><circle class="dot" cx="54" cy="80" r="2.6"/><circle class="dot" cx="61" cy="80" r="2.6"/><rect x="78" y="22" width="42" height="42" rx="8" style="fill:#6366f1"/><use href="#i-lock" class="on" x="87" y="31" width="24" height="24"/><circle class="fa" cx="85" cy="80" r="2.6"/><circle class="fa" cx="92" cy="80" r="2.6"/><circle class="fa" cx="99" cy="80" r="2.6"/><circle class="dot" cx="106" cy="80" r="2.6"/><circle class="dot" cx="113" cy="80" r="2.6"/><rect x="130" y="22" width="42" height="42" rx="8" style="fill:#d97706"/><use href="#i-lock" class="on" x="139" y="31" width="24" height="24"/><circle class="fa" cx="137" cy="80" r="2.6"/><circle class="fa" cx="144" cy="80" r="2.6"/><circle class="fa" cx="151" cy="80" r="2.6"/><circle class="dot" cx="158" cy="80" r="2.6"/><circle class="dot" cx="165" cy="80" r="2.6"/><rect x="182" y="22" width="42" height="42" rx="8" style="fill:#e11d48"/><use href="#i-lock" class="on" x="191" y="31" width="24" height="24"/><circle class="fa" cx="189" cy="80" r="2.6"/><circle class="fa" cx="196" cy="80" r="2.6"/><circle class="fa" cx="203" cy="80" r="2.6"/><circle class="dot" cx="210" cy="80" r="2.6"/><circle class="dot" cx="217" cy="80" r="2.6"/><rect x="234" y="22" width="42" height="42" rx="8" style="fill:#475569"/><use href="#i-lock" class="on" x="243" y="31" width="24" height="24"/><circle class="fa" cx="241" cy="80" r="2.6"/><circle class="fa" cx="248" cy="80" r="2.6"/><circle class="fa" cx="255" cy="80" r="2.6"/><circle class="dot" cx="262" cy="80" r="2.6"/><circle class="dot" cx="269" cy="80" r="2.6"/></svg></div>
         <h3><span lang="nl">Tot 5 kluizen, elk met een eigen PIN</span><span lang="en">Up to 5 safes, each with its own PIN</span></h3>
         <p lang="nl">Eén standaardkluis plus 1 tot 4 extra kluizen. Welke PIN je intikt, bepaalt welke kluis opengaat.</p>
         <p lang="en">One standard safe plus 1 to 4 extra safes. The PIN you enter decides which safe opens.</p>
@@ -844,11 +869,11 @@ footer .brand{font-size:.95rem}
 
     <!-- Camouflage -->
     <div class="extra" id="volume-manager">
-      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg></div>
+      <div class="art" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><rect class="ph" x="40" y="22" width="52" height="52" rx="14"/><use href="#i-sliders" class="ink" x="52" y="34" width="28" height="28"/><rect class="ph" x="106" y="22" width="52" height="52" rx="14"/><use href="#i-calc" class="ink" x="118" y="34" width="28" height="28"/><rect class="ph" x="172" y="22" width="52" height="52" rx="14"/><use href="#i-notes" class="ink" x="184" y="34" width="28" height="28"/><path class="ln" d="M66 84 C66 100 250 100 250 70"/><use href="#i-safe" class="acc" x="232" y="30" width="40" height="40"/></svg></div>
       <div>
-        <h3><span lang="nl">Stealth-instellingen</span><span lang="en">Stealth settings</span><span class="badge"><span lang="nl">volledige versie</span><span lang="en">Full version</span></span></h3>
-        <p lang="nl">Verberg ook dat AI-Safe op je telefoon staat. De app verschijnt dan als een werkende <strong>Volume Manager</strong>, <strong>Rekenmachine</strong> of <strong>Notities</strong>-app; houd de titel of "=" vast om de kluis te openen. Ook kun je de app uit de deelmenu's van andere apps halen. Extra lagen in de volledige versie: standaard is de app niet onopvallend, en je bestanden zijn ook zonder deze instellingen versleuteld.</p>
-        <p lang="en">Also hide that AI-Safe is on your phone. The app then appears as a working <strong>Volume Manager</strong>, <strong>Calculator</strong> or <strong>Notes</strong> app; hold the title or "=" to open the safe. You can also take the app out of the share menus of other apps. Extra layers in the Full version: by default the app is not stealthy, and your files are encrypted without these settings too.</p>
+        <h3><span lang="nl">Stealth-instellingen</span><span lang="en">Stealth settings</span></h3>
+        <p lang="nl">Verberg ook dat AI-Safe op je telefoon staat. De app verschijnt dan als een werkende <strong>Volume Manager</strong>, <strong>Rekenmachine</strong> of <strong>Notities</strong>-app; houd de titel of "=" vast om de kluis te openen. Ook kun je de app uit de deelmenu's van andere apps halen. Extra lagen: standaard is de app niet onopvallend, en je bestanden zijn ook zonder deze instellingen versleuteld.</p>
+        <p lang="en">Also hide that AI-Safe is on your phone. The app then appears as a working <strong>Volume Manager</strong>, <strong>Calculator</strong> or <strong>Notes</strong> app; hold the title or "=" to open the safe. You can also take the app out of the share menus of other apps. Extra layers: by default the app is not stealthy, and your files are encrypted without these settings too.</p>
         <details class="more"><summary><span lang="nl">Details</span><span lang="en">Details</span></summary>
           <div class="body">
           <ul lang="nl">
@@ -874,18 +899,17 @@ footer .brand{font-size:.95rem}
   </div>
 </section>
 
-<!-- FREE EN FULL (PLAN_EDITIONS, D-87/D-88) -->
-<section id="free-full">
+<!-- ALLE FUNCTIES (D-101: one edition, list kept) -->
+<section id="functies">
   <div class="wrap">
-    <div class="kicker"><span lang="nl">Welke versies zijn er?</span><span lang="en">Which versions are there?</span></div>
+    <div class="kicker"><span lang="nl">Alle functies</span><span lang="en">All features</span></div>
     <div class="intro">
-      <h2><span lang="nl">Gratis versie en volledige versie</span><span lang="en">Free version and Full version</span></h2>
-      <p lang="nl">De <strong>gratis versie</strong> is een onbeperkte kluis voor al je persoonlijke informatie en bestanden: alles wat je bestanden beschermt is gratis, zonder limiet op bestanden of mappen. De <strong>volledige versie</strong> voegt versleuteld delen, het bewerken van plaatjes en foto's, stealth-instellingen (camouflage, niet in deelmenu's), meer kijkplezier en vele andere functionaliteiten toe. Klap hieronder een onderdeel open om de lijst met functionaliteiten te bekijken.</p>
-      <p lang="en">The <strong>free version</strong> is an unlimited safe for all your personal information and files: everything that protects your files is free, with no limit on files or folders. The <strong>full version</strong> adds encrypted sharing, editing pictures and photos, stealth settings (camouflage, out of share menus), more viewing pleasure and many other features. Expand a topic below to see the list of features.</p>
+      <h2><span lang="nl">Wat AI-Safe allemaal kan</span><span lang="en">Everything AI-Safe can do</span></h2>
+      <p lang="nl">Alles wat AI-Safe kan, per onderwerp. Klap een onderdeel open om de lijst met functies te bekijken.</p>
+      <p lang="en">Everything AI-Safe can do, by topic. Expand a topic to see the list of features.</p>
     </div>
+    <div class="art art-wide" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><rect class="ph" x="58" y="10" width="226" height="90" rx="10"/><circle class="fa" cx="76" cy="26" r="7"/><use href="#i-check" class="on" x="70" y="20" width="12" height="12"/><rect class="fm" x="92" y="23" width="100" height="6" rx="3"/><circle class="fa" cx="76" cy="46" r="7"/><use href="#i-check" class="on" x="70" y="40" width="12" height="12"/><rect class="fm" x="92" y="43" width="74" height="6" rx="3"/><circle class="fa" cx="76" cy="66" r="7"/><use href="#i-check" class="on" x="70" y="60" width="12" height="12"/><rect class="fm" x="92" y="63" width="110" height="6" rx="3"/><circle class="fa" cx="76" cy="86" r="7"/><use href="#i-check" class="on" x="70" y="80" width="12" height="12"/><rect class="fm" x="92" y="83" width="86" height="6" rx="3"/><use href="#i-lock" class="acc" x="212" y="26" width="20" height="20"/><use href="#i-cam" class="acc" x="236" y="26" width="20" height="20"/><use href="#i-folder" class="acc" x="260" y="26" width="20" height="20"/><use href="#i-play" class="acc" x="212" y="56" width="20" height="20"/><use href="#i-mail" class="acc" x="236" y="56" width="20" height="20"/><use href="#i-safe" class="acc" x="260" y="56" width="20" height="20"/></svg></div>
     <div class="editions">
-      <p class="muted" lang="nl">De volledige versie is nog niet te koop. Tot dat kan, krijgt iedereen de volledige versie gratis.</p>
-      <p class="muted" lang="en">The full version can't be bought yet. Until it can, everyone gets the full version for free.</p>
       <details class="more cmp">
         <summary><span lang="nl">Ontgrendelen en beveiliging</span><span lang="en">Unlocking and security</span></summary>
         <div class="body">
@@ -896,11 +920,11 @@ footer .brand{font-size:.95rem}
             <li><span lang="nl">Automatisch vergrendelen: app verlaten, scherm uit, inactiviteit</span><span lang="en">Auto-lock: leaving the app, screen off, inactivity</span></li>
             <li><span lang="nl">Altijd aan: AES-256, toetsenbord leert niet, geen internet, geen account</span><span lang="en">Always on: AES-256, keyboard doesn't learn, no internet, no account</span></li>
             <li><span lang="nl">Screenshots en schermopnamen van de kluis zwart (standaard)</span><span lang="en">Screenshots and screen recordings of the safe blocked (default)</span></li>
-            <li><span lang="nl">Screenshots van de kluis toestaan (standaard uit)</span><span lang="en">Allow screenshots of the safe (off by default)</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
+            <li><span lang="nl">Screenshots van de kluis toestaan (standaard uit)</span><span lang="en">Allow screenshots of the safe (off by default)</span></li>
             <li><span lang="nl">Locatie en herleidbare gegevens verwijderd bij delen (standaard aan)</span><span lang="en">Location and identifying data removed when sharing (on by default)</span></li>
             <li><span lang="nl">Eigen kleur voor je kluis</span><span lang="en">Your own colour for the safe</span></li>
-            <li><span lang="nl">1 tot 4 extra kluizen, elk met eigen PIN, naam, kleur en vingerafdruk</span><span lang="en">1 to 4 extra safes, each with its own PIN, name, colour and fingerprint</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
-            <li><span lang="nl"><em>Sinds je laatste bezoek</em>: laatste opening en foute PIN-pogingen (uit te zetten)</span><span lang="en"><em>Since your last visit</em>: last opening and wrong PIN attempts (can be switched off)</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
+            <li><span lang="nl">1 tot 4 extra kluizen, elk met eigen PIN, naam, kleur en vingerafdruk</span><span lang="en">1 to 4 extra safes, each with its own PIN, name, colour and fingerprint</span></li>
+            <li><span lang="nl"><em>Sinds je laatste bezoek</em>: laatste opening en foute PIN-pogingen (uit te zetten)</span><span lang="en"><em>Since your last visit</em>: last opening and wrong PIN attempts (can be switched off)</span></li>
           </ul>
         </div>
       </details>
@@ -909,8 +933,8 @@ footer .brand{font-size:.95rem}
         <div class="body">
           <ul>
             <li><span lang="nl">Gewoon zichtbaar als AI-Safe, ook in het deelmenu van andere apps (standaard)</span><span lang="en">Plainly visible as AI-Safe, also in the share menu of other apps (default)</span></li>
-            <li><span lang="nl">Vermomming als werkende Volume Manager, Rekenmachine of Notities</span><span lang="en">Disguise as a working Volume Manager, Calculator or Notes app</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
-            <li><span lang="nl">De app uit de deelmenu's van andere apps halen</span><span lang="en">Take the app out of the share menus of other apps</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
+            <li><span lang="nl">Vermomming als werkende Volume Manager, Rekenmachine of Notities</span><span lang="en">Disguise as a working Volume Manager, Calculator or Notes app</span></li>
+            <li><span lang="nl">De app uit de deelmenu's van andere apps halen</span><span lang="en">Take the app out of the share menus of other apps</span></li>
           </ul>
         </div>
       </details>
@@ -925,8 +949,8 @@ footer .brand{font-size:.95rem}
             <li><span lang="nl">Originelen verwijderen + herinnering aan de cloudkopie</span><span lang="en">Remove originals + reminder about the cloud copy</span></li>
             <li><span lang="nl">Camera direct in de kluis, met rasterlijnen en zelfontspanner</span><span lang="en">Camera straight into the safe, with grid lines and self-timer</span></li>
             <li><span lang="nl">Versleuteld bestand van iemand anders openen</span><span lang="en">Open an encrypted file from someone else</span></li>
-            <li><span lang="nl">Documentscanner: randen, perspectief, zwart-wit, PDF</span><span lang="en">Document scanner: edges, perspective, black & white, PDF</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
-            <li><span lang="nl">Spraakmemo's opnemen en audiobestanden toevoegen</span><span lang="en">Record voice memos and add audio files</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
+            <li><span lang="nl">Documentscanner: randen, perspectief, zwart-wit, PDF</span><span lang="en">Document scanner: edges, perspective, black & white, PDF</span></li>
+            <li><span lang="nl">Spraakmemo's opnemen en audiobestanden toevoegen</span><span lang="en">Record voice memos and add audio files</span></li>
           </ul>
         </div>
       </details>
@@ -943,8 +967,8 @@ footer .brand{font-size:.95rem}
             <li><span lang="nl">Ongedaan maken na verplaatsen of verwijderen</span><span lang="en">Undo after moving or deleting</span></li>
             <li><span lang="nl">Favorieten, prullenbak, raster 2–24 per rij of lijst</span><span lang="en">Favourites, recycle bin, grid 2–24 per row or list</span></li>
             <li><span lang="nl">Bestanden weer uit de kluis halen</span><span lang="en">Take files out of the safe again</span></li>
-            <li><span lang="nl">Statistieken: inhoud, speelduur, opslag, back-upstatus</span><span lang="en">Statistics: content, playing time, storage, backup status</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
-            <li><span lang="nl">Kluis op de SD-kaart, kluis verplaatsen</span><span lang="en">Safe on the SD card, move the safe</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
+            <li><span lang="nl">Statistieken: inhoud, speelduur, opslag, back-upstatus</span><span lang="en">Statistics: content, playing time, storage, backup status</span></li>
+            <li><span lang="nl">Kluis op de SD-kaart, kluis verplaatsen</span><span lang="en">Safe on the SD card, move the safe</span></li>
           </ul>
         </div>
       </details>
@@ -957,10 +981,10 @@ footer .brand{font-size:.95rem}
             <li><span lang="nl">Videospeler: spoelen, ±10 s, dempen, volledig scherm, herhalen, verder kijken</span><span lang="en">Video player: seek, ±10 s, mute, full screen, repeat, resume</span></li>
             <li><span lang="nl">Helderheid (links) en volume (rechts) vegen bij video</span><span lang="en">Swipe brightness (left) and volume (right) on videos</span></li>
             <li><span lang="nl">Openen met een andere app (na waarschuwing)</span><span lang="en">Open with another app (after a warning)</span></li>
-            <li><span lang="nl">Snelheid 0,1×–2,5×, standaardsnelheid, snelheid per video onthouden</span><span lang="en">Speed 0.1×–2.5×, default speed, speed remembered per video</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
-            <li><span lang="nl">Beeld voor beeld, laatste beeld vasthouden, frame als foto opslaan</span><span lang="en">Frame by frame, hold last frame, save a frame as a photo</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
-            <li><span lang="nl">Audio doorspelen naar het volgende bestand</span><span lang="en">Audio continues with the next file</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
-            <li><span lang="nl">Bewegende GIF's en WebP-animaties</span><span lang="en">Animated GIFs and WebP animations</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
+            <li><span lang="nl">Snelheid 0,1×–2,5×, standaardsnelheid, snelheid per video onthouden</span><span lang="en">Speed 0.1×–2.5×, default speed, speed remembered per video</span></li>
+            <li><span lang="nl">Beeld voor beeld, laatste beeld vasthouden, frame als foto opslaan</span><span lang="en">Frame by frame, hold last frame, save a frame as a photo</span></li>
+            <li><span lang="nl">Audio doorspelen naar het volgende bestand</span><span lang="en">Audio continues with the next file</span></li>
+            <li><span lang="nl">Bewegende GIF's en WebP-animaties</span><span lang="en">Animated GIFs and WebP animations</span></li>
           </ul>
         </div>
       </details>
@@ -970,11 +994,10 @@ footer .brand{font-size:.95rem}
           <ul>
             <li><span lang="nl">Map, favorieten of selectie; foto's, video's of gemengd</span><span lang="en">Folder, favourites or selection; photos, videos or mixed</span></li>
             <li><span lang="nl">Tijd per foto, willekeurig, submappen, aftelbalk</span><span lang="en">Time per photo, shuffle, subfolders, countdown bar</span></li>
-            <li><span lang="nl">Overgang <em>Geen</em> en één eenvoudige</span><span lang="en">Transition <em>None</em> and one simple one</span></li>
-            <li><span lang="nl">Alle 20 overgangen en de duur van de overgang</span><span lang="en">All 20 transitions and the transition duration</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
-            <li><span lang="nl">Beweging (Ken Burns), rustig of sterk</span><span lang="en">Motion (Ken Burns), calm or strong</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
-            <li><span lang="nl">Muziek uit de kluis</span><span lang="en">Music from the safe</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
-            <li><span lang="nl">Onderschrift met datum (en naam)</span><span lang="en">Caption with date (and name)</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
+            <li><span lang="nl">Alle 20 overgangen en de duur van de overgang</span><span lang="en">All 20 transitions and the transition duration</span></li>
+            <li><span lang="nl">Beweging (Ken Burns), rustig of sterk</span><span lang="en">Motion (Ken Burns), calm or strong</span></li>
+            <li><span lang="nl">Muziek uit de kluis</span><span lang="en">Music from the safe</span></li>
+            <li><span lang="nl">Onderschrift met datum (en naam)</span><span lang="en">Caption with date (and name)</span></li>
           </ul>
         </div>
       </details>
@@ -985,9 +1008,9 @@ footer .brand{font-size:.95rem}
             <li><span lang="nl">Hernoemen, mapomslag kiezen</span><span lang="en">Rename, choose a folder cover</span></li>
             <li><span lang="nl">Redigeren van foto's en PDF's: echt onleesbaar maken</span><span lang="en">Redact photos and PDFs: make things truly unreadable</span></li>
             <li><span lang="nl">Foto als achtergrond (na waarschuwing)</span><span lang="en">Photo as wallpaper (after a warning)</span></li>
-            <li><span lang="nl">Foto's bijsnijden en draaien, video's inkorten</span><span lang="en">Crop and rotate photos, trim videos</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
-            <li><span lang="nl">Foto aanpassen: helderheid, contrast, verzadiging, filters</span><span lang="en">Adjust photos: brightness, contrast, saturation, filters</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
-            <li><span lang="nl">Andere documenten redigeren tot een PDF</span><span lang="en">Redact other documents into a PDF</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
+            <li><span lang="nl">Foto's bijsnijden en draaien, video's inkorten</span><span lang="en">Crop and rotate photos, trim videos</span></li>
+            <li><span lang="nl">Foto aanpassen: helderheid, contrast, verzadiging, filters</span><span lang="en">Adjust photos: brightness, contrast, saturation, filters</span></li>
+            <li><span lang="nl">Andere documenten redigeren tot een PDF</span><span lang="en">Redact other documents into a PDF</span></li>
           </ul>
         </div>
       </details>
@@ -997,9 +1020,9 @@ footer .brand{font-size:.95rem}
           <ul>
             <li><span lang="nl">Delen met een app zonder kopie op je telefoon (na waarschuwing)</span><span lang="en">Share to an app without a copy on your phone (after a warning)</span></li>
             <li><span lang="nl">Versleuteld deelbestand ontvangen en openen</span><span lang="en">Receive and open an encrypted share file</span></li>
-            <li><span lang="nl">Versleuteld delen: zelf een deelbestand maken</span><span lang="en">Encrypted share: create a share file yourself</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
-            <li><span lang="nl">Wachtzin als QR-code tonen en scannen</span><span lang="en">Show and scan the passphrase as a QR code</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
-            <li><span lang="nl">Afdrukken van foto's en PDF's</span><span lang="en">Print photos and PDFs</span> <span class="badge"><span lang="nl">Volledig</span><span lang="en">Full</span></span></li>
+            <li><span lang="nl">Versleuteld delen: zelf een deelbestand maken</span><span lang="en">Encrypted share: create a share file yourself</span></li>
+            <li><span lang="nl">Wachtzin als QR-code tonen en scannen</span><span lang="en">Show and scan the passphrase as a QR code</span></li>
+            <li><span lang="nl">Afdrukken van foto's en PDF's</span><span lang="en">Print photos and PDFs</span></li>
           </ul>
         </div>
       </details>
@@ -1013,7 +1036,6 @@ footer .brand{font-size:.95rem}
           </ul>
         </div>
       </details>
-      <p class="count"><span lang="nl">Gratis versie: 41 functies · Volledige versie: 64 functies.</span><span lang="en">Free version: 41 features · Full version: 64 features.</span></p>
     </div>
   </div>
 </section>
@@ -1026,6 +1048,7 @@ footer .brand{font-size:.95rem}
 
     <div class="steps" id="installeren">
       <div class="step">
+        <div class="art art-sm" aria-hidden="true"><svg viewBox="50 6 200 98"><rect class="ph" x="127" y="14" width="46" height="82" rx="9"/><rect class="scr" x="132" y="22" width="36" height="64" rx="4"/><rect class="fm" x="144.0" y="90" width="12" height="2.5" rx="1.25"/><use href="#i-android" class="acc" x="136" y="26" width="28" height="28"/><use href="#i-dl" class="ink" x="140" y="56" width="20" height="20"/><text x="60" y="60">APK</text><path class="la" d="M90 55L120 55M114 50L120 55L114 60"/></svg></div>
         <h3><span lang="nl">Installeren</span><span lang="en">Install</span></h3>
         <p lang="nl">Download de APK op je telefoon en open hem. Sta eenmalig "onbekende bronnen" toe en tik op Installeren.</p>
         <p lang="en">Download the APK on your phone and open it. Allow "unknown sources" once and tap Install.</p>
@@ -1034,6 +1057,7 @@ footer .brand{font-size:.95rem}
         </details>
       </div>
       <div class="step">
+        <div class="art art-sm" aria-hidden="true"><svg viewBox="50 6 200 98"><rect class="ph" x="127" y="14" width="46" height="82" rx="9"/><rect class="scr" x="132" y="22" width="36" height="64" rx="4"/><rect class="fm" x="144.0" y="90" width="12" height="2.5" rx="1.25"/><circle class="fa" cx="136.0" cy="36" r="2.2"/><circle class="fa" cx="141.6" cy="36" r="2.2"/><circle class="fa" cx="147.2" cy="36" r="2.2"/><circle class="fa" cx="152.8" cy="36" r="2.2"/><circle class="dot" cx="158.4" cy="36" r="2.2"/><circle class="dot" cx="164.0" cy="36" r="2.2"/><rect class="key" x="134" y="46" width="8" height="8" rx="2"/><rect class="key" x="145" y="46" width="8" height="8" rx="2"/><rect class="key" x="156" y="46" width="8" height="8" rx="2"/><rect class="key" x="134" y="57" width="8" height="8" rx="2"/><rect class="key" x="145" y="57" width="8" height="8" rx="2"/><rect class="key" x="156" y="57" width="8" height="8" rx="2"/><rect class="key" x="134" y="68" width="8" height="8" rx="2"/><rect class="key" x="145" y="68" width="8" height="8" rx="2"/><rect class="key" x="156" y="68" width="8" height="8" rx="2"/><use href="#i-key" class="mut" x="196" y="40" width="30" height="30"/></svg></div>
         <h3><span lang="nl">Kluis aanmaken</span><span lang="en">Create your safe</span></h3>
         <p lang="nl">Kies de telefoon of de SD-kaart, een kluiswachtwoord en een PIN.</p>
         <p lang="en">Choose the phone or the SD card, a safe password and a PIN.</p>
@@ -1042,6 +1066,7 @@ footer .brand{font-size:.95rem}
         </details>
       </div>
       <div class="step">
+        <div class="art art-sm" aria-hidden="true"><svg viewBox="50 6 200 98"><rect class="ph" x="127" y="14" width="46" height="82" rx="9"/><rect class="scr" x="132" y="22" width="36" height="64" rx="4"/><rect class="fm" x="144.0" y="90" width="12" height="2.5" rx="1.25"/><circle class="fa" cx="160" cy="78" r="8"/><use href="#i-plus" class="on" x="154" y="72" width="12" height="12"/><use href="#i-photo" class="ink" x="60" y="22" width="28" height="28"/><use href="#i-doc" class="ink" x="60" y="60" width="28" height="28"/><path class="la" d="M96 55L120 55M114 50L120 55L114 60"/><use href="#i-lock" class="acc" x="141" y="36" width="18" height="18"/></svg></div>
         <h3><span lang="nl">Bestanden toevoegen</span><span lang="en">Add files</span></h3>
         <p lang="nl">Tik op + en kies Foto's &amp; video's, Documenten, Map importeren, Camera, Scanner of Spraakmemo.</p>
         <p lang="en">Tap + and choose Photos &amp; videos, Documents, Import folder, Camera, Scanner or Voice memo.</p>
@@ -1050,18 +1075,19 @@ footer .brand{font-size:.95rem}
         </details>
       </div>
       <div class="step">
+        <div class="art art-sm" aria-hidden="true"><svg viewBox="50 6 200 98"><rect class="ph" x="90" y="14" width="46" height="82" rx="9"/><rect class="scr" x="95" y="22" width="36" height="64" rx="4"/><rect class="fm" x="107.0" y="90" width="12" height="2.5" rx="1.25"/><use href="#i-safe" class="acc" x="101" y="40" width="24" height="24"/><path class="la" d="M142 55L186 55M180 50L186 55L180 60"/><use href="#i-sd" class="ink" x="194" y="22" width="28" height="28"/><use href="#i-cloud" class="ink" x="194" y="60" width="28" height="28"/></svg></div>
         <h3><span lang="nl">Back-up instellen</span><span lang="en">Set up backups</span></h3>
         <p lang="nl">Instellingen → Back-up: kies een map buiten de telefoon en een back-upwachtwoord.</p>
         <p lang="en">Settings → Backup: choose a folder off the phone and a backup password.</p>
         <details class="more"><summary><span lang="nl">Meer</span><span lang="en">More</span></summary>
-          <div class="body"><p lang="nl" style="margin:0">Bijvoorbeeld een SD-kaart, USB-stick of cloudmap. Tik daarna af en toe op "Back-up maken"; de kluis herinnert je eraan. Optioneel (volledige versie): kies in Instellingen → Stealth een camouflage.</p><p lang="en" style="margin:0">For example an SD card, USB stick or cloud folder. Then tap "Make backup" now and then; the safe reminds you. Optional (Full version): pick a camouflage in Settings → Stealth.</p></div>
+          <div class="body"><p lang="nl" style="margin:0">Bijvoorbeeld een SD-kaart, USB-stick of cloudmap. Tik daarna af en toe op "Back-up maken"; de kluis herinnert je eraan. Optioneel: kies in Instellingen → Stealth een camouflage.</p><p lang="en" style="margin:0">For example an SD card, USB stick or cloud folder. Then tap "Make backup" now and then; the safe reminds you. Optional: pick a camouflage in Settings → Stealth.</p></div>
         </details>
       </div>
     </div>
 
     <div class="callout">
-      <p lang="nl"><strong>Belangrijk:</strong> geen account, geen server, geen achterdeur. Vergeet je je PIN, dan open je de kluis met je kluiswachtwoord. Ben je dat ook kwijt, dan kan niemand je kluis openen, ook de maker niet; alleen een back-up met het back-upwachtwoord brengt je bestanden dan terug.</p>
-      <p lang="en"><strong>Important:</strong> no account, no server, no back door. If you forget your PIN, open the safe with your safe password. If you have lost that too, nobody can open your safe, not even the maker; only a backup with its backup password brings your files back then.</p>
+      <p lang="nl"><strong>Belangrijk:</strong> geen account, geen server, geen achterdeur. Vergeet je je PIN, dan open je de kluis met je kluiswachtwoord. Ben je dat ook kwijt, dan kan niemand je kluis openen, ook de bouwer van deze app niet; alleen een back-up met het back-upwachtwoord brengt je bestanden dan terug.</p>
+      <p lang="en"><strong>Important:</strong> no account, no server, no back door. If you forget your PIN, open the safe with your safe password. If you have lost that too, nobody can open your safe, not even the developer of this app; only a backup with its backup password brings your files back then.</p>
       <p style="margin:0" class="muted"><span lang="nl">SHA-256 van de APK:</span><span lang="en">SHA-256 of the APK:</span> <span class="mono">70241500c137cf07ecdca33040b80c073fe6007ab9bf3290df027be499a18562</span></p>
     </div>
   </div>
@@ -1072,6 +1098,7 @@ footer .brand{font-size:.95rem}
   <div class="wrap">
     <div class="kicker"><span lang="nl">Vragen</span><span lang="en">FAQ</span></div>
     <div class="intro"><h2><span lang="nl">Veelgestelde vragen</span><span lang="en">Frequently asked questions</span></h2></div>
+    <div class="art art-wide" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><use href="#i-q" class="acc" x="50" y="14" width="46" height="46"/><use href="#i-q" class="mut" x="110" y="44" width="36" height="36"/><use href="#i-safe" class="acc" x="186" y="24" width="56" height="56"/><use href="#i-check" class="acc" x="244" y="14" width="24" height="24"/></svg></div>
     <div class="faq-groups">
       <div>
         <h3><span lang="nl">Over AI-Safe</span><span lang="en">About AI-Safe</span></h3>
@@ -1102,26 +1129,26 @@ footer .brand{font-size:.95rem}
         <details class="q"><summary><span lang="nl">Hoe werken de standaardkluis en de extra kluizen?</span><span lang="en">How do the standard safe and the extra safes work?</span></summary>
           <div class="a"><p lang="nl">De standaardkluis en de extra kluizen openen elk met <em>een eigen PIN</em>. AI-Safe heeft altijd één standaard-PIN die je <em>standaardkluis</em> opent. In Instellingen → Beveiliging → Kluizen &amp; PIN's (alleen zichtbaar in de standaardkluis) maak je 1 tot 4 <em>extra PIN's</em> die elk hun eigen kluis openen. Daar geef je elke kluis een naam en kleur en kies je welke kluizen ook met de vingerafdruk opengaan. Kies je geen eigen kleur, dan laat niets op het scherm van een geopende kluis zien welke kluis open is. Elke kluis heeft een <em>eigen back-up</em>. Ze beschermen tegen meekijken en druk, niet tegen forensisch onderzoek door iemand die deze app kent.</p><p lang="en">The standard safe and the extra safes each open with <em>a PIN of their own</em>. AI-Safe always has one standard PIN that opens your <em>standard safe</em>. In Settings → Security → Safes &amp; PINs (only visible in the standard safe) you create 1 to 4 <em>extra PINs</em> that each open their own safe. There you give each safe a name and colour and choose which safes also open with your fingerprint. Without an own colour, nothing on the screen of an open safe shows which safe is open. Every safe has its <em>own backup</em>. They protect against prying eyes and pressure, not against a forensic examination by someone who knows this app.</p></div></details>
         <details class="q"><summary><span lang="nl">Waarom kan ik in de kluis geen screenshots maken?</span><span lang="en">Why can't I take screenshots in the safe?</span></summary>
-          <div class="a"><p lang="nl">In de kluis kun je geen screenshots maken, omdat screenshots en schermopnamen van de kluis <em>standaard geblokkeerd</em> worden om je bestanden te beschermen, ook voor <em>AI-assistenten</em> die het scherm vastleggen. Het overzicht van recente apps toont een leeg venster. In de <em>volledige versie</em> kun je ze toestaan met Instellingen → Beveiliging → Screenshots van de kluis toestaan (standaard uit); schermen voor je PIN en wachtwoorden blijven dan afgeschermd.</p><p lang="en">You can't take screenshots in the safe because screenshots and screen recordings of the safe are <em>blocked by default</em> to protect your files, also for <em>AI assistants</em> that capture the screen. The recent-apps overview shows an empty window. In <em>Full</em> you can allow them with Settings → Security → Allow screenshots of the safe (off by default); screens for your PIN and passwords stay protected.</p></div></details>
+          <div class="a"><p lang="nl">In de kluis kun je geen screenshots maken, omdat screenshots en schermopnamen van de kluis <em>standaard geblokkeerd</em> worden om je bestanden te beschermen, ook voor <em>AI-assistenten</em> die het scherm vastleggen. Het overzicht van recente apps toont een leeg venster. Je kunt ze toestaan met Instellingen → Beveiliging → Screenshots van de kluis toestaan (standaard uit); schermen voor je PIN en wachtwoorden blijven dan afgeschermd.</p><p lang="en">You can't take screenshots in the safe because screenshots and screen recordings of the safe are <em>blocked by default</em> to protect your files, also for <em>AI assistants</em> that capture the screen. The recent-apps overview shows an empty window. You can allow them with Settings → Security → Allow screenshots of the safe (off by default); screens for your PIN and passwords stay protected.</p></div></details>
         <details class="q"><summary><span lang="nl">Leert mijn toetsenbord mee met wat ik in de kluis typ?</span><span lang="en">Does my keyboard learn from what I type in the safe?</span></summary>
           <div class="a"><div lang="nl"><p>Of je toetsenbord meeleert met wat je in de kluis typt, bepaalt <em>het toetsenbord zelf</em>. In de kluis <em>vraagt</em> AI-Safe het toetsenbord om <em>niets te onthouden</em>, zodat namen en notities die je daar typt niet in de woordsuggesties komen. Maar het toetsenbord is een <em>aparte app</em> van Google, Samsung of een andere maker: AI-Safe heeft er <em>geen controle</em> over en kan niet afdwingen dat het verzoek wordt opgevolgd.</p><ul><li><strong>Gboard</strong> (het toetsenbord van Google, standaard op Pixel en op veel andere telefoons) en <strong>Microsoft SwiftKey</strong> volgen het verzoek: ze schakelen in de kluis hun <em>incognitostand</em> in.</li><li>Bij het <strong>Samsung-toetsenbord</strong> (standaard op Samsung Galaxy) is niet bevestigd dat het het verzoek opvolgt.</li><li>Twijfel je? Gebruik in de kluis dan Gboard, of zet <em>voorspellende tekst</em> uit in de instellingen van je toetsenbord.</li></ul><p>Je PIN voer je altijd in op de eigen toetsen van de app, niet met je toetsenbord.</p></div><div lang="en"><p>Whether your keyboard learns from what you type in the safe is up to <em>the keyboard itself</em>. Inside the safe, AI-Safe <em>asks</em> the keyboard <em>not to remember anything</em>, so names and notes you type there don't end up in its suggestions. But the keyboard is a <em>separate app</em> from Google, Samsung or another maker: AI-Safe has <em>no control</em> over it and cannot force it to honour the request.</p><ul><li><strong>Gboard</strong> (Google's keyboard, standard on Pixel and many other phones) and <strong>Microsoft SwiftKey</strong> honour the request: they switch to their <em>incognito mode</em> in the safe.</li><li>For the <strong>Samsung Keyboard</strong> (standard on Samsung Galaxy) it is not confirmed that it honours the request.</li><li>In doubt? Use Gboard in the safe, or turn off <em>predictive text</em> in your keyboard's settings.</li></ul><p>You always enter your PIN on the app's own keys, not with your keyboard.</p></div></div></details>
         <details class="q"><summary><span lang="nl">Kunnen anderen zien dat ik een kluis heb?</span><span lang="en">Can other people tell that I have a safe?</span></summary>
-          <div class="a"><p lang="nl">Ja, zonder vermomming kunnen anderen zien dat je een kluis hebt: de app heet AI-Safe en heeft een schildicoon met sleutelgat. Wat erin staat, blijft hoe dan ook <em>versleuteld en onleesbaar</em>. Wil je ook de app zelf verbergen, kies dan onder Instellingen → <em>Stealth</em> een <em>vermomming</em> (Volume Manager, Rekenmachine of Notities) en haal de app eventueel uit de deelmenu's van andere apps (volledige versie).</p><p lang="en">Yes, without a disguise other people can tell that you have a safe: the app is called AI-Safe and has a shield icon with a keyhole. What is inside stays <em>encrypted and unreadable</em> either way. If you also want to hide the app itself, choose a <em>disguise</em> (Volume Manager, Calculator or Notes) under Settings → <em>Stealth</em>, and take the app out of the share menus of other apps if you like (Full version).</p></div></details>
+          <div class="a"><p lang="nl">Ja, zonder vermomming kunnen anderen zien dat je een kluis hebt: de app heet AI-Safe en heeft een schildicoon met sleutelgat. Wat erin staat, blijft hoe dan ook <em>versleuteld en onleesbaar</em>. Wil je ook de app zelf verbergen, kies dan onder Instellingen → <em>Stealth</em> een <em>vermomming</em> (Volume Manager, Rekenmachine of Notities) en haal de app eventueel uit de deelmenu's van andere apps.</p><p lang="en">Yes, without a disguise other people can tell that you have a safe: the app is called AI-Safe and has a shield icon with a keyhole. What is inside stays <em>encrypted and unreadable</em> either way. If you also want to hide the app itself, choose a <em>disguise</em> (Volume Manager, Calculator or Notes) under Settings → <em>Stealth</em>, and take the app out of the share menus of other apps if you like.</p></div></details>
       </div>
 
       <div>
         <h3><span lang="nl">PIN, wachtwoorden en opslag</span><span lang="en">PIN, passwords and storage</span></h3>
         <details class="q"><summary><span lang="nl">Welke PIN's en wachtwoorden zijn er?</span><span lang="en">Which PINs and passwords are there?</span></summary>
           <div class="a"><div lang="nl"><p>Er zijn er <em>vier</em>: de <em>PIN</em>, het <em>kluiswachtwoord</em>, het <em>back-upwachtwoord</em> en de <em>wachtzin</em>, elk met een eigen taak:</p><ol>
-<li><strong>PIN (of patroon, vingerafdruk)</strong>: opent de app op deze telefoon, elke keer en alleen hier. 6 tot 16 cijfers, of een patroon door minstens 5 punten: het patroon is dezelfde PIN als lijn getekend. De vingerafdruk is een extra manier om te openen. Wijzigen: Instellingen → Beveiliging → PIN wijzigen. Met extra kluizen (volledige versie) heeft elke kluis een eigen PIN.</li>
+<li><strong>PIN (of patroon, vingerafdruk)</strong>: opent de app op deze telefoon, elke keer en alleen hier. 6 tot 16 cijfers, of een patroon door minstens 5 punten: het patroon is dezelfde PIN als lijn getekend. De vingerafdruk is een extra manier om te openen. Wijzigen: Instellingen → Beveiliging → PIN wijzigen. Met extra kluizen heeft elke kluis een eigen PIN.</li>
 <li><strong>Kluiswachtwoord</strong>: kies je één keer, bij het aanmaken van de kluis (minstens 12 tekens, of laat de app vijf woorden voorstellen). Dagelijks heb je het niet nodig, alleen als je je PIN vergeet (<em>PIN vergeten?</em>) of als je een kluis op een SD-kaart opnieuw opent, bijvoorbeeld in een andere telefoon of na het terugzetten van de fabrieksinstellingen. Wijzigen: Instellingen → Kluis → Kluiswachtwoord.</li>
 <li><strong>Back-upwachtwoord</strong>: beschermt je back-up (minstens 12 tekens). Elke kluis heeft een eigen back-up: een complete kopie van die kluis, met dit eigen wachtwoord; je hebt het nodig om hem terug te zetten, op elke telefoon. Wijzigen: Instellingen → Back-up → Back-upwachtwoord. Een nieuw wachtwoord geldt vanaf de volgende back-up; tot dan opent je back-up met het oude.</li>
-<li><strong>Wachtzin van een gedeeld bestand</strong>: hoort bij één versleuteld deelbestand (minstens 8 tekens, of een voorstel van 2, 3 of 4 woorden). Je kiest hem bij het maken (volledige versie) en geeft hem apart aan de ontvanger; die voert hem in bij + → Versleuteld bestand openen. Samen op één plek? Toon de wachtzin dan als QR-code en laat de ander die scannen (volledige versie).</li>
+<li><strong>Wachtzin van een gedeeld bestand</strong>: hoort bij één versleuteld deelbestand (minstens 8 tekens, of een voorstel van 2, 3 of 4 woorden). Je kiest hem bij het maken en geeft hem apart aan de ontvanger; die voert hem in bij + → Versleuteld bestand openen. Samen op één plek? Toon de wachtzin dan als QR-code en laat de ander die scannen.</li>
 </ol><p>Bewaar het kluiswachtwoord en het back-upwachtwoord los van je PIN en van de back-up. Niemand kan ze herstellen. In de app staat bij elk van de vier een (i) met deze uitleg.</p></div><div lang="en"><p>There are <em>four</em>: the <em>PIN</em>, the <em>safe password</em>, the <em>backup password</em> and the <em>passphrase</em>, each with its own job:</p><ol>
-<li><strong>PIN (or pattern, fingerprint)</strong>: opens the app on this phone, every time and only here. 6 to 16 digits, or a pattern through at least 5 dots: the pattern is the same PIN drawn as a line. Fingerprint is an extra way to open. Change it: Settings → Security → Change PIN. With extra safes (Full) every safe has its own PIN.</li>
+<li><strong>PIN (or pattern, fingerprint)</strong>: opens the app on this phone, every time and only here. 6 to 16 digits, or a pattern through at least 5 dots: the pattern is the same PIN drawn as a line. Fingerprint is an extra way to open. Change it: Settings → Security → Change PIN. With extra safes every safe has its own PIN.</li>
 <li><strong>Safe password</strong>: you choose it once, when the safe is created (at least 12 characters, or let the app suggest five words). You don't need it day to day, only when you forget your PIN (<em>Forgot your PIN?</em>) or when you open a safe on an SD card again, for example in another phone or after a factory reset. Change it: Settings → Safe → Safe password.</li>
 <li><strong>Backup password</strong>: protects your backup (at least 12 characters). Every safe has its own backup: a complete copy of that safe with this password of its own; you need it to restore the backup, on any phone. Change it: Settings → Backup → Backup password. A new password applies from the next backup; until then your backup opens with the old one.</li>
-<li><strong>Passphrase of a shared file</strong>: belongs to one encrypted share file (at least 8 characters, or a suggestion of 2, 3 or 4 words). You choose it when making the file (Full) and give it to the recipient separately; they enter it at + → Open encrypted file. In the same place? Show the passphrase as a QR code and let the other person scan it (Full).</li>
+<li><strong>Passphrase of a shared file</strong>: belongs to one encrypted share file (at least 8 characters, or a suggestion of 2, 3 or 4 words). You choose it when making the file and give it to the recipient separately; they enter it at + → Open encrypted file. In the same place? Show the passphrase as a QR code and let the other person scan it.</li>
 </ol><p>Keep the safe password and the backup password apart from your PIN and from the backup. Nobody can recover them. In the app, each of the four has an (i) with this explanation.</p></div></div></details>
         <details class="q"><summary><span lang="nl">Ik ben mijn PIN vergeten. Kan ik er nog in?</span><span lang="en">I forgot my PIN. Can I still get in?</span></summary>
           <div class="a"><p lang="nl">Ja, ben je je PIN vergeten, dan kom je er nog in met je <em>kluiswachtwoord</em>: tik op het PIN-scherm op <em>PIN vergeten?</em>, voer het kluiswachtwoord in en kies een nieuwe PIN. Zonder kluiswachtwoord kan niemand helpen: er is geen account en nergens een kopie van je sleutel. Een <em>back-up</em> met het back-upwachtwoord is dan de enige weg terug.</p><p lang="en">Yes, if you forgot your PIN you can still get in with your <em>safe password</em>: tap <em>Forgot your PIN?</em> on the PIN screen, enter the safe password and choose a new PIN. Without the safe password nobody can help: there is no account and no copy of your key anywhere else. A <em>backup</em> with its backup password is then the only way back.</p></div></details>
@@ -1146,14 +1173,14 @@ footer .brand{font-size:.95rem}
         <details class="q"><summary><span lang="nl">Wat als ik mijn back-upwachtwoord vergeet?</span><span lang="en">What if I forget my backup password?</span></summary>
           <div class="a"><p lang="nl">Vergeet je je back-upwachtwoord, dan kun je je back-up <em>niet terugzetten</em>. Zolang je de kluis nog kunt openen, stel je in Instellingen → Back-up → Back-upwachtwoord een <em>nieuw wachtwoord</em> in en tik je meteen op <em>Back-up maken</em>: de back-up wordt dan vervangen door een met het nieuwe wachtwoord.</p><p lang="en">If you forget your backup password, your backup <em>can't be restored</em>. As long as you can open the safe, set a <em>new password</em> in Settings → Backup → Backup password and tap <em>Make backup</em> straight away: the backup is then replaced by one with the new password.</p></div></details>
         <details class="q"><summary><span lang="nl">Hoe geef ik iemand veilig een paar bestanden?</span><span lang="en">How do I give someone a few files safely?</span></summary>
-          <div class="a"><div lang="nl"><p>Iemand veilig een paar bestanden geven doe je met <em>Versleuteld delen</em> (volledige versie): de app maakt één <em>versleuteld bestand</em> dat alleen opengaat met een <em>wachtzin</em>. De ontvanger heeft AI-Safe nodig om het te openen (dat kan ook in de gratis versie).</p>
+          <div class="a"><div lang="nl"><p>Iemand veilig een paar bestanden geven doe je met <em>Versleuteld delen</em>: de app maakt één <em>versleuteld bestand</em> dat alleen opengaat met een <em>wachtzin</em>. De ontvanger heeft AI-Safe nodig om het te openen.</p>
 <p><strong>Het bestand maken</strong></p><ol><li>Selecteer in de kluis de items en tik onderin op <em>Versleuteld delen</em>.</li><li>Kies een wachtzin: minstens 8 tekens, of tik op de dobbelsteen voor een voorstel van 2, 3 of 4 woorden.</li><li>Tik op <em>Delen…</em> om het bestand te versturen (bijvoorbeeld via e-mail of een chat-app), of op <em>Opslaan in map</em>.</li></ol>
 <p><strong>Op afstand: wachtzin apart sturen</strong></p><ol><li>Stuur het bestand en de wachtzin <em>apart</em>, via een ander kanaal: bijvoorbeeld het bestand per e-mail en de wachtzin via een telefoontje of een andere app.</li><li>De ontvanger tikt in AI-Safe op <em>+ → Versleuteld bestand openen</em>, kiest het bestand en typt de wachtzin.</li><li>De bestanden komen in de geopende kluismap van de ontvanger.</li></ol>
-<p><strong>Samen op één plek: wachtzin als QR-code</strong> (volledige versie, bij allebei)</p><ol><li>Zet allebei <em>Wachtzin als QR-code</em> aan in Instellingen → Versleuteld delen (standaard uit).</li><li>Jij tikt na het kiezen van de wachtzin op <em>Tonen als QR-code</em>.</li><li>De ander tikt bij <em>+ → Versleuteld bestand openen</em> op <em>QR-code scannen</em> en scant de code van jouw scherm.</li></ol>
-<p>Stuur nooit een screenshot of foto van de QR-code mee met het bestand: dan heeft iedereen die het bestand krijgt ook de wachtzin.</p></div><div lang="en"><p>You give someone a few files safely with <em>Encrypted share</em> (Full): the app makes one <em>encrypted file</em> that only opens with a <em>passphrase</em>. The recipient needs AI-Safe to open it (the free version will do).</p>
+<p><strong>Samen op één plek: wachtzin als QR-code</strong></p><ol><li>Zet allebei <em>Wachtzin als QR-code</em> aan in Instellingen → Versleuteld delen (standaard uit).</li><li>Jij tikt na het kiezen van de wachtzin op <em>Tonen als QR-code</em>.</li><li>De ander tikt bij <em>+ → Versleuteld bestand openen</em> op <em>QR-code scannen</em> en scant de code van jouw scherm.</li></ol>
+<p>Stuur nooit een screenshot of foto van de QR-code mee met het bestand: dan heeft iedereen die het bestand krijgt ook de wachtzin.</p></div><div lang="en"><p>You give someone a few files safely with <em>Encrypted share</em>: the app makes one <em>encrypted file</em> that only opens with a <em>passphrase</em>. The recipient needs AI-Safe to open it.</p>
 <p><strong>Making the file</strong></p><ol><li>Select the items in the safe and tap <em>Encrypted share</em> at the bottom.</li><li>Choose a passphrase: at least 8 characters, or tap the dice for a suggestion of 2, 3 or 4 words.</li><li>Tap <em>Share…</em> to send the file (for example by email or a chat app), or <em>Save to folder</em>.</li></ol>
 <p><strong>At a distance: send the passphrase separately</strong></p><ol><li>Send the file and the passphrase <em>separately</em>, through another channel: for example the file by email and the passphrase in a phone call or another app.</li><li>The recipient taps <em>+ → Open encrypted file</em> in AI-Safe, picks the file and types the passphrase.</li><li>The files go into the recipient's open safe folder.</li></ol>
-<p><strong>In the same place: passphrase as a QR code</strong> (Full, on both phones)</p><ol><li>Both turn on <em>Passphrase as QR code</em> in Settings → Encrypted share (off by default).</li><li>After choosing the passphrase, you tap <em>Show as QR code</em>.</li><li>The other person taps <em>Scan QR code</em> at <em>+ → Open encrypted file</em> and scans the code on your screen.</li></ol>
+<p><strong>In the same place: passphrase as a QR code</strong></p><ol><li>Both turn on <em>Passphrase as QR code</em> in Settings → Encrypted share (off by default).</li><li>After choosing the passphrase, you tap <em>Show as QR code</em>.</li><li>The other person taps <em>Scan QR code</em> at <em>+ → Open encrypted file</em> and scans the code on your screen.</li></ol>
 <p>Never send a screenshot or photo of the QR code along with the file: anyone who gets the file would then have the passphrase too.</p></div></div></details>
         <details class="q"><summary><span lang="nl">Zijn verwijderde items meteen weg?</span><span lang="en">Are deleted items gone immediately?</span></summary>
           <div class="a"><p lang="nl">Nee, verwijderde items zijn niet meteen weg. Ze blijven gedurende de bewaartijd die je hebt gekozen in de <em>prullenbak</em>, nog steeds versleuteld. Leeg de prullenbak of gebruik <em>Definitief verwijderen</em> om ze meteen te wissen.</p><p lang="en">No, deleted items are not gone immediately. They stay in the <em>recycle bin</em>, still encrypted, for the retention time you chose. Empty the bin or use <em>Delete forever</em> to erase them right away.</p></div></details>
@@ -1170,6 +1197,7 @@ footer .brand{font-size:.95rem}
       <p lang="nl">Door de app te gebruiken, ga je akkoord met dit voorbehoud. Als je het er niet mee eens bent, gebruik de app dan niet.</p>
       <p lang="en">By using the app you accept this disclaimer. If you do not agree, do not use the app.</p>
     </div>
+    <div class="art art-wide" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><use href="#i-shield" class="acc" x="90" y="18" width="64" height="64"/><use href="#i-info" class="mut" x="168" y="30" width="40" height="40"/><path class="ln" d="M60 96 H240"/></svg></div>
     <div class="disc">
       <details class="q"><summary><span lang="nl">Geleverd zoals hij is</span><span lang="en">Provided as is</span></summary>
         <div class="a"><p lang="nl">Deze app wordt geleverd "zoals hij is", zonder enige garantie, uitdrukkelijk of stilzwijgend, ook niet wat betreft geschiktheid voor een bepaald doel. De app kan fouten bevatten en werkt mogelijk niet op elk apparaat.</p><p lang="en">This app is provided "as is", without any warranty, express or implied, including fitness for a particular purpose. It may contain errors and may not work on every device.</p></div></details>
