@@ -90,6 +90,11 @@ nav.links a:hover{color:#fff}
 .btn svg{width:20px;height:20px}
 .btn-ghost{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:13px 18px;border-radius:14px;font-weight:600;background:rgba(255,255,255,.04)}
 .btn-ghost:hover{background:rgba(255,255,255,.1)}
+.why{color:rgba(234,243,248,.7);max-width:34em;margin:-12px 0 28px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.dl{background:#0b1a2a;color:var(--hero-ink);padding:64px 0}
+.dl .wrap{display:flex;flex-direction:column;align-items:center;text-align:center}
+.dl .cta{align-items:center}
 .meta{font-size:.84rem;color:rgba(234,243,248,.65);margin:14px 0 0}
 .meta a{color:#5eead4}
 .update{margin:0 0 20px;padding:10px 14px;border-radius:12px;background:rgba(45,212,191,.12);border:1px solid rgba(45,212,191,.4);font-weight:600;max-width:34em}
@@ -228,6 +233,7 @@ footer .brand{font-size:.95rem}
       <a href="#features"><span lang="nl">Features</span><span lang="en">Features</span></a>
       <a href="#uitleg"><span lang="nl">Aan de slag</span><span lang="en">Get started</span></a>
       <a href="#faq"><span lang="nl">Vragen</span><span lang="en">FAQ</span></a>
+      <a href="#download"><span lang="nl">Download</span><span lang="en">Download</span></a>
       <a href="#disclaimer"><span lang="nl">Voorbehoud</span><span lang="en">Disclaimer</span></a>
     </nav>
     <div class="lang" role="group" aria-label="Language">
@@ -251,30 +257,19 @@ footer .brand{font-size:.95rem}
         <span lang="en">Keep your private data<br> <span class="grad">safe from AI.</span></span>
       </h1>
       <p class="lead">
-        <span lang="nl">AI-Safe is een kluis op je Android-telefoon voor foto's, video's en documenten. Alles wordt versleuteld en blijft offline: buiten de galerij, de cloud en het bereik van AI-assistenten. Geen account, geen internet. Alleen jij komt erbij, met je PIN, patroon of vingerafdruk.</span>
-        <span lang="en">AI-Safe is a safe on your Android phone for photos, videos and documents. Everything is encrypted and stays offline: out of the gallery, the cloud and the reach of AI assistants. No account, no internet. Only you get in, with your PIN, pattern or fingerprint.</span>
+        <span lang="nl">AI-Safe is een kluis op je Android-telefoon voor je foto's, video's en documenten. Versleuteld, offline en alleen voor jou.</span>
+        <span lang="en">AI-Safe is a safe on your Android phone for your photos, videos and documents. Encrypted, offline and for you only.</span>
       </p>
-      <p class="update" id="update" data-latest="4.2.5" hidden></p>
-      <div class="cta">
-        <a class="btn" href="AISafe-4.2.5-release.apk" download>
+      <p class="why">
+        <span lang="nl">Je galerij, je cloud en je toetsenbord worden steeds vaker door AI gelezen. Wat in AI-Safe staat, niet.</span>
+        <span lang="en">Your gallery, your cloud and your keyboard are read by AI more and more. What is in AI-Safe isn't.</span>
+      </p>
+      <div class="hero-cta">
+        <a class="btn" href="#download">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 11l6 6 6-6M5 21h14"/></svg>
-          <span lang="nl">Download APK 4.2.5 - Volledige versie</span><span lang="en">Download APK 4.2.5 - Full version</span>
+          <span lang="nl">Download</span><span lang="en">Download</span>
         </a>
-        <p class="promo"><span class="dot"></span><span lang="nl">De volledige versie is gratis tot 1/1/2027</span><span lang="en">The full version is free until 1/1/2027</span></p>
-        <a class="howto" href="#installeren">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5V14M12 17h.01"/></svg>
-          <span lang="nl">Hoe installeer ik de app?</span><span lang="en">How do I install the app?</span><span class="arrow">→</span>
-        </a>
-      </div>
-      <p class="meta">
-        <span lang="nl">Android 8.0 of nieuwer · 64-bit ARM · ca. 13 MB · NL, EN, DE, FR, IT, ES · Werkt de download niet? <a href="https://github.com/GosseVledder/AI-Safe/releases/latest">GitHub Releases</a></span>
-        <span lang="en">Android 8.0 or newer · 64-bit ARM · approx. 13 MB · NL, EN, DE, FR, IT, ES · Download not working? <a href="https://github.com/GosseVledder/AI-Safe/releases/latest">GitHub Releases</a></span>
-      </p>
-      <div class="stats">
-        <div><span lang="nl">Versleuteling</span><span lang="en">Encryption</span><b>AES-256</b></div>
-        <div><span lang="nl">Internettoegang</span><span lang="en">Internet access</span><b>0</b></div>
-        <div><span lang="nl">Accounts</span><span lang="en">Accounts</span><b>0</b></div>
-        <div><span lang="nl">AI in de app</span><span lang="en">AI in the app</span><b>0</b></div>
+        <a class="btn-ghost" href="#waarom"><span lang="nl">Waarom AI-Safe?</span><span lang="en">Why AI-Safe?</span></a>
       </div>
     </div>
 
@@ -307,6 +302,29 @@ footer .brand{font-size:.95rem}
     </div>
   </div>
 </div>
+
+<!-- DOWNLOAD -->
+<section class="dl" id="download">
+  <div class="wrap">
+    <div class="kicker"><span lang="nl">Download</span><span lang="en">Download</span></div>
+    <p class="update" id="update" data-latest="4.2.5" hidden></p>
+      <div class="cta">
+        <a class="btn" href="AISafe-4.2.5-release.apk" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 11l6 6 6-6M5 21h14"/></svg>
+          <span lang="nl">Download APK 4.2.5 - Volledige versie</span><span lang="en">Download APK 4.2.5 - Full version</span>
+        </a>
+        <p class="promo"><span class="dot"></span><span lang="nl">De volledige versie is gratis tot 1/1/2027</span><span lang="en">The full version is free until 1/1/2027</span></p>
+        <a class="howto" href="#installeren">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5V14M12 17h.01"/></svg>
+          <span lang="nl">Hoe installeer ik de app?</span><span lang="en">How do I install the app?</span><span class="arrow">→</span>
+        </a>
+      </div>
+      <p class="meta">
+        <span lang="nl">Android 8.0 of nieuwer · 64-bit ARM · ca. 13 MB · NL, EN, DE, FR, IT, ES · Werkt de download niet? <a href="https://github.com/GosseVledder/AI-Safe/releases/latest">GitHub Releases</a></span>
+        <span lang="en">Android 8.0 or newer · 64-bit ARM · approx. 13 MB · NL, EN, DE, FR, IT, ES · Download not working? <a href="https://github.com/GosseVledder/AI-Safe/releases/latest">GitHub Releases</a></span>
+      </p>
+  </div>
+</section>
 
 <!-- WAAROM -->
 <section id="waarom">
@@ -1204,6 +1222,9 @@ footer .brand{font-size:.95rem}
       add('en','You have the latest version ('+mine+').');
     }
     box.hidden=false;
+    // Opened from the app (Check for updates): land on the download section, not the top.
+    var dl=document.getElementById('download');
+    if(dl&&!location.hash) dl.scrollIntoView();
   }
 })();
 </script>
