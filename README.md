@@ -34,9 +34,9 @@ and screenshots of the safe stay black. The app itself contains no AI.
 - Share to the safe from other apps
 - Remove originals + reminder about the cloud copy
 - Camera straight into the safe, with grid lines and self-timer
-- Open an encrypted file from someone else
+- Open an AI-Safe file from someone else
 - Document scanner: edges, perspective, black & white, PDF
-- Record voice memos and add audio files
+- Add audio files
 
 ### Organising and finding
 - Folders, subfolders, cover, icon and colour per folder
@@ -80,8 +80,8 @@ and screenshots of the safe stay black. The app itself contains no AI.
 
 ### Sharing
 - Share to an app without a copy on your phone (after a warning)
-- Receive and open an encrypted share file
-- Encrypted share: create a share file yourself
+- Receive and open an AI-Safe file
+- Encrypted share: create an AI-Safe file yourself
 - Show and scan the passphrase as a QR code
 - Print photos and PDFs
 
