@@ -20,6 +20,7 @@ and screenshots of the safe stay black. The app itself contains no AI.
 - Safe password and *Forgot your PIN?*
 - Auto-lock: leaving the app, screen off, inactivity
 - Always on: AES-256, keyboard doesn't learn, no internet, no account
+- No back door: without the PIN or a password *nobody* can open the safe, not even the makers of the app (by design)
 - Screenshots and screen recordings of the safe blocked (default)
 - Allow screenshots of the safe (off by default)
 - Location and identifying data removed when sharing (on by default)
