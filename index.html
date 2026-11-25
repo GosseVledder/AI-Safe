@@ -132,7 +132,12 @@ nav.links a:hover{color:#fff}
 section{padding:88px 0}
 section.alt{background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .kicker{display:inline-block;color:var(--accent);font-weight:800;font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
-.intro{max-width:48em;margin-bottom:40px}
+.intro{margin-bottom:40px}
+@media (min-width:900px){.intro h2{font-size:clamp(1.7rem,3.2vw,2.3rem)}}
+.head-row{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:28px}
+.head-row .intro{margin-bottom:0}
+.head-row .art-wide{flex:0 1 380px;margin:0}
+@media (max-width:760px){.head-row{flex-direction:column;align-items:stretch;gap:20px}.head-row .art-wide{flex:none;width:100%}}
 .intro p{color:var(--muted);font-size:1.08rem;margin:0}
 
 /* threats */
@@ -891,9 +896,11 @@ footer .brand{font-size:.95rem}
 <!-- FAQ -->
 <section class="alt" id="faq">
   <div class="wrap">
-    <div class="kicker"><span lang="nl">Vragen</span><span lang="en">FAQ</span></div>
-    <div class="intro"><h2><span lang="nl">Veelgestelde vragen</span><span lang="en">Frequently asked questions</span></h2></div>
+    <div class="head-row">
+    <div><div class="kicker"><span lang="nl">Vragen</span><span lang="en">FAQ</span></div>
+    <div class="intro"><h2><span lang="nl">Veelgestelde vragen</span><span lang="en">Frequently asked questions</span></h2></div></div>
     <div class="art art-wide" aria-hidden="true"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid meet"><use href="#i-q" class="acc" x="50" y="14" width="46" height="46"/><use href="#i-q" class="mut" x="110" y="44" width="36" height="36"/><use href="#i-safe" class="acc" x="186" y="24" width="56" height="56"/><use href="#i-check" class="acc" x="244" y="14" width="24" height="24"/></svg></div>
+    </div>
     <div class="faq-groups">
       <div>
         <h3><span lang="nl">Over AI-Safe</span><span lang="en">About AI-Safe</span></h3>
